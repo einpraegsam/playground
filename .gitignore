@@ -7,6 +7,7 @@ uploads/
 typo3conf/l10n/
 typo3conf/*Configuration.php
 typo3conf/ENABLE_INSTALL_TOOL
+!typo3conf/DevelopmentConfiguration.php
 typo3conf/AdditionalConfiguration/
 typo3conf/PackageStates.php
 
