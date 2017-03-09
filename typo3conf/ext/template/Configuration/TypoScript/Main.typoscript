@@ -8,6 +8,9 @@ page {
     20.value = Uni Konstanz
 
     30 = TEXT
-    30.data = GP:test
-    30.htmlSpecialChars = 1
+    30.data = date:U
+    30.strftime = %d.$m.$Y
+
+    40 = TEXT
+    40.field = title
 }
