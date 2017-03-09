@@ -22,10 +22,10 @@ page {
         key.ifEmpty.data = levelfield:-2, backend_layout_next_level, slide
 
         default = TEXT
-        default.value = typo3conf/ext/template/Resources/Private/Templates/index.html
+        default.value = typo3conf/ext/template/Resources/Private/Templates/Default.html
 
         2 = TEXT
-        2.value = typo3conf/ext/template/Resources/Private/Templates/index.html
+        2.value = typo3conf/ext/template/Resources/Private/Templates/Home.html
     }
 }
 
@@ -61,3 +61,11 @@ lib.menu {
 
 
 lib.content < styles.content.get
+
+
+lib.content2 = TEXT
+lib.content2.value = Spalte 2
+
+
+lib.content3 = TEXT
+lib.content3.value = Spalte 3
