@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2017-03-09T14:42:43Z" product-name="person">
+		<header/>
+		<body>
+			<trans-unit id="first_name.description">
+				<source>firstName</source>
+			</trans-unit>
+			<trans-unit id="last_name.description">
+				<source>lastName</source>
+			</trans-unit>
+			<trans-unit id="date_of_birth.description">
+				<source>dateOfBirth</source>
+			</trans-unit>
+			<trans-unit id="description.description">
+				<source>description</source>
+			</trans-unit>
+			<trans-unit id="show_profile.description">
+				<source>showProfile</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
