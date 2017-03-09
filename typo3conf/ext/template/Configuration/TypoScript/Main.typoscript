@@ -1,3 +1,13 @@
 page = PAGE
-page.10 = TEXT
-page.10.value = Hello World
+page {
+    10 = TEXT
+    10.value = Hello
+    10.noTrimWrap = || |
+
+    20 = TEXT
+    20.value = Uni Konstanz
+
+    30 = TEXT
+    30.data = GP:test
+    30.htmlSpecialChars = 1
+}
