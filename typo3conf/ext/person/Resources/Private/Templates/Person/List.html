@@ -13,6 +13,7 @@
             <li>{person.lastName}</li>
             <li><f:format.date format="d.m.Y">{person.dateOfBirth}</f:format.date></li>
             <li><f:link.action action="detail" arguments="{person:person}" class="btn btn-primary">More...</f:link.action></li>
+            <li><f:link.action action="edit" arguments="{person:person}" class="btn btn-primary">Edit...</f:link.action></li>
         </ul>
     </div>
 </f:for>

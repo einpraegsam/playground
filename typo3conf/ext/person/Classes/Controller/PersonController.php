@@ -1,9 +1,7 @@
 <?php
 namespace Ukn\Person\Controller;
 
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
-use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 use Ukn\Person\Domain\Model\Person;
 
 /**
@@ -58,6 +56,26 @@ class PersonController extends ActionController
     {
         $this->personRepository->add($person);
         $this->addFlashMessage('user successfully generated');
+        $this->redirect('list');
+    }
+
+    /**
+     * @param Person $person
+     * @return void
+     */
+    public function editAction(Person $person)
+    {
+        $this->view->assign('person', $person);
+    }
+
+    /**
+     * @param Person $person
+     * @return void
+     */
+    public function updateAction(Person $person)
+    {
+        $this->personRepository->update($person);
+        $this->addFlashMessage('user properties successfully changed');
         $this->redirect('list');
     }
 }
