@@ -21,6 +21,10 @@
 			<trans-unit id="tx_person_domain_model_person.show_profile">
 				<source>Show Profile</source>
 			</trans-unit>
+
+			<trans-unit id="date_format">
+				<source>Y-m-d</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
