@@ -1,7 +1,9 @@
 <?php
 namespace Ukn\Person\Domain\Model;
 
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
+use Ukn\Person\Domain\Service\DateService;
 
 /**
  * Person
@@ -166,6 +168,7 @@ class Person extends AbstractEntity
      */
     public function isOver30(): bool
     {
-        return $this->getDateOfBirth()->diff(new \DateTime())->y > 30;
+        return GeneralUtility::makeInstance(DateService::class, $this->getDateOfBirth())
+            ->isOver30();
     }
 }
