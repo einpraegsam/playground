@@ -8,6 +8,7 @@
             <f:else>Geschlossenes Profil</f:else>
         </f:if>
     </li>
+    <f:if condition="{person.over30}"><li>Ganz schön alt</li></f:if>
     <li><f:format.date format="d.m.Y">{person.dateOfBirth}</f:format.date></li>
     <li><f:link.page class="btn btn-primary">Back...</f:link.page></li>
 </ul>
