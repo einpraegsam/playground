@@ -1,6 +1,7 @@
 <?php
 namespace Ukn\Person\Controller;
 
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 use Ukn\Person\Domain\Model\Person;
 
@@ -9,12 +10,31 @@ use Ukn\Person\Domain\Model\Person;
  */
 class PersonController extends ActionController
 {
+    /**
+     * @var array
+     */
+    protected $authenticatedActions = [
+        'createAction',
+        'updateAction',
+        'editAction'
+    ];
 
     /**
      * @var \Ukn\Person\Domain\Repository\PersonRepository
      * @inject
      */
     protected $personRepository = null;
+
+    /**
+     * @return void
+     * @throws \Exception
+     */
+    public function initializeAction()
+    {
+        if ($this->isAutenticatAction() && !$this->isAllowed()) {
+            throw new \Exception('Bad Guy!');
+        }
+    }
 
     /**
      * @param array $filter
@@ -88,5 +108,24 @@ class PersonController extends ActionController
      */
     public function list2Action()
     {
+    }
+
+    /**
+     * Check if frontend user is logged in with fe_groups.uid=1
+     *
+     * @return bool
+     */
+    protected function isAllowed(): bool
+    {
+        $feGroupUids = GeneralUtility::intExplode(',', $GLOBALS['TSFE']->fe_user->user['usergroup'], true);
+        return in_array(1, $feGroupUids);
+    }
+
+    /**
+     * @return bool
+     */
+    protected function isAutenticatAction(): bool
+    {
+        return in_array($this->actionMethodName, $this->authenticatedActions);
     }
 }
