@@ -17,7 +17,7 @@ class DateService
      *
      * @param \DateTime $dateOfBirth
      */
-    public function __construct(\DateTime $dateOfBirth)
+    public function __construct(\DateTime $dateOfBirth = null)
     {
         $this->dateOfBirth = $dateOfBirth;
     }
@@ -27,6 +27,10 @@ class DateService
      */
     public function isOver30(): bool
     {
-        return $this->dateOfBirth->diff(new \DateTime())->y > 30;
+        $dateOfBirth = $this->dateOfBirth;
+        if ($dateOfBirth !== null) {
+            return $dateOfBirth->diff(new \DateTime())->y > 30;
+        }
+        return false;
     }
 }

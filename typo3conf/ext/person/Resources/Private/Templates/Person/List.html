@@ -1,3 +1,11 @@
+<f:flashMessages as="flashMessages">
+    <ul class="message">
+        <f:for each="{flashMessages}" as="flashMessage">
+            <li>{flashMessage.message}</li>
+        </f:for>
+    </ul>
+</f:flashMessages>
+
 <f:for each="{persons}" as="person">
     <div>
         <ul>
@@ -8,3 +16,5 @@
         </ul>
     </div>
 </f:for>
+
+<f:link.action action="new" class="btn btn-primary">Create new person</f:link.action>
