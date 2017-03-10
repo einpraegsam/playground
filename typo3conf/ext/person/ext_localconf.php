@@ -7,10 +7,10 @@ if (!defined('TYPO3_MODE')) {
     'Ukn.' . $_EXTKEY,
     'Pi1',
     [
-        'Person' => 'list,detail,create,new,edit,update',
+        'Person' => 'list,detail,create,new,edit,update,list2',
     ],
     // non-cacheable actions
     [
-        'Person' => 'list,create,new,edit,update',
+        'Person' => 'list,create,new,edit,update,list2',
     ]
 );

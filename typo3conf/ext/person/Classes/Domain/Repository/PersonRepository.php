@@ -17,6 +17,7 @@ class PersonRepository extends Repository
     public function findByFilter(array $filter)
     {
         $query = $this->createQuery();
+        $query->getQuerySettings()->setRespectStoragePage(false);
 
         if (!empty($filter)) {
             $logicalOr = [

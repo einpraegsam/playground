@@ -80,4 +80,13 @@ class PersonController extends ActionController
         $this->addFlashMessage('user properties successfully changed');
         $this->redirect('list');
     }
+
+    /**
+     * Example action
+     *
+     * @return void
+     */
+    public function list2Action()
+    {
+    }
 }
