@@ -1,6 +1,7 @@
 <?php
 namespace Ukn\Person\Domain\Repository;
 
+use TYPO3\CMS\Core\Database\DatabaseConnection;
 use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
 use TYPO3\CMS\Extbase\Persistence\Repository;
 
@@ -30,5 +31,21 @@ class PersonRepository extends Repository
         }
 
         return $query->execute();
+    }
+
+    /**
+     * @param string $autocomplete
+     * @return array
+     */
+    public function findForAjax(string $autocomplete): array
+    {
+        /** @var DatabaseConnection $database */
+        $database = $GLOBALS['TYPO3_DB'];
+        $rows = $database->exec_SELECTgetRows(
+            'first_name,last_name',
+            'tx_person_domain_model_person',
+            'first_name like "' . $database->quoteStr($autocomplete, '')  . '%"'
+        );
+        return $rows;
     }
 }

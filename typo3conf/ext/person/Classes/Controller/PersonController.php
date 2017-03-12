@@ -111,6 +111,17 @@ class PersonController extends ActionController
     }
 
     /**
+     * &tx_person_pi1[autocomplete]=Ale
+     *
+     * @param string $autocomplete
+     * @return string
+     */
+    public function ajaxAction(string $autocomplete)
+    {
+        return json_encode($this->personRepository->findForAjax($autocomplete));
+    }
+
+    /**
      * Check if frontend user is logged in with fe_groups.uid=1
      *
      * @return bool
