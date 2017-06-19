@@ -1,21 +1,12 @@
 <?php
 namespace Twofour\TwofourContacts\Controller;
 
-/***
- *
- * This file is part of the "Contacts" Extension for TYPO3 CMS.
- *
- * For the full copyright and license information, please read the
- * LICENSE.txt file that was distributed with this source code.
- *
- *  (c) 2017 Alex Kellner <alexander.kellner@in2code.de>, in2code
- *
- ***/
+use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 /**
  * ContactController
  */
-class ContactController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
+class ContactController extends ActionController
 {
     /**
      * contactRepository
@@ -26,8 +17,6 @@ class ContactController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
     protected $contactRepository = null;
 
     /**
-     * action list
-     *
      * @return void
      */
     public function listAction()

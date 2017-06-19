@@ -1,21 +1,12 @@
 <?php
 namespace Twofour\TwofourContacts\Domain\Model;
 
-/***
- *
- * This file is part of the "Contacts" Extension for TYPO3 CMS.
- *
- * For the full copyright and license information, please read the
- * LICENSE.txt file that was distributed with this source code.
- *
- *  (c) 2017 Alex Kellner <alexander.kellner@in2code.de>, in2code
- *
- ***/
+use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 /**
  * Contact
  */
-class Contact extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
+class Contact extends AbstractEntity
 {
     /**
      * lastName
@@ -196,5 +187,22 @@ class Contact extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setImage(\TYPO3\CMS\Extbase\Domain\Model\FileReference $image)
     {
         $this->image = $image;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFullName(): string
+    {
+        return $this->getLastName() . ', ' . $this->getFirstName();
+    }
+
+    /**
+     * @return bool
+     */
+    public function isAtLeast18(): bool
+    {
+        $birthdate = $this->getBirthDate();
+        return $birthdate->diff(new \DateTime())->y >= 18;
     }
 }
