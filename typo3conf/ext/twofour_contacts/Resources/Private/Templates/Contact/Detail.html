@@ -1,7 +1,11 @@
 
 <ul>
     <li>{contact.fullName}</li>
-    <li>{contact.email}</li>
+    <li><f:link.email email="{contact.email}">{contact.email}</f:link.email></li>
+    <li><f:format.date format="{f:translate(key:'date.format')}">{contact.birthdate}</f:format.date></li>
+    <f:if condition="{contact.image}">
+        <li><f:image image="{contact.image}" width="100c" height="100c" /></li>
+    </f:if>
     <li>Über 18:
         <f:if condition="{contact.atLeast18}">
             <f:then>ja</f:then>
