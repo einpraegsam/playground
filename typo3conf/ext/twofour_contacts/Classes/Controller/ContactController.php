@@ -1,6 +1,7 @@
 <?php
 namespace Twofour\TwofourContacts\Controller;
 
+use Twofour\TwofourContacts\Domain\Model\Contact;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 /**
@@ -23,5 +24,14 @@ class ContactController extends ActionController
     {
         $contacts = $this->contactRepository->findAll();
         $this->view->assign('contacts', $contacts);
+    }
+
+    /**
+     * @param Contact $contact
+     * @return void
+     */
+    public function detailAction(Contact $contact)
+    {
+        $this->view->assign('contact', $contact);
     }
 }

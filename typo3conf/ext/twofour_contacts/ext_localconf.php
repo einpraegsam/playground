@@ -2,24 +2,23 @@
 defined('TYPO3_MODE') || die('Access denied.');
 
 call_user_func(
-    function($extKey)
-	{
+    function ($extKey) {
 
         \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
             'Twofour.TwofourContacts',
             'Pi1',
             [
-                'Contact' => 'list'
+                'Contact' => 'list,detail'
             ],
             // non-cacheable actions
             [
-                'Contact' => ''
+                'Contact' => 'list'
             ]
         );
 
-	// wizards
-	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
-		'mod {
+        // wizards
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
+            'mod {
 			wizards.newContentElement.wizardItems.plugins {
 				elements {
 					pi1 {
@@ -35,7 +34,7 @@ call_user_func(
 				show = *
 			}
 	   }'
-	);
+        );
     },
     $_EXTKEY
 );

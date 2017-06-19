@@ -1,0 +1,12 @@
+
+<ul>
+    <li>{contact.fullName}</li>
+    <li>{contact.email}</li>
+    <li>Über 18:
+        <f:if condition="{contact.atLeast18}">
+            <f:then>ja</f:then>
+            <f:else>nein</f:else>
+        </f:if>
+    </li>
+    <li><f:link.page>Zurück</f:link.page></li>
+</ul>
