@@ -12,7 +12,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Vendor\\Example\\": "typo3conf/ext/vendor/Classes"
+      "Twofour\\TwofourContacts\\": "typo3conf/ext/twofour_contacts/Classes"
     }
   }
 }
