@@ -1,4 +1,4 @@
-
+{namespace contacts=Twofour\TwofourContacts\ViewHelpers}
 <ul>
     <li>{contact.fullName}</li>
     <li><f:link.email email="{contact.email}">{contact.email}</f:link.email></li>
@@ -12,5 +12,6 @@
             <f:else>nein</f:else>
         </f:if>
     </li>
+    <li>Ü18 Newsletter: <contacts:getNewsletter contact="{contact}" /></li>
     <li><f:link.page>Zurück</f:link.page></li>
 </ul>
