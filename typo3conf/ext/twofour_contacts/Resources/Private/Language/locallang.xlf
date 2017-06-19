@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2017-06-19T11:34:23Z" product-name="twofour_contacts">
+		<header/>
+		<body>
+			<trans-unit id="tx_twofour_contacts_domain_model_pi1">
+				<source>Contact</source>
+			</trans-unit>
+			<trans-unit id="tx_twofour_contacts_domain_model_pi1.description">
+				<source>Show some contacts</source>
+			</trans-unit>
+			<trans-unit id="tx_twofourcontacts_domain_model_contact">
+				<source>Contact</source>
+			</trans-unit>
+			<trans-unit id="tx_twofourcontacts_domain_model_contact.last_name">
+				<source>Last Name</source>
+			</trans-unit>
+			<trans-unit id="tx_twofourcontacts_domain_model_contact.first_name">
+				<source>First Name</source>
+			</trans-unit>
+			<trans-unit id="tx_twofourcontacts_domain_model_contact.birth_date">
+				<source>Birth Date</source>
+			</trans-unit>
+			<trans-unit id="tx_twofourcontacts_domain_model_contact.newsletter">
+				<source>Newsletter</source>
+			</trans-unit>
+			<trans-unit id="tx_twofourcontacts_domain_model_contact.email">
+				<source>Email</source>
+			</trans-unit>
+			<trans-unit id="tx_twofourcontacts_domain_model_contact.image">
+				<source>Image</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
