@@ -30,6 +30,10 @@
 			<trans-unit id="tx_twofourcontacts_domain_model_contact.image">
 				<source>Image</source>
 			</trans-unit>
+
+			<trans-unit id="tx_twofourcontacts_domain_model_location">
+				<source>Location</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

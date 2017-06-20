@@ -8,7 +8,8 @@ call_user_func(
             'Twofour.TwofourContacts',
             'Pi1',
             [
-                'Contact' => 'list,detail'
+                'Contact' => 'list,detail',
+                'Location' => 'list'
             ],
             // non-cacheable actions
             [
