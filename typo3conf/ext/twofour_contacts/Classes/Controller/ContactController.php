@@ -49,4 +49,14 @@ class ContactController extends ActionController
     {
         $this->view->assign('contact', $contact);
     }
+
+    /**
+     * @param string $searchterm
+     * @return string
+     */
+    public function ajaxSearchAction(string $searchterm): string
+    {
+        $contacts = $this->contactRepository->findLastNameBySearchterm($searchterm);
+        return json_encode($contacts);
+    }
 }

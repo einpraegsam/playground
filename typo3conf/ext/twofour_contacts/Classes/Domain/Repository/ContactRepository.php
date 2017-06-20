@@ -37,4 +37,16 @@ class ContactRepository extends Repository
 
         return $query->execute();
     }
+
+    /**
+     * @param string $searchterm
+     * @return array
+     */
+    public function findLastNameBySearchterm(string $searchterm): array
+    {
+        $query = $this->createQuery();
+        $query->getQuerySettings()->setRespectStoragePage(false);
+        $query->matching($query->like('lastName', $searchterm . '%'));
+        return array_column($query->execute(true), 'last_name');
+    }
 }

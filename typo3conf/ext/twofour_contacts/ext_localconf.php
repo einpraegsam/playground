@@ -8,12 +8,12 @@ call_user_func(
             'Twofour.TwofourContacts',
             'Pi1',
             [
-                'Contact' => 'list,detail',
+                'Contact' => 'list,detail,ajaxSearch',
                 'Location' => 'list'
             ],
             // non-cacheable actions
             [
-                'Contact' => 'list'
+                'Contact' => 'list,ajaxSearch'
             ]
         );
 
