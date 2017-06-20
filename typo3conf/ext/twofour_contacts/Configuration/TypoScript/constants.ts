@@ -1,5 +1,9 @@
 
 plugin.tx_twofourcontacts_pi1 {
+  settings {
+    # cat=plugin.tx_twofourcontacts_pi1/; type=int+; label=Uid of the admin group
+    administratorUid = 1
+  }
   view {
     # cat=plugin.tx_twofourcontacts_pi1/file; type=string; label=Path to template root (FE)
     templateRootPath = EXT:twofour_contacts/Resources/Private/Templates/

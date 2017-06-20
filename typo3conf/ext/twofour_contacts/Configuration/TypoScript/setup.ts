@@ -1,5 +1,8 @@
 
 plugin.tx_twofourcontacts_pi1 {
+  settings {
+    administratorUid = {$plugin.tx_twofourcontacts_pi1.settings.administratorUid}
+  }
   view {
     templateRootPaths.0 = EXT:twofour_contacts/Resources/Private/Templates/
     templateRootPaths.1 = {$plugin.tx_twofourcontacts_pi1.view.templateRootPath}

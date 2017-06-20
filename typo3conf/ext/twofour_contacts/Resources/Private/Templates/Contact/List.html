@@ -14,7 +14,9 @@
                 {contact.location.city}
             </li>
             <li>
-                <f:link.action action="detail" arguments="{contact:contact}">Details</f:link.action>
+                <f:security.ifHasRole role="{settings.administratorUid}">
+                    <f:link.action action="detail" arguments="{contact:contact}">Details</f:link.action>
+                </f:security.ifHasRole>
             </li>
         </ul>
     </div>
