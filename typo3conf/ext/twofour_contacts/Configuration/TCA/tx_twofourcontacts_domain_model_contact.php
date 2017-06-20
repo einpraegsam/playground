@@ -20,10 +20,10 @@ return [
         'iconfile' => 'EXT:twofour_contacts/Resources/Public/Icons/tx_twofourcontacts_domain_model_contact.gif'
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, last_name, first_name, birth_date, newsletter, email, image',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, last_name, first_name, birth_date, newsletter, email, image, location',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, last_name, first_name, birth_date, newsletter, email, image, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, last_name, first_name, birth_date, newsletter, email, image, location, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -203,6 +203,19 @@ return [
                 ],
                 $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
             ),
+        ],
+        'location' => [
+            'exclude' => true,
+            'label' => 'Location',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'items' => [
+                    ['Bitte auswählen...', 0],
+                ],
+                'foreign_table' => 'tx_twofourcontacts_domain_model_location',
+                'foreign_table_where' => 'AND tx_twofourcontacts_domain_model_location.pid=###CURRENT_PID### AND tx_twofourcontacts_domain_model_location.sys_language_uid IN (-1,0) AND tx_twofourcontacts_domain_model_location.hidden = 0 AND tx_twofourcontacts_domain_model_location.deleted = 0',
+            ],
         ],
     ],
 ];

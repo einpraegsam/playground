@@ -39,11 +39,14 @@ class Contact extends AbstractEntity
     protected $newsletter = false;
 
     /**
-     * email
-     *
      * @var string
      */
     protected $email = '';
+
+    /**
+     * @var \Twofour\TwofourContacts\Domain\Model\Location
+     */
+    protected $location = null;
 
     /**
      * image
@@ -187,6 +190,24 @@ class Contact extends AbstractEntity
     public function setImage(\TYPO3\CMS\Extbase\Domain\Model\FileReference $image)
     {
         $this->image = $image;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLocation()
+    {
+        return $this->location;
+    }
+
+    /**
+     * @param string $location
+     * @return Contact
+     */
+    public function setLocation(string $location)
+    {
+        $this->location = $location;
+        return $this;
     }
 
     /**

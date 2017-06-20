@@ -13,6 +13,8 @@ CREATE TABLE tx_twofourcontacts_domain_model_contact (
 	email varchar(255) DEFAULT '' NOT NULL,
 	image int(11) unsigned NOT NULL default '0',
 
+	location int(11) unsigned NOT NULL default '0',
+
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
 	crdate int(11) unsigned DEFAULT '0' NOT NULL,
 	cruser_id int(11) unsigned DEFAULT '0' NOT NULL,
