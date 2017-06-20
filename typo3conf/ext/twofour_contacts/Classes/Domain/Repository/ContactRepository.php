@@ -1,20 +1,40 @@
 <?php
 namespace Twofour\TwofourContacts\Domain\Repository;
 
-/***
- *
- * This file is part of the "Contacts" Extension for TYPO3 CMS.
- *
- * For the full copyright and license information, please read the
- * LICENSE.txt file that was distributed with this source code.
- *
- *  (c) 2017 Alex Kellner <alexander.kellner@in2code.de>, in2code
- *
- ***/
+use TYPO3\CMS\Extbase\Persistence\QueryInterface;
+use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
+use TYPO3\CMS\Extbase\Persistence\Repository;
 
 /**
- * The repository for Contacts
+ * Class ContactRepository
  */
-class ContactRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
+class ContactRepository extends Repository
 {
+
+    /**
+     * @param array $filter
+     * @return QueryResultInterface
+     */
+    public function findByFilter(array $filter): QueryResultInterface
+    {
+        $query = $this->createQuery();
+        $query->getQuerySettings()->setRespectStoragePage(false);
+
+        if (!empty($filter)) {
+            $logicalOr = [
+                $query->like('firstName', '%' . $filter['searchterm'] . '%'),
+                $query->like('lastName', '%' . $filter['searchterm'] . '%'),
+                $query->like('email', '%' . $filter['searchterm'] . '%'),
+            ];
+            $query->matching(
+                $query->logicalOr($logicalOr)
+            );
+        }
+
+        $query->setOrderings([
+            'lastName' => QueryInterface::ORDER_DESCENDING
+        ]);
+
+        return $query->execute();
     }
+}

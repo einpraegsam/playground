@@ -2,6 +2,7 @@
 namespace Twofour\TwofourContacts\Controller;
 
 use Twofour\TwofourContacts\Domain\Model\Contact;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 /**
@@ -18,12 +19,16 @@ class ContactController extends ActionController
     protected $contactRepository = null;
 
     /**
+     * @param array $filter
      * @return void
      */
-    public function listAction()
+    public function listAction(array $filter = [])
     {
-        $contacts = $this->contactRepository->findAll();
-        $this->view->assign('contacts', $contacts);
+        $contacts = $this->contactRepository->findByFilter($filter);
+        $this->view->assignMultiple([
+            'contacts' => $contacts,
+            'filter' => $filter
+        ]);
     }
 
     /**
