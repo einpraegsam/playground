@@ -11,12 +11,16 @@ use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 class ContactController extends ActionController
 {
     /**
-     * contactRepository
-     *
      * @var \Twofour\TwofourContacts\Domain\Repository\ContactRepository
      * @inject
      */
     protected $contactRepository = null;
+
+    /**
+     * @var \Twofour\TwofourContacts\Domain\Repository\SmallContactRepository
+     * @inject
+     */
+    protected $smallContactRepository = null;
 
     /**
      * @param array $filter
@@ -24,7 +28,7 @@ class ContactController extends ActionController
      */
     public function listAction(array $filter = [])
     {
-        $contacts = $this->contactRepository->findByFilter($filter);
+        $contacts = $this->smallContactRepository->findByFilter($filter);
         $this->view->assignMultiple([
             'contacts' => $contacts,
             'filter' => $filter

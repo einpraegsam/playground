@@ -12,33 +12,6 @@ class ContactRepository extends Repository
 {
 
     /**
-     * @param array $filter
-     * @return QueryResultInterface
-     */
-    public function findByFilter(array $filter): QueryResultInterface
-    {
-        $query = $this->createQuery();
-        $query->getQuerySettings()->setRespectStoragePage(false);
-
-        if (!empty($filter)) {
-            $logicalOr = [
-                $query->like('firstName', '%' . $filter['searchterm'] . '%'),
-                $query->like('lastName', '%' . $filter['searchterm'] . '%'),
-                $query->like('email', '%' . $filter['searchterm'] . '%'),
-            ];
-            $query->matching(
-                $query->logicalOr($logicalOr)
-            );
-        }
-
-        $query->setOrderings([
-            'lastName' => QueryInterface::ORDER_DESCENDING
-        ]);
-
-        return $query->execute();
-    }
-
-    /**
      * @param string $searchterm
      * @return array
      */

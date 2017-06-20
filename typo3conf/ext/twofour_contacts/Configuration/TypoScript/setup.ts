@@ -22,6 +22,18 @@ plugin.tx_twofourcontacts_pi1 {
   }
 }
 
+plugin.tx_twofourcontacts {
+  persistence {
+    classes {
+      Twofour\TwofourContacts\Domain\Model\SmallContact {
+        mapping {
+          tableName = tx_twofourcontacts_domain_model_contact
+        }
+      }
+    }
+  }
+}
+
 ajaxSearterm = PAGE
 ajaxSearterm {
   typeNum = 101

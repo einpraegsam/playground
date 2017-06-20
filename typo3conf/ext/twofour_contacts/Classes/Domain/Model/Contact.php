@@ -32,31 +32,6 @@ class Contact extends AbstractEntity
     protected $birthDate = null;
 
     /**
-     * newsletter
-     *
-     * @var bool
-     */
-    protected $newsletter = false;
-
-    /**
-     * @var string
-     */
-    protected $email = '';
-
-    /**
-     * @var \Twofour\TwofourContacts\Domain\Model\Location
-     */
-    protected $location = null;
-
-    /**
-     * image
-     *
-     * @var \TYPO3\CMS\Extbase\Domain\Model\FileReference
-     * @cascade remove
-     */
-    protected $image = null;
-
-    /**
      * Returns the lastName
      *
      * @return string $lastName
@@ -64,17 +39,6 @@ class Contact extends AbstractEntity
     public function getLastName()
     {
         return $this->lastName;
-    }
-
-    /**
-     * Sets the lastName
-     *
-     * @param string $lastName
-     * @return void
-     */
-    public function setLastName($lastName)
-    {
-        $this->lastName = $lastName;
     }
 
     /**
@@ -88,17 +52,6 @@ class Contact extends AbstractEntity
     }
 
     /**
-     * Sets the firstName
-     *
-     * @param string $firstName
-     * @return void
-     */
-    public function setFirstName($firstName)
-    {
-        $this->firstName = $firstName;
-    }
-
-    /**
      * Returns the birthDate
      *
      * @return \DateTime $birthDate
@@ -106,108 +59,6 @@ class Contact extends AbstractEntity
     public function getBirthDate()
     {
         return $this->birthDate;
-    }
-
-    /**
-     * Sets the birthDate
-     *
-     * @param \DateTime $birthDate
-     * @return void
-     */
-    public function setBirthDate(\DateTime $birthDate)
-    {
-        $this->birthDate = $birthDate;
-    }
-
-    /**
-     * Returns the newsletter
-     *
-     * @return bool $newsletter
-     */
-    public function getNewsletter()
-    {
-        return $this->newsletter;
-    }
-
-    /**
-     * Sets the newsletter
-     *
-     * @param bool $newsletter
-     * @return void
-     */
-    public function setNewsletter($newsletter)
-    {
-        $this->newsletter = $newsletter;
-    }
-
-    /**
-     * Returns the boolean state of newsletter
-     *
-     * @return bool
-     */
-    public function isNewsletter()
-    {
-        return $this->newsletter;
-    }
-
-    /**
-     * Returns the email
-     *
-     * @return string $email
-     */
-    public function getEmail()
-    {
-        return $this->email;
-    }
-
-    /**
-     * Sets the email
-     *
-     * @param string $email
-     * @return void
-     */
-    public function setEmail($email)
-    {
-        $this->email = $email;
-    }
-
-    /**
-     * Returns the image
-     *
-     * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference $image
-     */
-    public function getImage()
-    {
-        return $this->image;
-    }
-
-    /**
-     * Sets the image
-     *
-     * @param \TYPO3\CMS\Extbase\Domain\Model\FileReference $image
-     * @return void
-     */
-    public function setImage(\TYPO3\CMS\Extbase\Domain\Model\FileReference $image)
-    {
-        $this->image = $image;
-    }
-
-    /**
-     * @return string
-     */
-    public function getLocation()
-    {
-        return $this->location;
-    }
-
-    /**
-     * @param string $location
-     * @return Contact
-     */
-    public function setLocation(string $location)
-    {
-        $this->location = $location;
-        return $this;
     }
 
     /**
