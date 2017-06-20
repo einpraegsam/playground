@@ -2,7 +2,7 @@
 namespace Twofour\TwofourContacts\Controller;
 
 use Twofour\TwofourContacts\Domain\Model\Contact;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
+use Twofour\TwofourContacts\Utility\UserUtility;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 /**
@@ -29,6 +29,16 @@ class ContactController extends ActionController
             'contacts' => $contacts,
             'filter' => $filter
         ]);
+    }
+
+    /**
+     * @return void
+     */
+    public function initializeDetailAction()
+    {
+        if (!UserUtility::isLoggedInFrontendUser()) {
+            $this->forward('list');
+        }
     }
 
     /**
