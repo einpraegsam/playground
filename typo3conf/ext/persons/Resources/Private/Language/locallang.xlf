@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2017-07-05T11:13:50Z" product-name="persons">
+		<header/>
+		<body>
+			<trans-unit id="tx_persons_domain_model_pi1">
+				<source>Personlist</source>
+			</trans-unit>
+			<trans-unit id="tx_persons_domain_model_pi1.description">
+				<source></source>
+			</trans-unit>
+			<trans-unit id="tx_persons_domain_model_person">
+				<source>Person</source>
+			</trans-unit>
+			<trans-unit id="tx_persons_domain_model_person.first_name">
+				<source>First Name</source>
+			</trans-unit>
+			<trans-unit id="tx_persons_domain_model_person.last_name">
+				<source>Last Name</source>
+			</trans-unit>
+			<trans-unit id="tx_persons_domain_model_person.newsletter">
+				<source>Newsletter</source>
+			</trans-unit>
+			<trans-unit id="tx_persons_domain_model_person.birthdate">
+				<source>Birthdate</source>
+			</trans-unit>
+			<trans-unit id="tx_persons_domain_model_person.image">
+				<source>Image</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
