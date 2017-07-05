@@ -1,0 +1,23 @@
+{namespace persons=In2code\Persons\ViewHelpers}
+<f:layout name="Default" />
+
+
+<f:section name="main">
+   <f:form name="person" action="create">
+       <div>
+           <label for="firstName">
+               Vorname
+           </label>
+           <f:form.textfield property="firstName" id="firstName" />
+       </div>
+
+       <div>
+           <label for="lastName">
+               Nachname
+           </label>
+           <f:form.textfield property="lastName" id="lastName" />
+       </div>
+
+       <f:form.submit value="Neu anlegen" />
+   </f:form>
+</f:section>

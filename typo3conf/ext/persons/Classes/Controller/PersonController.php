@@ -11,6 +11,7 @@ namespace In2code\Persons\Controller;
  *  (c) 2017 Alex Kellner <alexander.kellner@in2code.de>, in2code
  *
  ***/
+use In2code\Persons\Domain\Model\Person;
 
 /**
  * PersonController
@@ -26,6 +27,12 @@ class PersonController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
     protected $personRepository = null;
 
     /**
+     * @var \TYPO3\CMS\Extbase\Persistence\Generic\PersistenceManager
+     * @inject
+     */
+    protected $persistenceManager;
+
+    /**
      * @param array $filter
      * @return void
      */
@@ -36,5 +43,23 @@ class PersonController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
             'persons' => $persons,
             'filter' => $filter
         ]);
+    }
+
+    /**
+     * @return void
+     */
+    public function newAction()
+    {
+    }
+
+    /**
+     * @param Person $person
+     * @return void
+     */
+    public function createAction(Person $person)
+    {
+        $this->personRepository->add($person);
+        $this->persistenceManager->persistAll();
+        $this->redirect('list');
     }
 }
