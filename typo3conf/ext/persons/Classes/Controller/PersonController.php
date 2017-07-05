@@ -26,13 +26,15 @@ class PersonController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
     protected $personRepository = null;
 
     /**
-     * action list
-     *
+     * @param array $filter
      * @return void
      */
-    public function listAction()
+    public function listAction(array $filter = [])
     {
-        $persons = $this->personRepository->findAll();
-        $this->view->assign('persons', $persons);
+        $persons = $this->personRepository->findByFilter($filter);
+        $this->view->assignMultiple([
+            'persons' => $persons,
+            'filter' => $filter
+        ]);
     }
 }
