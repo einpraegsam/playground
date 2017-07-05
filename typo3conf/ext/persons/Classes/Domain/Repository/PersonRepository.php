@@ -1,6 +1,7 @@
 <?php
 namespace In2code\Persons\Domain\Repository;
 
+use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
 use TYPO3\CMS\Extbase\Persistence\Repository;
 
@@ -35,10 +36,10 @@ class PersonRepository extends Repository
 
     /**
      * @param array $filter
-     * @param $query
+     * @param QueryInterface $query
      * @return void
      */
-    protected function getQueryFilter(array $filter, $query)
+    protected function getQueryFilter(array $filter, QueryInterface $query)
     {
         if (!empty($filter['searchterm'])) {
             $logicalOr = [
