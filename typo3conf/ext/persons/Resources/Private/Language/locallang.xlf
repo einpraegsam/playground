@@ -27,6 +27,13 @@
 			<trans-unit id="tx_persons_domain_model_person.image">
 				<source>Image</source>
 			</trans-unit>
+
+			<trans-unit id="yes">
+				<source>Yes</source>
+			</trans-unit>
+			<trans-unit id="no">
+				<source>No</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
