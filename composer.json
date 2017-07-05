@@ -12,7 +12,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Vendor\\Example\\": "typo3conf/ext/vendor/Classes"
+      "In2code\\Persons\\": "typo3conf/ext/persons/Classes"
     }
   }
 }
