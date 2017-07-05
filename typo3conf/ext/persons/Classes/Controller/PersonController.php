@@ -60,6 +60,7 @@ class PersonController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
     {
         $this->personRepository->add($person);
         $this->persistenceManager->persistAll();
+        $this->addFlashMessage('danke, ist angelegt');
         $this->redirect('list');
     }
 }

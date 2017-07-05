@@ -5,6 +5,18 @@
 <f:section name="main">
     <f:render partial="Filter" arguments="{_all}" />
 
+    <f:flashMessages />
+    <f:comment>
+        Flashmessages in TYPO3 8.7 and newer:
+        <f:flashMessages as="flashMessages">
+            <ul class="{flashMessageClass}">
+                <f:for each="{flashMessages}" as="flashMessage">
+                    <li>{flashMessage.message}</li>
+                </f:for>
+            </ul>
+        </f:flashMessages>
+    </f:comment>
+
     <f:for each="{persons}" as="person">
         <div>
             <ul>
@@ -19,7 +31,7 @@
     </f:for>
 
 
-
+    <f:link.action action="new">Neuer Datensatz anlegen</f:link.action>
 
 
     <f:comment>
