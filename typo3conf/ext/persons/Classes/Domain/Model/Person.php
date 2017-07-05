@@ -2,6 +2,7 @@
 namespace In2code\Persons\Domain\Model;
 
 use In2code\Persons\Domain\Service\AdultService;
+use In2code\Persons\Utility\StringUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
@@ -64,7 +65,7 @@ class Person extends AbstractEntity
      */
     public function getFirstName(): string
     {
-        return $this->firstName;
+        return StringUtility::firstLetterUpper($this->firstName);
     }
 
     /**
