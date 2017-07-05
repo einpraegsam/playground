@@ -1,3 +1,5 @@
 # Example TYPO3 instance for trainings
 
-Nothing really interresting
+Welcome Markus for an individual TYPO3 development training :)
+
+
