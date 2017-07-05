@@ -117,7 +117,7 @@ class Person extends AbstractEntity
     /**
      * @return \DateTime
      */
-    public function getBirthdate(): \DateTime
+    public function getBirthdate()
     {
         return $this->birthdate;
     }

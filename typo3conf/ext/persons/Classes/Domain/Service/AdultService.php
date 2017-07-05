@@ -16,7 +16,10 @@ class AdultService
     public function isOver18(Person $person): bool
     {
         $birthdate = $person->getBirthDate();
-        return $this->isDateOlderThan18($birthdate);
+        if ($birthdate !== null) {
+            return $this->isDateOlderThan18($birthdate);
+        }
+        return false;
     }
 
     /**
