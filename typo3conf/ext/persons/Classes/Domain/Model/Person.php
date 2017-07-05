@@ -1,6 +1,8 @@
 <?php
 namespace In2code\Persons\Domain\Model;
 
+use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
+
 /***
  *
  * This file is part of the "Personlist" Extension for TYPO3 CMS.
@@ -15,7 +17,7 @@ namespace In2code\Persons\Domain\Model;
 /**
  * Person
  */
-class Person extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
+class Person extends AbstractEntity
 {
     /**
      * firstName
@@ -56,117 +58,100 @@ class Person extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $image = null;
 
     /**
-     * Returns the firstName
-     *
-     * @return string $firstName
+     * @return string
      */
-    public function getFirstName()
+    public function getFirstName(): string
     {
         return $this->firstName;
     }
 
     /**
-     * Sets the firstName
-     *
      * @param string $firstName
-     * @return void
+     * @return Person
      */
-    public function setFirstName($firstName)
+    public function setFirstName(string $firstName)
     {
         $this->firstName = $firstName;
+        return $this;
     }
 
     /**
-     * Returns the lastName
-     *
-     * @return string $lastName
+     * @return string
      */
-    public function getLastName()
+    public function getLastName(): string
     {
         return $this->lastName;
     }
 
     /**
-     * Sets the lastName
-     *
      * @param string $lastName
-     * @return void
+     * @return Person
      */
-    public function setLastName($lastName)
+    public function setLastName(string $lastName)
     {
         $this->lastName = $lastName;
+        return $this;
     }
 
     /**
-     * Returns the newsletter
-     *
-     * @return bool $newsletter
-     */
-    public function getNewsletter()
-    {
-        return $this->newsletter;
-    }
-
-    /**
-     * Sets the newsletter
-     *
-     * @param bool $newsletter
-     * @return void
-     */
-    public function setNewsletter($newsletter)
-    {
-        $this->newsletter = $newsletter;
-    }
-
-    /**
-     * Returns the boolean state of newsletter
-     *
      * @return bool
      */
-    public function isNewsletter()
+    public function isNewsletter(): bool
     {
         return $this->newsletter;
     }
 
     /**
-     * Returns the birthdate
-     *
-     * @return \DateTime $birthdate
+     * @param bool $newsletter
+     * @return Person
      */
-    public function getBirthdate()
+    public function setNewsletter(bool $newsletter)
+    {
+        $this->newsletter = $newsletter;
+        return $this;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getBirthdate(): \DateTime
     {
         return $this->birthdate;
     }
 
     /**
-     * Sets the birthdate
-     *
      * @param \DateTime $birthdate
-     * @return void
+     * @return Person
      */
     public function setBirthdate(\DateTime $birthdate)
     {
         $this->birthdate = $birthdate;
+        return $this;
     }
 
     /**
-     * Returns the image
-     *
-     * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference $image
+     * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference
      */
-    public function getImage()
+    public function getImage(): \TYPO3\CMS\Extbase\Domain\Model\FileReference
     {
         return $this->image;
     }
 
     /**
-     * Sets the image
-     *
      * @param \TYPO3\CMS\Extbase\Domain\Model\FileReference $image
-     * @return void
+     * @return Person
      */
     public function setImage(\TYPO3\CMS\Extbase\Domain\Model\FileReference $image)
     {
         $this->image = $image;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFullName(): string
+    {
+        return $this->getLastName() . ', ' . $this->getFirstName();
     }
 }
