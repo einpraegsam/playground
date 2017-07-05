@@ -1,6 +1,8 @@
 <?php
 namespace In2code\Persons\Domain\Model;
 
+use In2code\Persons\Domain\Service\AdultService;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 /***
@@ -153,5 +155,14 @@ class Person extends AbstractEntity
     public function getFullName(): string
     {
         return $this->getLastName() . ', ' . $this->getFirstName();
+    }
+
+    /**
+     * @return bool
+     */
+    public function isOver18(): bool
+    {
+        $adultService = GeneralUtility::makeInstance(AdultService::class);
+        return $adultService->isOver18($this);
     }
 }

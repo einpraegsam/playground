@@ -1,9 +1,10 @@
-
 <f:for each="{persons}" as="person">
     <div>
         <ul>
             <li><h2>{person.fullName}</h2></li>
             <li>{person.newsletter}</li>
+            <li><f:format.date format="%d.%m.%Y">{person.birthdate}</f:format.date></li>
+            <li>Über 18: {person.over18}</li>
         </ul>
     </div>
 </f:for>
