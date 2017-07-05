@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 namespace In2code\Persons\Domain\Service;
 
 use In2code\Persons\Domain\Model\Person;
