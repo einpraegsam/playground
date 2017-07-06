@@ -35,6 +35,13 @@ call_user_func(
 			}
 	   }'
         );
+
+
+        /**
+         * CommandController for powermail tasks
+         */
+        $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['extbase']['commandControllers'][] =
+            \In2code\Persons\Command\ImportCommandController::class;
     },
     $_EXTKEY
 );

@@ -22,6 +22,9 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
  */
 class Person extends AbstractEntity
 {
+
+    const TABLE_NAME = 'tx_persons_domain_model_person';
+
     /**
      * firstName
      *
