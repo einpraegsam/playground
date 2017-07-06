@@ -69,5 +69,6 @@ class ImportCommandController extends CommandController
             $this->personRepository->add($person);
         }
         $this->persistenceManager->persistAll();
+        $this->outputLine(count($rows) . ' Persons imported - have a nice day!');
     }
 }
