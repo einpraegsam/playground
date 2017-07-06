@@ -52,3 +52,7 @@ plugin.tx_persons._CSS_DEFAULT_STYLE (
         color:green;
     }
 )
+
+
+# AJAX example TypoScript configuration:
+# https://github.com/einpraegsam/ipandlanguageredirect/blob/master/Configuration/TypoScript/setup.txt
