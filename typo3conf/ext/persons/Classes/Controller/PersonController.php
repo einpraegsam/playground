@@ -1,6 +1,9 @@
 <?php
 namespace In2code\Persons\Controller;
 
+use In2code\Persons\Domain\Model\Person;
+use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
+
 /***
  *
  * This file is part of the "Personlist" Extension for TYPO3 CMS.
@@ -11,12 +14,11 @@ namespace In2code\Persons\Controller;
  *  (c) 2017 Alex Kellner <alexander.kellner@in2code.de>, in2code
  *
  ***/
-use In2code\Persons\Domain\Model\Person;
 
 /**
  * PersonController
  */
-class PersonController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
+class PersonController extends ActionController
 {
     /**
      * personRepository
