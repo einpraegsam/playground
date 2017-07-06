@@ -56,3 +56,6 @@ plugin.tx_persons._CSS_DEFAULT_STYLE (
 
 # AJAX example TypoScript configuration:
 # https://github.com/einpraegsam/ipandlanguageredirect/blob/master/Configuration/TypoScript/setup.txt
+
+# XLS example action:
+# https://github.com/einpraegsam/powermail/blob/develop/Classes/Controller/ModuleController.php#L97
