@@ -61,6 +61,11 @@ class Person extends AbstractEntity
     protected $image = null;
 
     /**
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\In2code\Persons\Domain\Model\Authorization>
+     */
+    protected $authorizations = null;
+
+    /**
      * @return string
      */
     public function getFirstName(): string
@@ -147,6 +152,24 @@ class Person extends AbstractEntity
     public function setImage(\TYPO3\CMS\Extbase\Domain\Model\FileReference $image)
     {
         $this->image = $image;
+        return $this;
+    }
+
+    /**
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
+     */
+    public function getAuthorizations()
+    {
+        return $this->authorizations;
+    }
+
+    /**
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $authorizations
+     * @return Person
+     */
+    public function setAuthorizations(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $authorizations)
+    {
+        $this->authorizations = $authorizations;
         return $this;
     }
 

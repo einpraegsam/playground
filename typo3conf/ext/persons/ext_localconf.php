@@ -8,11 +8,11 @@ call_user_func(
             'In2code.Persons',
             'Pi1',
             [
-                'Person' => 'list,new,create'
+                'Person' => 'list,new,create,edit,update'
             ],
             // non-cacheable actions
             [
-                'Person' => 'list,new,create'
+                'Person' => 'list,new,create,edit,update'
             ]
         );
 

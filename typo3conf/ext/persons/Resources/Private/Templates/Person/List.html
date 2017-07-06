@@ -26,6 +26,7 @@
                 </li>
                 <li><f:format.date format="%d.%m.%Y">{person.birthdate}</f:format.date></li>
                 <li>Über 18: {person.over18}</li>
+                <li><f:link.action action="edit" arguments="{person:person}">Editieren</f:link.action></li>
             </ul>
         </div>
     </f:for>

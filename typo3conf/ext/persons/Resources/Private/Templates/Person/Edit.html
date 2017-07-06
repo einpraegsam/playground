@@ -1,0 +1,51 @@
+{namespace persons=In2code\Persons\ViewHelpers}
+<f:layout name="Default"/>
+
+
+
+<f:section name="main">
+    <f:form name="person" action="update" object="{person}">
+        <div>
+            <label for="firstName">
+                Vorname
+            </label>
+            <f:form.textfield property="firstName" id="firstName"/>
+        </div>
+
+        <div>
+            <label for="lastName">
+                Nachname
+            </label>
+            <f:form.textfield property="lastName" id="lastName"/>
+        </div>
+
+        <f:render section="programs" arguments="{_all}" />
+
+        <f:form.submit value="Ändern"/>
+    </f:form>
+</f:section>
+
+
+
+<f:section name="programs">
+    <f:for each="{programs}" as="program">
+        <ul>
+            <li><h3>{program.title}</h3></li>
+            <li>
+                <ul>
+                    <f:for each="{program.authorizations}" as="authorization">
+                        <li>
+                            <label>
+                                {authorization.title}
+                                <f:form.checkbox
+                                        property="authorizations."
+                                        checked="{persons:isRelationToAuthorization(person:person,authorization:authorization)}"
+                                        value="{authorization.uid}" />
+                            </label>
+                        </li>
+                    </f:for>
+                </ul>
+            </li>
+        </ul>
+    </f:for>
+</f:section>

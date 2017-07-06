@@ -21,12 +21,15 @@ use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 class PersonController extends ActionController
 {
     /**
-     * personRepository
-     *
      * @var \In2code\Persons\Domain\Repository\PersonRepository
      * @inject
      */
     protected $personRepository = null;
+    /**
+     * @var \In2code\Persons\Domain\Repository\ProgramRepository
+     * @inject
+     */
+    protected $programRepository = null;
 
     /**
      * @var \TYPO3\CMS\Extbase\Persistence\Generic\PersistenceManager
@@ -63,6 +66,30 @@ class PersonController extends ActionController
         $this->personRepository->add($person);
         $this->persistenceManager->persistAll();
         $this->addFlashMessage('danke, ist angelegt');
+        $this->redirect('list');
+    }
+
+    /**
+     * @param Person $person
+     * @return void
+     */
+    public function editAction(Person $person)
+    {
+        $programs = $this->programRepository->findEverything();
+        $this->view->assignMultiple([
+            'person' => $person,
+            'programs' => $programs
+        ]);
+    }
+
+    /**
+     * @param Person $person
+     * @return void
+     */
+    public function updateAction(Person $person)
+    {
+        $this->personRepository->update($person);
+        $this->addFlashMessage('danke, ist geändert');
         $this->redirect('list');
     }
 }
