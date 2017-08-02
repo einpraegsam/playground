@@ -11,7 +11,7 @@
   ],
   "require": {
     "typo3/cms": "8.*",
-    "friendsoftypo3/extension-builder": "dev-master",
+    "friendsoftypo3/extension-builder": "8.7.x-dev",
     "helhum/typo3-console": "*"
   },
   "autoload": {
