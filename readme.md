@@ -1,6 +1,7 @@
 # TYPO3 instance for your training session
 
-Welcome to your individual training for extension development in TYPO3  
+Welcome to the group training for extension development in TYPO3  
+2017-08-02 Rosenheim at in2code.de 
 
 ## Contact
 
