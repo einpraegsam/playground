@@ -24,6 +24,10 @@
 			<trans-unit id="tx_person_domain_model_person.image">
 				<source>Image</source>
 			</trans-unit>
+
+			<trans-unit id="dateformat">
+				<source>%Y-%m-%d</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
