@@ -14,4 +14,9 @@
     </li>
     <li><f:format.date format="{f:translate(key:'dateformat')}">{person.birthDate}</f:format.date></li>
     <li><f:link.page>zurück</f:link.page></li>
+    <li><f:image image="{person.image}" width="100c" height="100c" /></li>
+    <f:comment>
+        Path to resized image
+        <li><f:uri.image image="{person.image}" width="100c" height="100c" /></li>
+    </f:comment>
 </ul>
