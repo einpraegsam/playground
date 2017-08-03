@@ -1,21 +1,12 @@
 <?php
 namespace Group\Person\Domain\Model;
 
-/***
- *
- * This file is part of the "Personlist" Extension for TYPO3 CMS.
- *
- * For the full copyright and license information, please read the
- * LICENSE.txt file that was distributed with this source code.
- *
- *  (c) 2017 Alex Kellner <alexander.kellner@in2code.de>, in2code GmbH
- *
- ***/
+use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 /**
  * Single person
  */
-class Person extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
+class Person extends AbstractEntity
 {
     /**
      * firstName
@@ -63,124 +54,97 @@ class Person extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $image = null;
 
     /**
-     * Returns the firstName
-     *
-     * @return string $firstName
+     * @return string
      */
-    public function getFirstName()
+    public function getFirstName(): string
     {
         return $this->firstName;
     }
 
     /**
-     * Sets the firstName
-     *
      * @param string $firstName
-     * @return void
+     * @return Person
      */
-    public function setFirstName($firstName)
+    public function setFirstName(string $firstName)
     {
         $this->firstName = $firstName;
+        return $this;
     }
 
     /**
-     * Returns the lastName
-     *
-     * @return string $lastName
+     * @return string
      */
-    public function getLastName()
+    public function getLastName(): string
     {
         return $this->lastName;
     }
 
     /**
-     * Sets the lastName
-     *
      * @param string $lastName
-     * @return void
+     * @return Person
      */
-    public function setLastName($lastName)
+    public function setLastName(string $lastName)
     {
         $this->lastName = $lastName;
+        return $this;
     }
 
     /**
-     * Returns the description
-     *
-     * @return string $description
+     * @return string
      */
-    public function getDescription()
+    public function getDescription(): string
     {
         return $this->description;
     }
 
     /**
-     * Sets the description
-     *
      * @param string $description
-     * @return void
+     * @return Person
      */
-    public function setDescription($description)
+    public function setDescription(string $description)
     {
         $this->description = $description;
+        return $this;
     }
 
     /**
-     * Returns the newsletter
-     *
-     * @return bool $newsletter
-     */
-    public function getNewsletter()
-    {
-        return $this->newsletter;
-    }
-
-    /**
-     * Sets the newsletter
-     *
-     * @param bool $newsletter
-     * @return void
-     */
-    public function setNewsletter($newsletter)
-    {
-        $this->newsletter = $newsletter;
-    }
-
-    /**
-     * Returns the boolean state of newsletter
-     *
      * @return bool
      */
-    public function isNewsletter()
+    public function isNewsletter(): bool
     {
         return $this->newsletter;
     }
 
     /**
-     * Returns the birthDate
-     *
-     * @return \DateTime $birthDate
+     * @param bool $newsletter
+     * @return Person
      */
-    public function getBirthDate()
+    public function setNewsletter(bool $newsletter)
+    {
+        $this->newsletter = $newsletter;
+        return $this;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getBirthDate(): \DateTime
     {
         return $this->birthDate;
     }
 
     /**
-     * Sets the birthDate
-     *
      * @param \DateTime $birthDate
-     * @return void
+     * @return Person
      */
     public function setBirthDate(\DateTime $birthDate)
     {
         $this->birthDate = $birthDate;
+        return $this;
     }
 
     /**
-     * Returns the image
-     *
-     * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference $image
+     * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference
      */
     public function getImage()
     {
@@ -188,13 +152,21 @@ class Person extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Sets the image
-     *
      * @param \TYPO3\CMS\Extbase\Domain\Model\FileReference $image
-     * @return void
+     * @return Person
      */
     public function setImage(\TYPO3\CMS\Extbase\Domain\Model\FileReference $image)
     {
         $this->image = $image;
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isAtLeast18(): bool
+    {
+        $birthdate = $this->getBirthDate();
+        return $birthdate->diff(new \DateTime())->y >= 18;
     }
 }

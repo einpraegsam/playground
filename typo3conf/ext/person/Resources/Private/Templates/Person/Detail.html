@@ -1,5 +1,17 @@
 <ul>
     <li>{person.firstName} {person.lastName}</li>
     <li>{person.newsletter}</li>
+    <li>
+        Ist schon über 18:
+        <f:if condition="{person.atLeast18}">
+            <f:then>
+                ja
+            </f:then>
+            <f:else>
+                nein
+            </f:else>
+
+        </f:if>
+    </li>
     <li><f:link.page>zurück</f:link.page></li>
 </ul>
