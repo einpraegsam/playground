@@ -1,0 +1,19 @@
+{
+    "name": "group/person",
+    "type": "typo3-cms-extension",
+    "description": "Lists of persons",
+    "authors": [
+        {
+            "name": "Alex Kellner",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "typo3/cms-core": "^8.6.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Group\\Person\\": "Classes"
+        }
+    }
+}
