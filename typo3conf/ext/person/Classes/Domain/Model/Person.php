@@ -1,6 +1,8 @@
 <?php
 namespace Group\Person\Domain\Model;
 
+use Group\Person\Domain\Service\BirthdateService;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 /**
@@ -166,7 +168,7 @@ class Person extends AbstractEntity
      */
     public function isAtLeast18(): bool
     {
-        $birthdate = $this->getBirthDate();
-        return $birthdate->diff(new \DateTime())->y >= 18;
+        $birthdateService = GeneralUtility::makeInstance(BirthdateService::class);
+        return $birthdateService->isAtLeast18($this->getBirthDate());
     }
 }
