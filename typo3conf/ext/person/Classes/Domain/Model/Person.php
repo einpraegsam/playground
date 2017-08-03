@@ -2,6 +2,7 @@
 namespace Group\Person\Domain\Model;
 
 use Group\Person\Domain\Service\BirthdateService;
+use Group\Person\Utility\StringUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
@@ -60,7 +61,7 @@ class Person extends AbstractEntity
      */
     public function getFirstName(): string
     {
-        return $this->firstName;
+        return StringUtility::removeLastCharacter($this->firstName);
     }
 
     /**
