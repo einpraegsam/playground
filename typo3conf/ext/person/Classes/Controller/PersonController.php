@@ -54,4 +54,13 @@ class PersonController extends ActionController
     {
         $this->view->assign('person', $person);
     }
+
+    /**
+     * @return void
+     */
+    public function myAction()
+    {
+        $persons = $this->personRepository->findAll();
+        \TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($persons, 'in2code: ' . __CLASS__ . ':' . __LINE__);
+    }
 }
