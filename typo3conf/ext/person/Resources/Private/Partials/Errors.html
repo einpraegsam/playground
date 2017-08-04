@@ -1,0 +1,11 @@
+<f:form.validationResults>
+    <ul class="myclass">
+        <f:for each="{validationResults.flattenedErrors}" as="errors">
+            <f:for each="{errors}" as="singleError">
+                <li>
+                    <f:translate key="error.{singleError.code}">{singleError.message}</f:translate>
+                </li>
+            </f:for>
+        </f:for>
+    </ul>
+</f:form.validationResults>

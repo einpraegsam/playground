@@ -8,6 +8,41 @@ plugin.tx_person {
 }
 
 
+# these classes are only used in auto-generated templates
+plugin.tx_person._CSS_DEFAULT_STYLE (
+    textarea.f3-form-error {
+        background-color:#FF9F9F;
+        border: 1px #FF0000 solid;
+    }
+
+    input.f3-form-error {
+        background-color:#FF9F9F;
+        border: 1px #FF0000 solid;
+    }
+
+    .tx-person table {
+        border-collapse:separate;
+        border-spacing:10px;
+    }
+
+    .tx-person table th {
+        font-weight:bold;
+    }
+
+    .tx-person table td {
+        vertical-align:top;
+    }
+
+    .typo3-messages .message-error {
+        color:red;
+    }
+
+    .typo3-messages .message-ok {
+        color:green;
+    }
+)
+
+
 plugin.tx_person_pi1 {
     view {
         templateRootPaths.0 = EXT:person/Resources/Private/Templates/
