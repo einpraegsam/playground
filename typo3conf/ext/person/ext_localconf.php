@@ -7,11 +7,11 @@ call_user_func(
             'Group.Person',
             'Pi1',
             [
-                'Person' => 'list,detail'
+                'Person' => 'list,detail,new,create'
             ],
             // non-cacheable actions
             [
-                'Person' => 'list'
+                'Person' => 'list,new,create'
             ]
         );
     }

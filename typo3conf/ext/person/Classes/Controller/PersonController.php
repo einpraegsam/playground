@@ -18,6 +18,12 @@ class PersonController extends ActionController
     protected $personRepository = null;
 
     /**
+     * @var \TYPO3\CMS\Extbase\Persistence\Generic\PersistenceManager
+     * @inject
+     */
+    protected $persistenceManager;
+
+    /**
      * @return void
      */
     public function initializeListAction()
@@ -53,6 +59,25 @@ class PersonController extends ActionController
     public function detailAction(Person $person)
     {
         $this->view->assign('person', $person);
+    }
+
+    /**
+     * @return void
+     */
+    public function newAction()
+    {
+    }
+
+    /**
+     * @param Person $person
+     * @return void
+     */
+    public function createAction(Person $person)
+    {
+        $this->personRepository->add($person);
+        $this->persistenceManager->persistAll();
+        $this->addFlashMessage('gespeichert');
+        $this->redirect('list');
     }
 
     /**

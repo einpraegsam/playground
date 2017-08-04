@@ -1,4 +1,5 @@
 <f:render partial="Filter" arguments="{_all}" />
+<f:render partial="Flashmessages" arguments="{_all}" />
 
 <ul>
     <f:for each="{persons}" as="person">
@@ -9,4 +10,5 @@
                     arguments="{person:person}">Detailansicht</f:link.action>
         </li>
     </f:for>
+    <f:link.action action="new">Neue Person anlegen</f:link.action>
 </ul>
