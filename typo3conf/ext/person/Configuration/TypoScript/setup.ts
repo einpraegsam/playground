@@ -33,36 +33,34 @@ plugin.tx_person_pi1 {
     }
 }
 
-# these classes are only used in auto-generated templates
-plugin.tx_person._CSS_DEFAULT_STYLE (
-    textarea.f3-form-error {
-        background-color:#FF9F9F;
-        border: 1px #FF0000 solid;
+
+exampleAjax = PAGE
+exampleAjax {
+    # &type=688684
+    typeNum = 688684
+    config {
+        # < TYPO3 8
+        additionalHeaders = Content-Type: application/json
+
+        # >= TYPO3 8
+        additionalHeaders.10.header = Content-Type: application/json
+
+        no_cache = 1
+        disableAllHeaderCode = 1
+        disablePrefixComment = 1
+        xhtml_cleaning = 0
+        admPanel = 0
+        debug = 0
     }
 
-    input.f3-form-error {
-        background-color:#FF9F9F;
-        border: 1px #FF0000 solid;
+    10 = USER
+    10 {
+        userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+        extensionName = Person
+        pluginName = Pi1
+        vendorName = Group
+        controller = Person
+        action = exampleJson
+        switchableControllerActions.Person.1 = exampleJson
     }
-
-    .tx-person table {
-        border-collapse:separate;
-        border-spacing:10px;
-    }
-
-    .tx-person table th {
-        font-weight:bold;
-    }
-
-    .tx-person table td {
-        vertical-align:top;
-    }
-
-    .typo3-messages .message-error {
-        color:red;
-    }
-
-    .typo3-messages .message-ok {
-        color:green;
-    }
-)
+}

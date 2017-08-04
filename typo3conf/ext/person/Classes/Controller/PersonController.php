@@ -63,4 +63,13 @@ class PersonController extends ActionController
         $persons = $this->personRepository->findAll();
         \TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($persons, 'in2code: ' . __CLASS__ . ':' . __LINE__);
     }
+
+    /**
+     * @param Person $person
+     * @return string
+     */
+    public function exampleJsonAction(Person $person): string
+    {
+        return json_encode($person->_getProperties());
+    }
 }
