@@ -81,6 +81,26 @@ class PersonController extends ActionController
     }
 
     /**
+     * @param Person $person
+     * @return void
+     */
+    public function editAction(Person $person)
+    {
+        $this->view->assign('person', $person);
+    }
+
+    /**
+     * @param Person $person
+     * @return void
+     */
+    public function updateAction(Person $person)
+    {
+        $this->personRepository->update($person);
+        $this->addFlashMessage('gespeichert');
+        $this->redirect('list');
+    }
+
+    /**
      * @return void
      */
     public function myAction()

@@ -1,26 +1,4 @@
 <f:form name="person" action="create">
-    <div>
-        <label>
-            Vorname
-            <f:form.textfield property="firstName" />
-        </label>
-    </div>
-
-    <div>
-        <label>
-            Nachname
-            <f:form.textfield property="lastName" />
-        </label>
-    </div>
-
-    <div>
-        <label>
-            Willst du den Newsletter haben?
-            <f:form.checkbox
-                    property="newsletter"
-                    value="1" />
-        </label>
-    </div>
-
+    <f:render partial="FormFields" arguments="{_all}" />
     <f:form.submit value="Neu anlegen" />
 </f:form>
