@@ -1,8 +1,12 @@
+<f:render partial="Filter" arguments="{_all}" />
+
 <ul>
     <f:for each="{persons}" as="person">
         <li>
             {person.lastName}
-            <f:link.action action="detail" arguments="{person:person}">Detailansicht</f:link.action>
+            <f:link.action
+                    action="detail"
+                    arguments="{person:person}">Detailansicht</f:link.action>
         </li>
     </f:for>
 </ul>

@@ -13,7 +13,7 @@ plugin.tx_person_pi1 {
         #recursive = 1
     }
     features {
-        #skipDefaultArguments = 1
+        skipDefaultArguments = 1
         # if set to 1, the enable fields are ignored in BE context
         ignoreAllEnableFieldsInBe = 0
         # Should be on by default, but can be disabled if all action in the plugin are uncached
