@@ -129,9 +129,9 @@ class Person extends AbstractEntity
     }
 
     /**
-     * @return \DateTime
+     * @return \DateTime|null
      */
-    public function getBirthDate(): \DateTime
+    public function getBirthDate()
     {
         return $this->birthDate;
     }
@@ -169,7 +169,10 @@ class Person extends AbstractEntity
      */
     public function isAtLeast18(): bool
     {
-        $birthdateService = GeneralUtility::makeInstance(BirthdateService::class);
-        return $birthdateService->isAtLeast18($this->getBirthDate());
+        if ($this->getBirthDate() !== null) {
+            $birthdateService = GeneralUtility::makeInstance(BirthdateService::class);
+            return $birthdateService->isAtLeast18($this->getBirthDate());
+        }
+        return false;
     }
 }

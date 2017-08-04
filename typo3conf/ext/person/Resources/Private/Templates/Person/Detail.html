@@ -1,9 +1,21 @@
+{namespace person=Group\Person\ViewHelpers}
 <ul>
     <li>{person.firstName} {person.lastName}</li>
     <li>{person.newsletter}</li>
     <li>
         Ist schon über 18:
         <f:if condition="{person.atLeast18}">
+            <f:then>
+                ja
+            </f:then>
+            <f:else>
+                nein
+            </f:else>
+        </f:if>
+    </li>
+    <li>
+        Ist schon über 18:
+        <f:if condition="{person:isAtLeast18(person:person)}">
             <f:then>
                 ja
             </f:then>
