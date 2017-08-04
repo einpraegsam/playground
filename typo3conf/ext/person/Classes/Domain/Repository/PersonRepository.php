@@ -1,6 +1,7 @@
 <?php
 namespace Group\Person\Domain\Repository;
 
+use Group\Person\Domain\Model\Dto\FilterDto;
 use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
 use TYPO3\CMS\Extbase\Persistence\Repository;
@@ -12,10 +13,10 @@ class PersonRepository extends Repository
 {
 
     /**
-     * @param array $filter
+     * @param FilterDto $filter
      * @return QueryResultInterface
      */
-    public function findByFilter(array $filter): QueryResultInterface
+    public function findByFilter(FilterDto $filter = null): QueryResultInterface
     {
         $query = $this->createQuery();
         $this->buildQueryByFilter($filter, $query);
@@ -23,17 +24,17 @@ class PersonRepository extends Repository
     }
 
     /**
-     * @param array $filter
+     * @param FilterDto $filter
      * @param QueryInterface $query
      * @return void
      */
-    protected function buildQueryByFilter(array $filter, QueryInterface $query)
+    protected function buildQueryByFilter(FilterDto $filter = null, QueryInterface $query)
     {
-        if (!empty($filter['searchterm'])) {
+        if ($filter !== null) {
             $logicalOr = [
-                $query->like('lastName', '%' . $filter['searchterm'] . '%'),
-                $query->like('firstName', '%' . $filter['searchterm'] . '%'),
-                $query->like('description', '%' . $filter['searchterm'] . '%')
+                $query->like('lastName', '%' . $filter->getSearchterm() . '%'),
+                $query->like('firstName', '%' . $filter->getSearchterm() . '%'),
+                $query->like('description', '%' . $filter->getSearchterm() . '%')
             ];
             $query->matching($query->logicalOr($logicalOr));
         }

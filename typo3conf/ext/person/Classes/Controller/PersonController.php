@@ -1,7 +1,9 @@
 <?php
 namespace Group\Person\Controller;
 
+use Group\Person\Domain\Model\Dto\FilterDto;
 use Group\Person\Domain\Model\Person;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 /**
@@ -16,12 +18,24 @@ class PersonController extends ActionController
     protected $personRepository = null;
 
     /**
-     * @param array $filter
      * @return void
      */
-    public function listAction(array $filter = [])
+    public function initializeListAction()
     {
-        $filter = $this->addFilterSearchtermFromFlexForm($filter);
+        try {
+            $filter = $this->request->getArgument('filter');
+            $filter = GeneralUtility::makeInstance(FilterDto::class, $this->settings, $filter);
+            $this->request->setArgument('filter', $filter);
+        } catch (\Exception $exception) {
+        }
+    }
+
+    /**
+     * @param FilterDto $filter
+     * @return void
+     */
+    public function listAction(FilterDto $filter = null)
+    {
         $persons = $this->personRepository->findByFilter($filter);
         $this->view->assignMultiple([
             'persons' => $persons,
@@ -39,17 +53,5 @@ class PersonController extends ActionController
     public function detailAction(Person $person)
     {
         $this->view->assign('person', $person);
-    }
-
-    /**
-     * @param array $filter
-     * @return array
-     */
-    protected function addFilterSearchtermFromFlexForm(array $filter): array
-    {
-        if ($filter === [] && !empty($this->settings['searchterm'])) {
-            $filter['searchterm'] = $this->settings['searchterm'];
-        }
-        return $filter;
     }
 }
