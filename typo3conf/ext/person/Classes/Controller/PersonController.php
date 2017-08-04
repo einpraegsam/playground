@@ -21,6 +21,7 @@ class PersonController extends ActionController
      */
     public function listAction(array $filter = [])
     {
+        $filter = $this->addFilterSearchtermFromFlexForm($filter);
         $persons = $this->personRepository->findByFilter($filter);
         $this->view->assignMultiple([
             'persons' => $persons,
@@ -38,5 +39,17 @@ class PersonController extends ActionController
     public function detailAction(Person $person)
     {
         $this->view->assign('person', $person);
+    }
+
+    /**
+     * @param array $filter
+     * @return array
+     */
+    protected function addFilterSearchtermFromFlexForm(array $filter): array
+    {
+        if ($filter === [] && !empty($this->settings['searchterm'])) {
+            $filter['searchterm'] = $this->settings['searchterm'];
+        }
+        return $filter;
     }
 }

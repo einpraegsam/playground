@@ -1,3 +1,12 @@
+plugin.tx_person {
+    settings {
+        color {
+            1 = red
+            2 = blue
+        }
+    }
+}
+
 
 plugin.tx_person_pi1 {
     view {
