@@ -1,6 +1,6 @@
 # TYPO3 instance for your training session
 
-Welcome to your individual training for extension development in TYPO3  
+Welcome to your individual training and consulting for TYPO3 integration and extension development **Daniel**.
 
 ## Contact
 
