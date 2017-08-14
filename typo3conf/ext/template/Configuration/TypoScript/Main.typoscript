@@ -1,4 +1,18 @@
-# <INCLUDE_TYPOSCRIPT: source="FILE:typo3conf/ext/template/Configuration/TypoScript/Main.typoscript">
 page = PAGE
-page.10 = TEXT
-page.10.value = Hello World
+page {
+    20 = TEXT
+    20.value = <img src="/fileadmin/dalmatiner.png" width="300" />
+
+    30 = IMAGE
+    30.file = fileadmin/dalmatiner.png
+    30.file.width = 300c
+    30.file.height = 300c
+    30.altText = Test
+
+    40 < .30
+    40 = IMG_RESOURCE
+}
+
+page.50 < page.20
+
+page.30 >
