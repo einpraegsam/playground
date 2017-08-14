@@ -1,7 +1,7 @@
 page = PAGE
 page {
-    10 = HMENU
-    10 {
+    1 = HMENU
+    1 {
         # Set start point
         #special = directory
         #special.value = 123
@@ -16,4 +16,6 @@ page {
             ACT.allWrap = <li class="act">|</li>
         }
     }
+
+    10 < styles.content.get
 }
