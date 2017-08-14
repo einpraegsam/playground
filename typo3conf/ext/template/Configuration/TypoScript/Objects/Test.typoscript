@@ -1,9 +1,17 @@
-lib.test = TEXT
+lib.test = CASE
 lib.test {
-    value = Seite ABC
-    wrap = <h1>Überschrift:|</h1>
-}
+    stdWrap.wrap = x|x
+    key.field = subtitle
 
-[IP = 127.*.*.*] && [IP = 128.*.*.*]
-    lib.test.value = lala
-[end]
+    default = TEXT
+    default.value = layout1
+
+    1 = TEXT
+    1.value = layout1
+
+    2 = TEXT
+    2.value = layout2
+
+    3 = TEXT
+    3.value = layout3
+}
