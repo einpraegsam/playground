@@ -1,0 +1,22 @@
+lib.test = TEXT
+lib.test {
+    value = HW
+    typolink.parameter.field = subtitle
+    typolink.additionalParams.cObject = COA
+    typolink.additionalParams.cObject {
+        10 = TEXT
+        10.wrap = &L=|
+        10.value = 22
+    }
+
+    typolink.parameter.override = 1
+    typolink.parameter.override {
+        value = 1
+        if {
+            isFalse.field = subtitle
+        }
+    }
+
+    # Only return the uri
+#    typolink.returnLast = url
+}

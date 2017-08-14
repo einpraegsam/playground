@@ -1,0 +1,6 @@
+page = PAGE
+page {
+    10 < lib.menu
+    20 < styles.content.get
+    30 < lib.test
+}
