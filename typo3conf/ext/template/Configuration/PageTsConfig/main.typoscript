@@ -1,0 +1,30 @@
+#######################################################
+#### BACKENDLAYOUT: DEFAULT ####
+#######################################################
+mod {
+	web_layout {
+		BackendLayouts {
+			homepage {
+				title = Main layout
+				config {
+					backend_layout {
+						colCount = 1
+						rowCount = 1
+						rows {
+							1 {
+								columns {
+									1 {
+										name = Inhalt
+										colPos = 0
+										colspan = 1
+									}
+								}
+							}
+						}
+					}
+				}
+				icon = EXT:template/Resources/Public/Icons/backend_layout_default.svg
+			}
+		}
+	}
+}
