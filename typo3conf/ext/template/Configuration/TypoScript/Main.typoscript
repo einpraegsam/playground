@@ -2,7 +2,13 @@ page = PAGE
 page {
     10 = USER
     10 {
-        userFunc = In2code\Template\IpService->getCurrentIp
-        fallbackOnLocalhost = 192.168.0.1
+        userFunc = In2code\Template\ImageService->renderImage
+        image = IMAGE
+        image {
+            file = fileadmin/dalmatiner.png
+            file.width = 300c
+            file.height = 300c
+            altText.field = title
+        }
     }
 }
