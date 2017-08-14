@@ -1,14 +1,19 @@
 page = PAGE
 page {
-    10 = USER
+    10 = HMENU
     10 {
-        userFunc = In2code\Template\ImageService->renderImage
-        image = IMAGE
-        image {
-            file = fileadmin/dalmatiner.png
-            file.width = 300c
-            file.height = 300c
-            altText.field = title
+        # Set start point
+        #special = directory
+        #special.value = 123
+
+        1 = TMENU
+        1 {
+            wrap = <ul>|</ul>
+            NO = 1
+            NO.allWrap = <li>|</li>|*|<li>|</li>|*|<li class="last">|</li>
+
+            ACT < .NO
+            ACT.allWrap = <li class="act">|</li>
         }
     }
 }
