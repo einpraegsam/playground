@@ -1,19 +1,25 @@
 page = PAGE
 page {
-    10 = COA
+    10 = CONTENT
     10 {
-        10 = TEXT
-        10.value = HW
+        table = tt_content
+        select {
+            pidInList = 4
+            where {
+                data = GP:c
+                wrap = uid=
+                intval = 1
+            }
+
+        }
+        renderObj = COA
+        renderObj {
+            10 = TEXT
+            10.field = header
+            10.wrap = <h2>|</h2>
+            20 = TEXT
+            20.field = bodytext
+            20.wrap = <div>|</div>
+        }
     }
-}
-
-
-ajaxTimeStamp = PAGE
-ajaxTimeStamp {
-    // &type=123
-    typeNum = 123
-    config.no_cache = 1
-
-    10 = TEXT
-    10.data = TSFE:fe_user|user|username
 }
