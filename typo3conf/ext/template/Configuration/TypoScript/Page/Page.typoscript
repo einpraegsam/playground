@@ -2,7 +2,21 @@ page = PAGE
 page {
     10 = FLUIDTEMPLATE
     10 {
-        templateName = Main
+        templateName.stdWrap.cObject = CASE
+        templateName.stdWrap.cObject {
+            key.data = levelfield:-1, backend_layout_next_level, slide
+            key.override.field = backend_layout
+
+            default = TEXT
+            default.value = Default
+
+            pagets__start = TEXT
+            pagets__start.value = Start
+
+            pagets__default = TEXT
+            pagets__default.value = Default
+        }
+
         templateRootPaths {
             10 = EXT:template/Resources/Private/Templates/
         }

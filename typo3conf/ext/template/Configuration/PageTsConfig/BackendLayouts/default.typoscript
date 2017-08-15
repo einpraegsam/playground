@@ -4,8 +4,8 @@
 mod {
 	web_layout {
 		BackendLayouts {
-			homepage {
-				title = Main layout
+			default {
+				title = Default layout
 				config {
 					backend_layout {
 						colCount = 1
