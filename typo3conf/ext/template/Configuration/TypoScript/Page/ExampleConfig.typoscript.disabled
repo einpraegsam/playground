@@ -1,0 +1,235 @@
+/**
+* Hier befindet sich die grundsätzliche Konfiguration von TYPO3
+*/
+
+page {
+	# in2code Branding im HTML Quellcode
+	config.headerComment (
+********************************************************************************
+*                                                                *****  **     *
+*              TYPO3 by in2code.de - Wir leben TYPO3           ******  ****    *
+*                                                               *****  **      *
+* www.in2code.de / info(at)in2code(dot)de / +49 8031 8873983     *****         *
+*                                                                  **          *
+********************************************************************************
+	)
+
+	# Setzen des Favicon
+	shortcutIcon = {$PATH.IMAGES}/logo_mini.png
+
+	# UID der aktuellen Seite dem Body-Tag hinzufügen
+	bodyTag >
+	bodyTagCObject = TEXT
+	bodyTagCObject.field = uid
+	bodyTagCObject.wrap = <body id="page" class="page no-js page|">
+
+	# meta page description
+	meta {
+		viewport = width=device-width, initial-scale=1.0, user-scalable=yes
+		description {
+			data = page:description
+			ifEmpty.data = levelfield :-1, description, slide
+		}
+
+		robots = index,follow
+		author =
+
+		# Keywords are a mix of pages.keywords and tt_content.header of a given page
+		keywords.cObject = COA
+		keywords.cObject {
+			10 = TEXT
+			10 {
+				field = keywords
+				noTrimWrap = ||, |
+				required = 1
+			}
+
+			20 = CONTENT
+			20 {
+				table = tt_content
+				select {
+					pidInList = {$UID.PAGEKEYWORDS}
+					where = colPos = 0
+				}
+				renderObj = TEXT
+				renderObj {
+					field = header
+				}
+			}
+		}
+
+		date {
+			data = page:SYS_LASTCHANGED // page:crdate
+			date = Y-m-d
+		}
+
+		language = de
+
+		X-UA-Compatible = IE=edge,chrome=1
+		X-UA-Compatible.httpEquivalent = 1
+	}
+
+	headerData {
+		# Title
+		10 = TEXT
+		10 {
+			data = page:nav_title
+			ifEmpty.data = page:title
+			noTrimWrap = |<title>| &ndash; eno.de</title>|
+		}
+
+		# Canonical Tag
+		100 = TEXT
+		100 {
+			wrap = <link rel="canonical" href="|" />
+			typolink.parameter.data = TSFE:id
+			typolink.returnLast = url
+			typolink.forceAbsoluteUrl = 1
+			typolink.addQueryString = 1
+			typolink.addQueryString.exclude = cHash,backPid
+		}
+
+		# Google site verification
+		110 = TEXT
+		110 {
+			wrap = <meta name="google-site-verification" content="|" />
+			value = 9ChCYclypIiTXyXa1U8uUyT-EvD2tnKjlr0JwXTXauQ
+		}
+	}
+
+
+	/**
+	* Add hreflang tag
+	*/
+	headerData.1218 = HMENU
+	headerData.1218 {
+		1 = TMENU
+		1 {
+			NO = 1
+			NO {
+				stdWrap.cObject = TEXT
+				stdWrap.cObject {
+					value = de
+				}
+
+				linkWrap = <link rel="alternate" hreflang="|
+				doNotLinkIt = 1
+				after.cObject = TEXT
+				after.cObject {
+					stdWrap {
+						wrap = " href="|" />
+						typolink {
+							parameter.data = page:uid
+							returnLast = url
+							addQueryString = 1
+							addQueryString.exclude = cHash, id
+						}
+					}
+				}
+			}
+
+			CUR = 1
+			CUR {
+				doNotShowLink = 1
+			}
+
+			USERDEF1 = 1
+			USERDEF1 {
+				doNotShowLink = 1
+			}
+		}
+	}
+	headerData.1218.insertData = 1
+}
+
+config {
+	# baseURL setzen (aus Konstanten)
+	absRefPrefix = {$PROTOCOL}{$BASEURL}/
+	prefixLocalAnchors = all
+	disableImgBorderAttr = 1
+	doctype = html5
+	tx_realurl_enable = 1
+	contentObjectExceptionHandler = 0
+	language = de
+	locale_all = de_DE.UTF-8
+	htmlTag_langKey = de
+	admPanel = 0
+	cache = 1
+	no_cache = 0
+	index_enable = 1
+	sendCacheHeaders = 1
+	metaCharset = utf-8
+	uniqueLinkVars = 1
+	compressCss = 0
+	compressJs = 0
+	removeDefaultCss = 0
+	inlineStyle2TempFile = 1
+	extTarget = _blank
+	noPageTitle = 1
+
+	# Wird für Multidomain Webseiten benötigt
+	typolinkCheckRootline = 1
+	typolinkEnableLinksAcrossDomains = 1
+
+	# Email spam safety measures
+	spamProtectEmailAddresses = 2
+	spamProtectEmailAddresses_atSubst = <span style="display:none">spam prevention</span>@
+}
+
+[PIDinRootline = {$UID.HOME.EN}]
+	config.htmlTag_langKey = en
+	config.language = en
+
+	page.meta.language = en
+
+	page.headerData {
+		10.noTrimWrap = |<title>| &ndash; University of applied sciences</title>|
+		1218 {
+			1.NO.stdWrap.cObject.value = en
+		}
+	}
+[end]
+
+/**
+* hreflang to EN startpage
+*/
+[globalVar = TSFE:id = {$UID.HOME.DE}]
+	page.headerData.1219 < page.headerData.1218
+	page.headerData.1219 {
+		1 {
+			NO {
+				stdWrap.cObject.value = en
+				after {
+					cObject {
+						stdWrap {
+							typolink.parameter >
+							typolink.parameter = {$UID.HOME.EN}
+						}
+					}
+				}
+			}
+		}
+	}
+[end]
+
+/**
+* hreflang to DE startpage
+*/
+[globalVar = TSFE:id = {$UID.HOME.EN}]
+	page.headerData.1219 < page.headerData.1218
+	page.headerData.1219 {
+		1 {
+			NO {
+				stdWrap.cObject.value = de
+				after {
+					cObject {
+						stdWrap {
+							typolink.parameter >
+							typolink.parameter = {$UID.HOME.DE}
+						}
+					}
+				}
+			}
+		}
+	}
+[end]
