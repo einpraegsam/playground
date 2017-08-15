@@ -1,0 +1,18 @@
+mod {
+    wizards.newContentElement.wizardItems.contentelements {
+        header = Eigene Content Elemente
+        elements {
+            contentelement_slider {
+                iconIdentifier = contentelement_slider
+                title = Slideshow
+                description = Slideshow for startpage
+                tt_content_defValues {
+                    CType = contentelement_slider
+                }
+            }
+        }
+
+        // Commaseparated list of all CType elements in tab contentelements
+        show = *
+    }
+}
