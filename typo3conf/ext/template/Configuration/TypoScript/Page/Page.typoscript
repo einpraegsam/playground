@@ -24,4 +24,20 @@ page {
             10 = EXT:template/Resources/Private/Layouts/
         }
     }
+
+    # Add individual title tag
+    headerData {
+        10 = COA
+        10 {
+            wrap = <title>|</title>
+            10 = TEXT
+            10 {
+                data = page:nav_title
+                ifEmpty.data = page:title
+            }
+            20 = TEXT
+            20.noTrimWrap = | - ||
+            20.data = LLL:typo3conf/ext/powermail/Resources/Private/Language/locallang.xlf:pleaseChoose
+        }
+    }
 }
