@@ -4,11 +4,19 @@ page {
         bootstrap.external = 1
 
         additional = EXT:template/Resources/Public/CSS/Additional.css
+        codesnippet = EXT:template/Resources/Public/JavaScript/CkPlugins/codesnippet/lib/highlight/styles/monokai.css
     }
 
     includeJSFooterlibs {
         jquery = EXT:template/Resources/Public/JavaScript/jquery.min.js
         popper = EXT:template/Resources/Public/JavaScript/popper.min.js
         bootstrap = EXT:template/Resources/Public/JavaScript/bootstrap.min.js
+        codesnippet = EXT:template/Resources/Public/JavaScript/CkPlugins/codesnippet/lib/highlight/highlight.pack.js
+    }
+    jsFooterInline {
+        10 = TEXT
+        10.value (
+            hljs.initHighlightingOnLoad();
+        )
     }
 }

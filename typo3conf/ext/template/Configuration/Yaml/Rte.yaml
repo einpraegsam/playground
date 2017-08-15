@@ -3,6 +3,7 @@ imports:
     - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Base.yaml" }
     - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Plugins.yaml" }
     - { resource: "EXT:rte_ckeditor_wordcount/Configuration/RTE/Plugin.yaml" }
+    - { resource: "EXT:template/Configuration/Yaml/Codesnippet.yaml" }
 
 editor:
   config:

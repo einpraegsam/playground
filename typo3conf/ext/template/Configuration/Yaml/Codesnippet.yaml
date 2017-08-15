@@ -1,0 +1,4 @@
+editor:
+  externalPlugins:
+    codesnippet:
+      resource: "EXT:template/Resources/Public/JavaScript/CkPlugins/codesnippet/plugin.js"
