@@ -1,0 +1,13 @@
+/**
+* Einbinden der colPos auf das TS-Object lib.content
+*
+* Einbinden der Spalten im Fluid über DATA
+* Beispiel für die Spalte 0 =  <f:cObject typoscriptObjectPath="lib.content" data="0">
+*
+* Beispiel für die Spalte 2 =  <f:cObject typoscriptObjectPath="lib.content" data="2">
+*/
+lib.content < styles.content.get
+lib.content.select {
+    where.current = 1
+    where.wrap = colPos =
+}
