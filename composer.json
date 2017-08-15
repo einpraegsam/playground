@@ -3,13 +3,18 @@
     {
       "type": "composer",
       "url": "https://composer.typo3.org/"
+    },
+    {
+      "type": "git",
+      "url": "https://github.com/mschwemer/rte_ckeditor_wordcount"
     }
   ],
   "require": {
     "typo3/cms": "8.*",
     "friendsoftypo3/extension-builder": "8.7.x-dev",
     "helhum/typo3-console": "*",
-    "in2code/powermail": "*"
+    "in2code/powermail": "*",
+    "mschwemer/rte-ckeditor-wordcount": "dev-master"
   },
   "autoload": {
     "psr-4": {

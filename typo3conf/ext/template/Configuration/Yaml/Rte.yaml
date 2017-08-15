@@ -1,0 +1,50 @@
+imports:
+    - { resource: "EXT:rte_ckeditor/Configuration/RTE/Processing.yaml" }
+    - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Base.yaml" }
+    - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Plugins.yaml" }
+    - { resource: "EXT:rte_ckeditor_wordcount/Configuration/RTE/Plugin.yaml" }
+
+editor:
+  config:
+    contentsCss: ["EXT:template/Resources/Public/CSS/Additional.css"]
+    stylesSet:
+      - { name: "Button", element: "a", attributes: { class: "btn" } }
+      - { name: "Download", element: "a", attributes: { class: "c-cta__link c-cta__link--download" } }
+      - { name: "Kontakt", element: "a", attributes: { class: "c-cta__link c-cta__link--contact" } }
+      # Table styles
+      - { name: "Tabelle", element: "table", attributes: { 'class': 'c-table' }}
+      - { name: "Col1", element: "col", attributes: { 'class': 'c-table__column c-table__column--feature' }}
+      - { name: "Col2", element: "col", attributes: { 'class': 'c-table__column' }}
+      - { name: "Col3", element: "col", attributes: { 'class': 'c-table__column c-table__column--is-highlight' }}
+
+    format_tags: "p;h1;h2;h3;h4;h5;pre"
+
+    toolbar:
+      - [ 'Bold', 'Italic', 'Underline']
+      - [ 'Link', 'Unlink', 'Table', 'CodeSnippet' ]
+      - [ 'NumberedList', 'BulletedList' ]
+      - [ 'Styles' ]
+      - [ 'Source' ]
+
+    justifyClasses:
+      - text-left
+      - text-center
+      - text-right
+      - text-justify
+
+    extraPlugins:
+      - justify
+      - codesnippet
+
+    removePlugins:
+      - image
+
+    codeSnippet_theme: 'monokai_sublime'
+
+processing:
+  allowTags:
+    - colgroup
+    - col
+  allowTagsOutside:
+    - colgroup
+    - col
