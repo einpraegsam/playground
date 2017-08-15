@@ -1,3 +1,4 @@
+/*
 lib.test = CASE
 lib.test {
     stdWrap.wrap = x|x
@@ -15,3 +16,4 @@ lib.test {
     3 = TEXT
     3.value = layout3
 }
+*/

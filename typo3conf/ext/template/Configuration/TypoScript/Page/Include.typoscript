@@ -1,0 +1,14 @@
+page {
+    includeCSS {
+        bootstrap = //maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css
+        bootstrap.external = 1
+
+        additional = EXT:template/Resources/Public/CSS/Additional.css
+    }
+
+    includeJSFooterlibs {
+        jquery = EXT:template/Resources/Public/JavaScript/jquery.min.js
+        popper = EXT:template/Resources/Public/JavaScript/popper.min.js
+        bootstrap = EXT:template/Resources/Public/JavaScript/bootstrap.min.js
+    }
+}

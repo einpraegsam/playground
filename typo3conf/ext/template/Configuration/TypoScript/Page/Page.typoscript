@@ -1,6 +1,13 @@
 page = PAGE
 page {
-    10 < lib.menu
-    20 < styles.content.get
-    30 < lib.test
+    10 = FLUIDTEMPLATE
+    10 {
+        templateName = Main
+        templateRootPaths {
+            10 = EXT:template/Resources/Private/Templates/
+        }
+        layoutRootPaths {
+            10 = EXT:template/Resources/Private/Layouts/
+        }
+    }
 }
