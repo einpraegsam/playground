@@ -1,0 +1,15 @@
+tt_content {
+    # Slideshow
+    contentelement_slider = FLUIDTEMPLATE
+    contentelement_slider {
+        file = EXT:contentelements/Resources/Private/Templates/Slider.html
+
+        dataProcessing {
+            10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+            10 {
+                references.fieldName = assets
+                as = slideritems
+            }
+        }
+    }
+}
