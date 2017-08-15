@@ -1,16 +1,17 @@
 lib.menu = HMENU
 lib.menu {
-    # Set start point
-    #special = directory
-    #special.value = 123
-
     1 = TMENU
     1 {
-        wrap = <ul>|</ul>
+        wrap = <ul class="navbar-nav ml-auto">|</ul>
         NO = 1
-        NO.allWrap = <li>|</li>|*|<li>|</li>|*|<li class="last">|</li>
+        NO.allWrap = <li class="nav-item">|</li>
+        NO.ATagParams = class="nav-link"
 
-        ACT < .NO
-        ACT.allWrap = <li class="act">|</li>
+        CUR < .NO
+        CUR.allWrap = <li class="nav-item active">|</li>
     }
 }
+
+[globalVar = TSFE:id=4]
+    lib.menu.1.NO.allWrap = <li class="nav-item active">|</li> |*| <li class="nav-item">|</li>
+[end]
