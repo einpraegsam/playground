@@ -1,0 +1,9 @@
+TCEFORM {
+    tt_content.layout {
+        removeItems = 1,2,3
+        addItems {
+            100 = Slider item (start)
+            101 = Slider item
+        }
+    }
+}

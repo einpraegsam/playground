@@ -13,3 +13,10 @@ body {
         padding-top: 56px;
     }
 }
+
+.startcarousel {
+    height: 300px;
+    background: #ccc;
+    padding: 20px;
+    overflow: hidden;
+}
