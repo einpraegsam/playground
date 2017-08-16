@@ -160,4 +160,21 @@ class Employee extends AbstractEntity
         $this->image = $image;
         return $this;
     }
+
+    /**
+     * @return string
+     */
+    public function getFullname(): string
+    {
+        return $this->getFirstName() . ' ' . $this->getLastName();
+    }
+
+    /**
+     * @return bool
+     */
+    public function isAtLeast18(): bool
+    {
+        $birthdate = $this->getBirthdate();
+        return $birthdate->diff(new \DateTime())->y >= 18;
+    }
 }

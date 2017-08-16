@@ -11,7 +11,10 @@
 <f:section name="Employees">
     <ul>
         <f:for each="{employees}" as="employee">
-            <li>{employee.firstName} {employee.lastName}</li>
+            <li>
+                <h3>{employee.fullName}</h3><br />
+                <f:link.action action="detail" arguments="{employee:employee}" class="btn btn-primary">Details</f:link.action>
+            </li>
         </f:for>
     </ul>
 </f:section>

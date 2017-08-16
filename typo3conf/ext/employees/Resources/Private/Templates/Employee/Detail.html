@@ -1,0 +1,16 @@
+<ul>
+    <li>
+        <h3>{employee.fullName}</h3>
+    </li>
+    <li>{employee.description}<br />
+    </li>
+    <li><f:format.date format="%d.%m.%Y">{employee.birthdate}</f:format.date></li>
+    <li>{employee.companyMobile}</h3></li>
+    <li>
+        Ist über 18:
+        <f:if condition="{employee.atLeast18}">
+            <f:then>✔</f:then>
+            <f:else>✗</f:else>
+        </f:if>
+    </li>
+</ul>
