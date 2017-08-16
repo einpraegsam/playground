@@ -1,6 +1,10 @@
 <?php
+declare(strict_types=1);
 namespace In2code\Employees\Domain\Model;
 
+use In2code\Employees\Domain\Service\BirthdateService;
+use In2code\Employees\Utility\StringUtility;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 /**
@@ -58,7 +62,7 @@ class Employee extends AbstractEntity
      */
     public function getFirstName(): string
     {
-        return $this->firstName;
+        return StringUtility::firstCharacterUppercase($this->firstName);
     }
 
     /**
@@ -76,7 +80,7 @@ class Employee extends AbstractEntity
      */
     public function getLastName(): string
     {
-        return $this->lastName;
+        return StringUtility::firstCharacterUppercase($this->lastName);
     }
 
     /**
@@ -175,6 +179,10 @@ class Employee extends AbstractEntity
     public function isAtLeast18(): bool
     {
         $birthdate = $this->getBirthdate();
-        return $birthdate->diff(new \DateTime())->y >= 18;
+        if ($birthdate !== null) {
+            $birthdateService = GeneralUtility::makeInstance(BirthdateService::class);
+            return $birthdateService->isAtLeast18($birthdate);
+        }
+        return false;
     }
 }
