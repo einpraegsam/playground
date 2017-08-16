@@ -1,21 +1,12 @@
 <?php
 namespace In2code\Employees\Domain\Model;
 
-/***
- *
- * This file is part of the "EmployeeList" Extension for TYPO3 CMS.
- *
- * For the full copyright and license information, please read the
- * LICENSE.txt file that was distributed with this source code.
- *
- *  (c) 2017 Alex Kellner <alexander.kellner@in2code.de>, in2code.de
- *
- ***/
+use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 /**
- * Employee
+ * Class Employee
  */
-class Employee extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
+class Employee extends AbstractEntity
 {
     /**
      * firstName
@@ -63,72 +54,61 @@ class Employee extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $image = null;
 
     /**
-     * Returns the firstName
-     *
-     * @return string $firstName
+     * @return string
      */
-    public function getFirstName()
+    public function getFirstName(): string
     {
         return $this->firstName;
     }
 
     /**
-     * Sets the firstName
-     *
      * @param string $firstName
-     * @return void
+     * @return Employee
      */
-    public function setFirstName($firstName)
+    public function setFirstName(string $firstName)
     {
         $this->firstName = $firstName;
+        return $this;
     }
 
     /**
-     * Returns the lastName
-     *
-     * @return string $lastName
+     * @return string
      */
-    public function getLastName()
+    public function getLastName(): string
     {
         return $this->lastName;
     }
 
     /**
-     * Sets the lastName
-     *
      * @param string $lastName
-     * @return void
+     * @return Employee
      */
-    public function setLastName($lastName)
+    public function setLastName(string $lastName)
     {
         $this->lastName = $lastName;
+        return $this;
     }
 
     /**
-     * Returns the description
-     *
-     * @return string $description
+     * @return string
      */
-    public function getDescription()
+    public function getDescription(): string
     {
         return $this->description;
     }
 
     /**
-     * Sets the description
-     *
      * @param string $description
-     * @return void
+     * @return Employee
      */
-    public function setDescription($description)
+    public function setDescription(string $description)
     {
         $this->description = $description;
+        return $this;
     }
 
     /**
-     * Returns the birthdate
-     *
-     * @return \DateTime $birthdate
+     * @return \DateTime
      */
     public function getBirthdate()
     {
@@ -136,51 +116,35 @@ class Employee extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Sets the birthdate
-     *
      * @param \DateTime $birthdate
-     * @return void
+     * @return Employee
      */
     public function setBirthdate(\DateTime $birthdate)
     {
         $this->birthdate = $birthdate;
+        return $this;
     }
 
     /**
-     * Returns the companyMobile
-     *
-     * @return bool $companyMobile
-     */
-    public function getCompanyMobile()
-    {
-        return $this->companyMobile;
-    }
-
-    /**
-     * Sets the companyMobile
-     *
-     * @param bool $companyMobile
-     * @return void
-     */
-    public function setCompanyMobile($companyMobile)
-    {
-        $this->companyMobile = $companyMobile;
-    }
-
-    /**
-     * Returns the boolean state of companyMobile
-     *
      * @return bool
      */
-    public function isCompanyMobile()
+    public function isCompanyMobile(): bool
     {
         return $this->companyMobile;
     }
 
     /**
-     * Returns the image
-     *
-     * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference $image
+     * @param bool $companyMobile
+     * @return Employee
+     */
+    public function setCompanyMobile(bool $companyMobile)
+    {
+        $this->companyMobile = $companyMobile;
+        return $this;
+    }
+
+    /**
+     * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference
      */
     public function getImage()
     {
@@ -188,13 +152,12 @@ class Employee extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Sets the image
-     *
      * @param \TYPO3\CMS\Extbase\Domain\Model\FileReference $image
-     * @return void
+     * @return Employee
      */
     public function setImage(\TYPO3\CMS\Extbase\Domain\Model\FileReference $image)
     {
         $this->image = $image;
+        return $this;
     }
 }

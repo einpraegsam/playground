@@ -2,7 +2,9 @@
 return [
     'ctrl' => [
         'title' => 'LLL:EXT:employees/Resources/Private/Language/locallang_db.xlf:tx_employees_domain_model_employee',
-        'label' => 'first_name',
+        'label' => 'last_name',
+        'label_alt' => 'first_name',
+        'label_alt_force' => true,
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
         'cruser_id' => 'cruser_id',
@@ -17,7 +19,7 @@ return [
             'endtime' => 'endtime',
         ],
         'searchFields' => 'first_name,last_name,description,birthdate,company_mobile,image',
-        'iconfile' => 'EXT:employees/Resources/Public/Icons/tx_employees_domain_model_employee.gif'
+        'iconfile' => 'EXT:employees/Resources/Public/Icons/tx_employees_domain_model_employee.svg'
     ],
     'interface' => [
         'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, first_name, last_name, description, birthdate, company_mobile, image',

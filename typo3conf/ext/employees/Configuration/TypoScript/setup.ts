@@ -9,7 +9,7 @@ plugin.tx_employees_pi1 {
         layoutRootPaths.1 = {$plugin.tx_employees_pi1.view.layoutRootPath}
     }
     persistence {
-        storagePid = {$plugin.tx_employees_pi1.persistence.storagePid}
+        #storagePid = {$plugin.tx_employees_pi1.persistence.storagePid}
         #recursive = 1
     }
     features {
