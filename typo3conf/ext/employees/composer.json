@@ -1,0 +1,19 @@
+{
+    "name": "in2code/employees",
+    "type": "typo3-cms-extension",
+    "description": "List some employees",
+    "authors": [
+        {
+            "name": "Alex Kellner",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "typo3/cms-core": "^8.6.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "In2code\\Employees\\": "Classes"
+        }
+    }
+}

@@ -18,7 +18,8 @@
   },
   "autoload": {
     "psr-4": {
-      "In2code\\Template\\": "typo3conf/ext/template/Classes"
+      "In2code\\Template\\": "typo3conf/ext/template/Classes",
+      "In2code\\Employees\\": "typo3conf/ext/employees/Classes"
     }
   }
 }

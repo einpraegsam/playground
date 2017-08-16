@@ -13,6 +13,7 @@ typo3conf/PackageStates.php
 typo3conf/ext/*
 !/typo3conf/ext/template/
 !/typo3conf/ext/contentelements/
+!/typo3conf/ext/employees/
 
 ### Dateien die per SYMLINK hinzugefügt werden
 ### bzw. Logfiles und TXT-Files
