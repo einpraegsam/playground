@@ -22,10 +22,13 @@ return [
         'iconfile' => 'EXT:employees/Resources/Public/Icons/tx_employees_domain_model_employee.svg'
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, first_name, last_name, description, birthdate, company_mobile, image',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, first_name, last_name, ' .
+            'description, birthdate, company_mobile, image, crdate',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, first_name, last_name, description, birthdate, company_mobile, image, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, first_name, last_name, ' .
+            'description, birthdate, company_mobile, image, crdate,' .
+            '--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -207,6 +210,17 @@ return [
                 ],
                 $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
             ),
+        ],
+        'crdate' => [
+            'exclude' => true,
+            'label' => 'Erstellungsdatum',
+            'config' => [
+                'type' => 'input',
+                'size' => 13,
+                'eval' => 'datetime',
+                'default' => 0,
+                'readOnly' => true
+            ],
         ],
     
     ],

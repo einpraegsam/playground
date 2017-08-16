@@ -58,6 +58,11 @@ class Employee extends AbstractEntity
     protected $image = null;
 
     /**
+     * @var \DateTime
+     */
+    protected $crdate = null;
+
+    /**
      * @return string
      */
     public function getFirstName(): string
@@ -162,6 +167,24 @@ class Employee extends AbstractEntity
     public function setImage(\TYPO3\CMS\Extbase\Domain\Model\FileReference $image)
     {
         $this->image = $image;
+        return $this;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getCrdate(): \DateTime
+    {
+        return $this->crdate;
+    }
+
+    /**
+     * @param \DateTime $crdate
+     * @return Employee
+     */
+    public function setCrdate(\DateTime $crdate)
+    {
+        $this->crdate = $crdate;
         return $this;
     }
 
