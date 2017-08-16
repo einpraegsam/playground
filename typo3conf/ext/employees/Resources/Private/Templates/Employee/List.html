@@ -1,1 +1,24 @@
-HW
+<f:if condition="{employees}">
+    <f:then>
+        <f:render section="Employees" arguments="{_all}" />
+    </f:then>
+    <f:else>
+        <f:render section="NoResults" arguments="{_all}" />
+    </f:else>
+</f:if>
+
+
+<f:section name="Employees">
+    <ul>
+        <f:for each="{employees}" as="employee">
+            <li>{employee.firstName} {employee.lastName}</li>
+        </f:for>
+    </ul>
+</f:section>
+
+
+<f:section name="NoResults">
+    <p class="alert alert-warning">
+        <f:translate key="list.noresults">No results found</f:translate>
+    </p>
+</f:section>

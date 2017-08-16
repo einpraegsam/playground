@@ -27,6 +27,7 @@
 
 			<trans-unit id="list.noresults">
 				<source>No results found!</source>
+				<target state="translated">Keine Ergebnisse gefunden!</target>
 			</trans-unit>
 		</body>
 	</file>

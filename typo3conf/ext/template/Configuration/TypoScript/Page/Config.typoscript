@@ -1,4 +1,5 @@
 config {
     absRefPrefix = /
     noPageTitle = 1
+    language = de
 }
