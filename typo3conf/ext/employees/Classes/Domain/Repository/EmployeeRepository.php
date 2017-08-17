@@ -21,6 +21,7 @@ class EmployeeRepository extends Repository
     {
         $query = $this->createQuery();
         $this->findByFilterWhere($filter, $query);
+        $this->findByFilterOrderings($query);
         return $query->execute();
     }
 
@@ -44,5 +45,19 @@ class EmployeeRepository extends Repository
             }
             $query->matching($query->logicalAnd($logicalAnd));
         }
+    }
+
+    /**
+     * @param QueryInterface $query
+     * @return void
+     */
+    protected function findByFilterOrderings(QueryInterface $query)
+    {
+        $query->setOrderings(
+            [
+                'lastName' => QueryInterface::ORDER_ASCENDING,
+                'firstName' => QueryInterface::ORDER_ASCENDING
+            ]
+        );
     }
 }
