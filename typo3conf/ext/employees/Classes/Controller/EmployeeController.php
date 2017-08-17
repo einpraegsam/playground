@@ -17,12 +17,14 @@ class EmployeeController extends ActionController
     protected $employeeRepository = null;
 
     /**
+     * @param array $filter
      * @return void
      */
-    public function listAction()
+    public function listAction(array $filter = [])
     {
-        $employees = $this->employeeRepository->findAll();
+        $employees = $this->employeeRepository->findByFilter($filter);
         $this->view->assign('employees', $employees);
+        $this->view->assign('filter', $filter);
     }
 
     /**
