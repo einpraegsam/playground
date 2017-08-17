@@ -184,7 +184,7 @@ class Employee extends AbstractEntity
     /**
      * @return \DateTime
      */
-    public function getCrdate(): \DateTime
+    public function getCrdate()
     {
         return $this->crdate;
     }

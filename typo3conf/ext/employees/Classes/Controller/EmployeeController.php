@@ -5,6 +5,7 @@ namespace In2code\Employees\Controller;
 use In2code\Employees\Domain\Model\Employee;
 use In2code\Employees\Domain\Model\Dto\FilterDto;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
+use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 
 /**
  * Class EmployeeController
@@ -16,6 +17,12 @@ class EmployeeController extends ActionController
      * @inject
      */
     protected $employeeRepository = null;
+
+    /**
+     * @var \TYPO3\CMS\Extbase\Persistence\Generic\PersistenceManager
+     * @inject
+     */
+    protected $persistenceManager;
 
     /**
      * @param FilterDto $filter
@@ -44,5 +51,26 @@ class EmployeeController extends ActionController
     public function detailAction(Employee $employee)
     {
         $this->view->assign('employee', $employee);
+    }
+
+    /**
+     * @return void
+     */
+    public function newAction()
+    {
+    }
+
+    /**
+     * @param Employee $employee
+     * @return void
+     */
+    public function createAction(Employee $employee)
+    {
+        $this->employeeRepository->add($employee);
+        $this->persistenceManager->persistAll();
+        $this->addFlashMessage(
+            LocalizationUtility::translate('flashmessage.new', 'employees', [$employee->getFullname()])
+        );
+        $this->redirect('list');
     }
 }

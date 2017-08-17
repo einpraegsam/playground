@@ -29,6 +29,11 @@
 				<source>No results found!</source>
 				<target state="translated">Keine Ergebnisse gefunden!</target>
 			</trans-unit>
+
+			<trans-unit id="flashmessage.new">
+				<source>New employee (%s) successfully created!</source>
+				<target state="translated">Neuer Mitarbeiter (%s) erfolgreich erzeugt!</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

@@ -28,6 +28,10 @@
 			<trans-unit id="list.noresults">
 				<source>No results found!</source>
 			</trans-unit>
+
+			<trans-unit id="flashmessage.new">
+				<source>New employee (%s) successfully created!</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

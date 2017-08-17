@@ -7,11 +7,11 @@ call_user_func(
             'In2code.Employees',
             'Pi1',
             [
-                'Employee' => 'list,list2,detail'
+                'Employee' => 'list,list2,create,new,detail'
             ],
             // non-cacheable actions
             [
-                'Employee' => 'list,list2'
+                'Employee' => 'list,list2,create,new'
             ]
         );
     }

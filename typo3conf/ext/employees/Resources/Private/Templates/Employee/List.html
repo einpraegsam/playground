@@ -1,5 +1,13 @@
-<f:debug>{_all}</f:debug>
 <f:render partial="Filter" arguments="{_all}" />
+
+
+<f:flashMessages as="flashMessages">
+    <ul class="alert alert-info">
+        <f:for each="{flashMessages}" as="flashMessage">
+            <li>{flashMessage.message}</li>
+        </f:for>
+    </ul>
+</f:flashMessages>
 
 
 <f:if condition="{employees}">
@@ -10,6 +18,11 @@
         <f:render section="NoResults" arguments="{_all}" />
     </f:else>
 </f:if>
+<f:link.action action="new" class="btn btn-info">Neuen Mitarbeiter anlegen</f:link.action>
+
+
+
+
 
 
 <f:section name="Employees">
@@ -22,6 +35,11 @@
         </f:for>
     </ul>
 </f:section>
+
+
+
+
+
 
 
 <f:section name="NoResults">
