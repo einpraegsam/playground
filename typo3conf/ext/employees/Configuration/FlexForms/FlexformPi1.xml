@@ -10,6 +10,27 @@
                 </TCEforms>
                 <type>array</type>
                 <el>
+                    <switchableControllerActions>
+                        <TCEforms>
+                            <label>Ansicht wählen:</label>
+                            <config>
+                                <type>select</type>
+                                <renderType>selectSingle</renderType>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">List 1</numIndex>
+                                        <numIndex index="1">Employee->list;Employee->detail;</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">List 2</numIndex>
+                                        <numIndex index="1">Employee->list2;</numIndex>
+                                    </numIndex>
+                                </items>
+                                <maxitems>1</maxitems>
+                                <size>1</size>
+                            </config>
+                        </TCEforms>
+                    </switchableControllerActions>
                     <settings.colorValue>
                         <TCEforms>
                             <exclude>1</exclude>

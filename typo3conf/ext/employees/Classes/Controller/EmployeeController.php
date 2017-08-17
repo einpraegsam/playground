@@ -29,6 +29,15 @@ class EmployeeController extends ActionController
     }
 
     /**
+     * @return void
+     */
+    public function list2Action()
+    {
+        $employees = $this->employeeRepository->findAll();
+        \TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($employees, 'in2code: ' . __CLASS__ . ':' . __LINE__);
+    }
+
+    /**
      * @param Employee $employee
      * @return void
      */

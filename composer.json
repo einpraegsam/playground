@@ -14,6 +14,7 @@
     "friendsoftypo3/extension-builder": "8.7.x-dev",
     "helhum/typo3-console": "*",
     "in2code/powermail": "*",
+    "in2code/femanager": "*",
     "mschwemer/rte-ckeditor-wordcount": "dev-master"
   },
   "autoload": {
