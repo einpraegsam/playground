@@ -3,6 +3,7 @@ declare(strict_types=1);
 namespace In2code\Employees\Controller;
 
 use In2code\Employees\Domain\Model\Employee;
+use In2code\Employees\Domain\Model\Dto\FilterDto;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 /**
@@ -17,10 +18,10 @@ class EmployeeController extends ActionController
     protected $employeeRepository = null;
 
     /**
-     * @param array $filter
+     * @param FilterDto $filter
      * @return void
      */
-    public function listAction(array $filter = [])
+    public function listAction(FilterDto $filter = null)
     {
         $employees = $this->employeeRepository->findByFilter($filter);
         $this->view->assign('employees', $employees);

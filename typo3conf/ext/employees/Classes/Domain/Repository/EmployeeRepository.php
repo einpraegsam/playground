@@ -2,6 +2,7 @@
 declare(strict_types=1);
 namespace In2code\Employees\Domain\Repository;
 
+use In2code\Employees\Domain\Model\Dto\FilterDto;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
@@ -14,28 +15,27 @@ class EmployeeRepository extends Repository
 {
 
     /**
-     * @param array $filter
+     * @param FilterDto $filter
      * @return QueryResultInterface
      */
-    public function findByFilter(array $filter): QueryResultInterface
+    public function findByFilter(FilterDto $filter = null): QueryResultInterface
     {
         $query = $this->createQuery();
-        $this->findByFilterWhere($filter, $query);
+        $this->findByFilterWhere($filter ?: GeneralUtility::makeInstance(FilterDto::class), $query);
         $this->findByFilterOrderings($query);
         return $query->execute();
     }
 
     /**
-     * @param array $filter
+     * @param FilterDto $filter
      * @param QueryInterface $query
      * @return void
      */
-    protected function findByFilterWhere(array $filter, QueryInterface $query)
+    protected function findByFilterWhere(FilterDto $filter, QueryInterface $query)
     {
-        if (!empty($filter['searchterm'])) {
-            $searchterms = GeneralUtility::trimExplode(' ', $filter['searchterm'], true);
+        if ($filter->isFiltered()) {
             $logicalAnd = [];
-            foreach ($searchterms as $searchterm) {
+            foreach ($filter->getSearchterms() as $searchterm) {
                 $logicalOr = [
                     $query->like('lastName', '%' . $searchterm . '%'),
                     $query->like('firstName', '%' . $searchterm . '%'),
