@@ -34,6 +34,11 @@
 				<source>New employee (%s) successfully created!</source>
 				<target state="translated">Neuer Mitarbeiter (%s) erfolgreich erzeugt!</target>
 			</trans-unit>
+
+			<trans-unit id="validation.1221560718">
+				<source>Field must not be empty: %s</source>
+				<target state="translated">Feld darf nicht leer sein: %s</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
