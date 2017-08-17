@@ -1,8 +1,16 @@
 <f:form name="filter" object="{filter}">
-    <label>
-        Suchbegriff:
-        <f:form.textfield property="searchterm" />
-    </label>
+    <div class="form-group">
+        <label>
+            Suchbegriff:
+            <f:form.textfield property="searchterm" class="form-control" />
+        </label>
+    </div>
+    <div class="form-group">
+        <label>
+            Mit Firmen-Mobiltelefon:
+            <f:form.checkbox property="companyMobile" class="form-control" value="1" />
+        </label>
+    </div>
 
     <f:form.submit
             value="Jetzt filtern"

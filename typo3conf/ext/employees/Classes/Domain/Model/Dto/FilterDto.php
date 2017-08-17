@@ -15,6 +15,11 @@ class FilterDto
     protected $searchterm = '';
 
     /**
+     * @var bool
+     */
+    protected $companyMobile = false;
+
+    /**
      * @return string
      */
     public function getSearchterm(): string
@@ -44,8 +49,26 @@ class FilterDto
     /**
      * @return bool
      */
+    public function isCompanyMobile(): bool
+    {
+        return $this->companyMobile;
+    }
+
+    /**
+     * @param bool $companyMobile
+     * @return FilterDto
+     */
+    public function setCompanyMobile(bool $companyMobile)
+    {
+        $this->companyMobile = $companyMobile;
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
     public function isFiltered(): bool
     {
-        return $this->getSearchterm() !== '';
+        return $this->getSearchterm() !== '' || $this->isCompanyMobile();
     }
 }

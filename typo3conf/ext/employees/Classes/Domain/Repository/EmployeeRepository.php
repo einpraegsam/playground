@@ -35,6 +35,9 @@ class EmployeeRepository extends Repository
     {
         if ($filter->isFiltered()) {
             $logicalAnd = [];
+            if ($filter->isCompanyMobile()) {
+                $logicalAnd[] = $query->equals('companyMobile', $filter->isCompanyMobile());
+            }
             foreach ($filter->getSearchterms() as $searchterm) {
                 $logicalOr = [
                     $query->like('lastName', '%' . $searchterm . '%'),
