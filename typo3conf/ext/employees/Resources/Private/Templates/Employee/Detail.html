@@ -2,6 +2,7 @@
     <li>
         <h3>{employee.fullName}</h3>
     </li>
+    <li>E-Mail-Adresse: <f:link.email email="{employee.email}" /></li>
     <li><f:format.nl2br>{employee.description}</f:format.nl2br></li>
     <li>Geburtsdatum: <f:format.date format="%d.%m.%Y">{employee.birthdate}</f:format.date></li>
     <li>Erstellungsdatum: <f:format.date format="%d.%m.%Y">{employee.crdate}</f:format.date></li>

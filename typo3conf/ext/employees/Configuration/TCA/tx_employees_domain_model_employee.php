@@ -19,15 +19,15 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'searchFields' => 'first_name,last_name,description,birthdate,company_mobile,image',
+        'searchFields' => 'first_name,last_name,email,description',
         'iconfile' => 'EXT:employees/Resources/Public/Icons/tx_employees_domain_model_employee.svg'
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, first_name, last_name, ' .
-            'description, birthdate, company_mobile, image, crdate',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, first_name, last_name,' .
+            ' email, description, birthdate, company_mobile, image, crdate',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, first_name, last_name, ' .
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, first_name, last_name, email, ' .
             'description, birthdate, company_mobile, image, crdate,' .
             '--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
@@ -130,6 +130,31 @@ return [
                 'type' => 'input',
                 'size' => 30,
                 'eval' => 'trim,required'
+            ],
+        ],
+        'email' => [
+            'exclude' => false,
+            'label' => 'Email',
+            'config' => [
+                'type' => 'input',
+                'size' => 30,
+                'eval' => 'trim,email',
+                // adds "mailto:" as prefix to database
+                //'wizards' => [
+                //    'link' => [
+                //        'type' => 'popup',
+                //        'title' => 'email',
+                //        'icon' => 'actions-wizard-link',
+                //        'module' => [
+                //            'name' => 'wizard_link',
+                //        ],
+                //        'JSopenParams' => 'height=800,width=600,status=0,menubar=0,scrollbars=1',
+                //        'params' => [
+                //            'blindLinkOptions' => 'file,page,spec,url,folder',
+                //            'blindLinkFields' => 'class,params,target,title'
+                //        ],
+                //    ],
+                //],
             ],
         ],
         'description' => [

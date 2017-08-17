@@ -12,6 +12,7 @@ CREATE TABLE tx_employees_domain_model_employee (
 	birthdate date DEFAULT '0000-00-00',
 	company_mobile smallint(5) unsigned DEFAULT '0' NOT NULL,
 	image int(11) unsigned NOT NULL default '0',
+	email varchar(255) DEFAULT '' NOT NULL,
 
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
 	crdate int(11) unsigned DEFAULT '0' NOT NULL,

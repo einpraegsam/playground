@@ -13,45 +13,38 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 class Employee extends AbstractEntity
 {
     /**
-     * firstName
-     *
      * @var string
      * @validate NotEmpty
      */
     protected $firstName = '';
 
     /**
-     * lastName
-     *
      * @var string
      * @validate NotEmpty
      */
     protected $lastName = '';
 
     /**
-     * description
-     *
+     * @var string
+     */
+    protected $email = '';
+
+    /**
      * @var string
      */
     protected $description = '';
 
     /**
-     * birthdate
-     *
      * @var \DateTime
      */
     protected $birthdate = null;
 
     /**
-     * companyMobile
-     *
      * @var bool
      */
     protected $companyMobile = false;
 
     /**
-     * image
-     *
      * @var \TYPO3\CMS\Extbase\Domain\Model\FileReference
      * @cascade remove
      */
@@ -95,6 +88,24 @@ class Employee extends AbstractEntity
     public function setLastName(string $lastName)
     {
         $this->lastName = $lastName;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getEmail(): string
+    {
+        return $this->email;
+    }
+
+    /**
+     * @param string $email
+     * @return Employee
+     */
+    public function setEmail(string $email)
+    {
+        $this->email = $email;
         return $this;
     }
 
