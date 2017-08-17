@@ -1,10 +1,10 @@
 <f:render partial="FormValidation" arguments="{_all}" />
 
-<f:form name="employee" action="create">
+<f:form name="employee" action="update" object="{employee}">
     <f:render partial="FormFields" arguments="{_all}" />
 
     <f:form.submit
-            value="Erstellen"
+            value="Ändern"
             class="btn btn-primary" />
 </f:form>
 

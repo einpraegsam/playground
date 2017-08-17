@@ -1,0 +1,51 @@
+<div class="form-group">
+    <label>
+        Vorname:
+        <f:form.textfield
+                property="firstName"
+                class="form-control" />
+    </label>
+</div>
+<div class="form-group">
+    <label>
+        Nachname:
+        <f:form.textfield
+                property="lastName"
+                class="form-control" />
+    </label>
+</div>
+<div class="form-group">
+    <label>
+        E-Mail:
+        <f:form.textfield
+                property="email"
+                class="form-control" />
+    </label>
+</div>
+<div class="form-group">
+    <label>
+        Beschreibung:
+        <f:form.textarea
+                property="description"
+                class="form-control" />
+    </label>
+</div>
+<div class="form-group">
+    <label>
+        Mobiltelefon:
+        <f:form.checkbox
+                property="companyMobile"
+                class="form-control"
+                value="1" />
+    </label>
+</div>
+<div class="form-group">
+    <label>
+        Geburtstag:
+        <f:form.textfield
+                property="birthdate"
+                placeholder="{f:translate(key:'format.date')}"
+                value="{employee.birthdate -> f:format.date(format:'{f:translate(key:\'format.date\')}')}"
+                class="form-control" />
+    </label>
+</div>

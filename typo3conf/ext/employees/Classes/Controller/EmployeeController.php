@@ -84,6 +84,37 @@ class EmployeeController extends ActionController
     }
 
     /**
+     * @param Employee $employee
+     * @return void
+     */
+    public function editAction(Employee $employee)
+    {
+        $this->view->assign('employee', $employee);
+    }
+
+    /**
+     * @return void
+     */
+    public function initializeUpdateAction()
+    {
+        $this->prepareBirthdateArguments();
+    }
+
+    /**
+     * @param Employee $employee
+     * @return void
+     */
+    public function updateAction(Employee $employee)
+    {
+        $this->employeeRepository->update($employee);
+        $this->persistenceManager->persistAll();
+        $this->addFlashMessage(
+            LocalizationUtility::translate('flashmessage.update', 'employees', [$employee->getFullname()])
+        );
+        $this->redirect('list');
+    }
+
+    /**
      * Deactivate unneeded errormessages in validation result viewhelper
      *
      * @return bool

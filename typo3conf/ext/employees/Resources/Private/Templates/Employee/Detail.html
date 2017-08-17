@@ -1,3 +1,4 @@
+<f:render partial="FormValidation" arguments="{_all}" />
 <ul>
     <li>
         <h3>{employee.fullName}</h3>
@@ -20,5 +21,11 @@
     </li>
     <li>
         <f:image image="{employee.image}" width="200" />
+    </li>
+    <li>
+        <f:link.action
+                action="edit"
+                class="btn btn-info"
+                arguments="{employee:employee}">Edit</f:link.action>
     </li>
 </ul>

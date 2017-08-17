@@ -34,6 +34,10 @@
 				<source>New employee (%s) successfully created!</source>
 				<target state="translated">Neuer Mitarbeiter (%s) erfolgreich erzeugt!</target>
 			</trans-unit>
+			<trans-unit id="flashmessage.update">
+				<source>Employee (%s) successfully updated!</source>
+				<target state="translated">Mitarbeiter (%s) erfolgreich geändert!</target>
+			</trans-unit>
 
 			<trans-unit id="validation.1221560718">
 				<source>Field must not be empty: %s</source>
