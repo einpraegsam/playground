@@ -73,4 +73,14 @@ class EmployeeController extends ActionController
         );
         $this->redirect('list');
     }
+
+    /**
+     * Deactivate unneeded errormessages in validation result viewhelper
+     *
+     * @return bool
+     */
+    protected function getErrorFlashMessage()
+    {
+        return false;
+    }
 }

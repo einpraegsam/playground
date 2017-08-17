@@ -36,6 +36,12 @@
 			<trans-unit id="validation.1221560718">
 				<source>Field must not be empty: %s</source>
 			</trans-unit>
+			<trans-unit id="validation.1502975089754">
+				<source>Field is not a correct email address: %s</source>
+			</trans-unit>
+			<trans-unit id="validation.1502978169443">
+				<source>Email is already registered</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

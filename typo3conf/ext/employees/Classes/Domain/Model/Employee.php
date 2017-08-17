@@ -26,8 +26,10 @@ class Employee extends AbstractEntity
 
     /**
      * @var string
+     * @validate NotEmpty
+     * @validate \In2code\Employees\Domain\Validation\UniqueEmailValidator
      */
-    protected $email = '';
+    protected $email;
 
     /**
      * @var string

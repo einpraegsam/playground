@@ -39,6 +39,14 @@
 				<source>Field must not be empty: %s</source>
 				<target state="translated">Feld darf nicht leer sein: %s</target>
 			</trans-unit>
+			<trans-unit id="validation.1502975089754">
+				<source>Field is not a correct email address: %s</source>
+				<target state="translated">Feld ist keine korrekte E-Mail-Adresse: %s</target>
+			</trans-unit>
+			<trans-unit id="validation.1502978169443">
+				<source>Email is already registered</source>
+				<target state="translated">E-Mail ist bereits registriert</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
