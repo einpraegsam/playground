@@ -28,5 +28,12 @@ call_user_func(
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages(
             'tx_employees_domain_model_employee'
         );
+
+        // Add FlexForm
+        $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist']['employees_pi1'] = 'pi_flexform';
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue(
+            'employees_pi1',
+            'FILE:EXT:employees/Configuration/FlexForms/FlexformPi1.xml'
+        );
     }
 );

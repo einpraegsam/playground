@@ -1,0 +1,27 @@
+<T3DataStructure>
+    <meta>
+        <langDisable>1</langDisable>
+    </meta>
+    <sheets>
+        <main>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>Configuration</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <settings.colorValue>
+                        <TCEforms>
+                            <exclude>1</exclude>
+                            <label>Farbe</label>
+                            <config>
+                                <type>input</type>
+                                <eval>trim</eval>
+                            </config>
+                        </TCEforms>
+                    </settings.colorValue>
+                </el>
+            </ROOT>
+        </main>
+    </sheets>
+</T3DataStructure>
