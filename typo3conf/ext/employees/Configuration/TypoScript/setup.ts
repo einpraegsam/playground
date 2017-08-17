@@ -1,4 +1,3 @@
-
 plugin.tx_employees_pi1 {
     view {
         templateRootPaths.0 = EXT:employees/Resources/Private/Templates/
@@ -21,6 +20,16 @@ plugin.tx_employees_pi1 {
     }
     mvc {
         #callDefaultActionIfActionCantBeResolved = 1
+    }
+    settings {
+        foo = bar
+
+        color {
+            1 {
+                value = red
+                category = 3
+            }
+        }
     }
 }
 
