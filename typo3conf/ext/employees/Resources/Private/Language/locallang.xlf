@@ -42,6 +42,10 @@
 			<trans-unit id="validation.1502978169443">
 				<source>Email is already registered</source>
 			</trans-unit>
+
+			<trans-unit id="format.date">
+				<source>Y-m-d</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

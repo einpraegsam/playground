@@ -47,6 +47,11 @@
 				<source>Email is already registered</source>
 				<target state="translated">E-Mail ist bereits registriert</target>
 			</trans-unit>
+
+			<trans-unit id="format.date">
+				<source>Y-m-d</source>
+				<target state="translated">d.m.Y</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

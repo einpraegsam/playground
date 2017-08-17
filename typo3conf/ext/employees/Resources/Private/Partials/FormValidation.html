@@ -4,7 +4,7 @@
             <f:for each="{validationResults.flattenedErrors}" as="errors" key="property">
                 <f:for each="{errors}" as="singleError">
                     <li title="{singleError.code}">
-                        <f:translate key="validation.{singleError.code}" arguments="{0:property}">{singleError.message}</f:translate>
+                        <f:translate key="validation.{singleError.code}" arguments="{0:property, 1:property}">{singleError.message}</f:translate>
                     </li>
                 </f:for>
             </f:for>

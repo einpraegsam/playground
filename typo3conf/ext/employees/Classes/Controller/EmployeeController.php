@@ -5,6 +5,7 @@ namespace In2code\Employees\Controller;
 use In2code\Employees\Domain\Model\Employee;
 use In2code\Employees\Domain\Model\Dto\FilterDto;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
+use TYPO3\CMS\Extbase\Property\TypeConverter\DateTimeConverter;
 use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 
 /**
@@ -61,6 +62,14 @@ class EmployeeController extends ActionController
     }
 
     /**
+     * @return void
+     */
+    public function initializeCreateAction()
+    {
+        $this->prepareBirthdateArguments();
+    }
+
+    /**
      * @param Employee $employee
      * @return void
      */
@@ -82,5 +91,18 @@ class EmployeeController extends ActionController
     protected function getErrorFlashMessage()
     {
         return false;
+    }
+
+    /**
+     * @return void
+     */
+    protected function prepareBirthdateArguments()
+    {
+        $configuration = $this->arguments->getArgument('employee')->getPropertyMappingConfiguration();
+        $configuration->forProperty('birthdate')->setTypeConverterOption(
+            DateTimeConverter::class,
+            DateTimeConverter::CONFIGURATION_DATE_FORMAT,
+            LocalizationUtility::translate('format.date', 'employees')
+        );
     }
 }
