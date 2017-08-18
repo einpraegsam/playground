@@ -52,6 +52,7 @@ class EmployeeController extends ActionController
     public function detailAction(Employee $employee)
     {
         $this->view->assign('employee', $employee);
+        $this->changePageMetaInformation($employee);
     }
 
     /**
@@ -165,5 +166,18 @@ class EmployeeController extends ActionController
             DateTimeConverter::CONFIGURATION_DATE_FORMAT,
             LocalizationUtility::translate('format.date', 'employees')
         );
+    }
+
+    /**
+     * @param Employee $employee
+     * @return void
+     * @SuppressWarnings(PHPMD.Superglobals)
+     */
+    protected function changePageMetaInformation(Employee $employee)
+    {
+        $GLOBALS['TSFE']->page['title'] = $employee->getFullname();
+        $GLOBALS['TSFE']->page['keywords'] = $employee->getFullname();
+        $GLOBALS['TSFE']->page['description'] = $employee->getFullname();
+        $GLOBALS['TSFE']->indexedDocTitle = $employee->getFullname();
     }
 }
