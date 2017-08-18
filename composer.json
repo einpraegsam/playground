@@ -15,6 +15,7 @@
     "helhum/typo3-console": "*",
     "in2code/powermail": "*",
     "in2code/femanager": "*",
+    "wyrihaximus/html-compress": "1.2.*",
     "mschwemer/rte_ckeditor_wordcount": "dev-master"
   },
   "autoload": {
