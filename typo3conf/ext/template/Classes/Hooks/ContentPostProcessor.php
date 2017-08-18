@@ -27,6 +27,13 @@ class ContentPostProcessor
                     $parser->compress($body[0]),
                     $typoScriptFrontend->content
                 );
+
+                // Remove comments
+                //$typoScriptFrontend->content = preg_replace(
+                //    '/<!-.*-->/isU',
+                //    '',
+                //    $typoScriptFrontend->content
+                //);
             }
         }
     }

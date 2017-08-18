@@ -2,4 +2,6 @@ config {
     absRefPrefix = /
     noPageTitle = 1
     language = de
+    index_enable = 1
+    compressBody = 1
 }
