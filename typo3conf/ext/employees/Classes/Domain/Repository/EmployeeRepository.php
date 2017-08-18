@@ -27,6 +27,18 @@ class EmployeeRepository extends Repository
     }
 
     /**
+     * @param string $part
+     * @return QueryResultInterface
+     */
+    public function findByLastNamePart(string $part): QueryResultInterface
+    {
+        $query = $this->createQuery();
+        $query->matching($query->like('lastName', $part . '%'));
+        $query->getQuerySettings()->setRespectStoragePage(false);
+        return $query->execute();
+    }
+
+    /**
      * @param FilterDto $filter
      * @param QueryInterface $query
      * @return void

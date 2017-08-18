@@ -16,7 +16,7 @@ plugin.tx_employees_pi1 {
         # if set to 1, the enable fields are ignored in BE context
         ignoreAllEnableFieldsInBe = 0
         # Should be on by default, but can be disabled if all action in the plugin are uncached
-        requireCHashArgumentForActionArguments = 0
+        requireCHashArgumentForActionArguments = 1
     }
     mvc {
         #callDefaultActionIfActionCantBeResolved = 1
@@ -66,3 +66,31 @@ plugin.tx_employees._CSS_DEFAULT_STYLE (
         color:green;
     }
 )
+
+
+suggestAjax = PAGE
+suggestAjax {
+    typeNum = 847857858
+    config {
+        additionalHeaders = Content-Type: application/json
+        additionalHeaders.10.header = Content-Type: application/json
+        no_cache = 1
+        disableAllHeaderCode = 1
+        disablePrefixComment = 1
+        xhtml_cleaning = 0
+        admPanel = 0
+        debug = 0
+    }
+
+    10  = USER
+    10 {
+        userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+        extensionName = Employees
+        pluginName = Pi1
+        vendorName = In2code
+        controller = Employee
+        action = suggestAjax
+        switchableControllerActions.Employee.1 = suggestAjax
+        features.requireCHashArgumentForActionArguments = 0
+    }
+}

@@ -58,6 +58,15 @@ class Employee extends AbstractEntity
     protected $crdate = null;
 
     /**
+     * @var array
+     */
+    protected $propertiesForArray = [
+        'uid',
+        'firstName',
+        'lastName'
+    ];
+
+    /**
      * @return string
      */
     public function getFirstName(): string
@@ -220,5 +229,17 @@ class Employee extends AbstractEntity
             return $birthdateService->isAtLeast18($birthdate);
         }
         return false;
+    }
+
+    /**
+     * @return array
+     */
+    public function getPropertiesForSuggestAction(): array
+    {
+        $properties = [];
+        foreach ($this->propertiesForArray as $property) {
+            $properties[$property] = $this->_getProperty($property);
+        }
+        return $properties;
     }
 }

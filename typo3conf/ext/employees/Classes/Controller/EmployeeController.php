@@ -117,6 +117,21 @@ class EmployeeController extends ActionController
     }
 
     /**
+     * @param string $search
+     * @return string
+     */
+    public function suggestAjaxAction(string $search): string
+    {
+        $employees = $this->employeeRepository->findByLastNamePart($search);
+        $employeesArray = [];
+        /** @var Employee $employee */
+        foreach ($employees as $employee) {
+            $employeesArray[] = $employee->getPropertiesForSuggestAction();
+        }
+        return json_encode($employeesArray);
+    }
+
+    /**
      * Deactivate unneeded errormessages in validation result viewhelper
      *
      * @return bool
