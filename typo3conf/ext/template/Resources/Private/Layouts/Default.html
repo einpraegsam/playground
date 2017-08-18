@@ -5,9 +5,12 @@
     <a class="navbar-brand" href="/">
         <f:image src="{f:uri.resource(path:'Images/in2code.png', extensionName:'template')}" width="200" />
     </a>
+    <p style="color: white">{pagetitle}</p>
+
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse" id="navbarResponsive">
         <f:cObject typoscriptObjectPath="lib.menu">
             <ul class="navbar-nav ml-auto">

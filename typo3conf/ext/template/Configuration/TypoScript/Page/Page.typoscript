@@ -23,6 +23,9 @@ page {
         layoutRootPaths {
             10 = EXT:template/Resources/Private/Layouts/
         }
+        dataProcessing {
+            1 = In2code\Template\DataProcessing\PageTitleProcessor
+        }
     }
 
     # Add individual title tag
