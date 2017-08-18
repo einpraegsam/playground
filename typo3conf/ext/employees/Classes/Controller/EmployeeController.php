@@ -66,6 +66,7 @@ class EmployeeController extends ActionController
      */
     public function initializeCreateAction()
     {
+        $this->checkAuthentication();
         $this->prepareBirthdateArguments();
     }
 
@@ -106,6 +107,7 @@ class EmployeeController extends ActionController
      */
     public function updateAction(Employee $employee)
     {
+        $this->checkAuthentication();
         $this->employeeRepository->update($employee);
         $this->persistenceManager->persistAll();
         $this->addFlashMessage(
@@ -122,6 +124,19 @@ class EmployeeController extends ActionController
     protected function getErrorFlashMessage()
     {
         return false;
+    }
+
+    /**
+     * Check if fe_user is logged in
+     *
+     * @SuppressWarnings(PHPMD.Superglobals)
+     * @return void
+     */
+    protected function checkAuthentication()
+    {
+        if ((int)$GLOBALS['TSFE']->fe_user->user['uid'] === 0) {
+            $this->forward('list');
+        }
     }
 
     /**
