@@ -1,0 +1,7 @@
+plugin.tx_indexedsearch_pi2 {
+    features.requireCHashArgumentForActionArguments = 0
+}
+
+lib.searchterm = TEXT
+lib.searchterm.data = GP:tx_indexedsearch_pi2|search|sword
+lib.searchterm.htmlSpecialChars = 1
