@@ -15,7 +15,7 @@
     "helhum/typo3-console": "*",
     "in2code/powermail": "*",
     "in2code/femanager": "*",
-    "mschwemer/rte-ckeditor-wordcount": "dev-master"
+    "mschwemer/rte_ckeditor_wordcount": "dev-master"
   },
   "autoload": {
     "psr-4": {
