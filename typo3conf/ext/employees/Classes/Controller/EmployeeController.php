@@ -46,6 +46,15 @@ class EmployeeController extends ActionController
     }
 
     /**
+     * @return void
+     */
+    public function listModuleAction()
+    {
+        $employees = $this->employeeRepository->findAll();
+        $this->view->assign('employees', $employees);
+    }
+
+    /**
      * @param Employee $employee
      * @return void
      */

@@ -1,0 +1,24 @@
+<f:layout name="Backend" />
+
+<f:section name="content">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Username</th>
+        </tr>
+        </thead>
+        <tbody>
+        <f:for each="{employees}" as="employee">
+            <tr>
+                <th scope="row">1</th>
+                <td>{employee.fullName}</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+            </tr>
+        </f:for>
+        </tbody>
+    </table>
+</f:section>

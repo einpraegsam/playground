@@ -35,5 +35,21 @@ call_user_func(
             'employees_pi1',
             'FILE:EXT:employees/Configuration/FlexForms/FlexformPi1.xml'
         );
+
+        // Add backend module
+        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerModule(
+            'In2code.employees',
+            'web',
+            'm1',
+            '',
+            array(
+                'Employee' => 'listModule'
+            ),
+            array(
+                'access' => 'user,group',
+                'icon' => 'EXT:employees/Resources/Public/Icons/tx_employees_domain_model_employee.svg',
+                'labels' => 'LLL:EXT:employees/Resources/Private/Language/locallang_mod.xlf',
+            )
+        );
     }
 );
