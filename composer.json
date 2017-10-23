@@ -8,6 +8,7 @@
   "require": {
     "typo3/cms": "8.*",
     "friendsoftypo3/extension-builder": "8.7.x-dev",
+    "in2code/powermail": "*",
     "helhum/typo3-console": "*"
   },
   "autoload": {
