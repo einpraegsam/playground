@@ -1,4 +1,16 @@
 # <INCLUDE_TYPOSCRIPT: source="FILE:typo3conf/ext/template/Configuration/TypoScript/Main.typoscript">
 page = PAGE
-page.10 = TEXT
-page.10.value = Hello World
+page {
+    10 = TEXT
+    10.value = H
+    10.noTrimWrap = || |
+
+    20 = TEXT
+    20.value = W
+}
+
+/**
+$typoScript = ['page'] = 'PAGE';
+$typoScript = ['page.']['10'] = 'TEXT';
+$typoScript = ['page.']['10.']['value'] = '<h2>Hello World</h2>';
+*/
