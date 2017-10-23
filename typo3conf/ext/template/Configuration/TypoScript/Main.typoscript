@@ -1,14 +1,14 @@
 page = PAGE
 page {
-    # GET/POST of &id=123
+    # &test=<div style="color:red">test</div>
     10 = TEXT
-    10.data = GP:id
-    10.wrap = <h1>|</h1>
+    10.data = GP:test
 
-    # GET/POST of &test=123
-    # And wrap it (but only if set)
-    20 = TEXT
-    20.data = GP:test
-    20.wrap = <h2>Testparameter: |</h2>
-    20.required = 1
+    # enforce integer
+    10.intval = 1
+
+    # enforce ascii signs for <>"'&
+    10.htmlSpecialChars = 1
+
+    10.wrap = <h1>|</h1>
 }
