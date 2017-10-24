@@ -1,30 +1,11 @@
 page = PAGE
 page {
-    10 = CONTENT
+    10 = USER
     10 {
-        table = tt_content
-
-        select {
-            pidInList = 1
-
-            # index.php?id=1&content=2
-            where.cObject = TEXT
-            where.cObject {
-                # uid=2
-                data = GP:content
-                wrap = uid=|
-                intval = 1
-            }
-        }
-
-        renderObj = COA
-        renderObj {
-            10 = TEXT
-            10.field = header
-            10.wrap = <h1>|</h1>
-
-            20 = TEXT
-            20.field = bodytext
+        userFunc = In2code\Template\User\WelcomeText->getText
+        text {
+            morning = Guten Morgen auf meiner Website
+            evening = Guten Abend auf meiner Website
         }
     }
 }
