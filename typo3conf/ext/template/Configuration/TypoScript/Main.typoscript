@@ -5,3 +5,5 @@ page {
         file = EXT:template/Resources/Private/Templates/Website.html
     }
 }
+
+lib.content < styles.content.get
