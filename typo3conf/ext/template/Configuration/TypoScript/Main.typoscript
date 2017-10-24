@@ -1,11 +1,5 @@
 page = PAGE
 page {
-    10 = USER
-    10 {
-        userFunc = In2code\Template\User\WelcomeText->getText
-        text {
-            morning = Guten Morgen auf meiner Website
-            evening = Guten Abend auf meiner Website
-        }
-    }
+    # Don't forget to add fluid static template!
+    10 < styles.content.get
 }
