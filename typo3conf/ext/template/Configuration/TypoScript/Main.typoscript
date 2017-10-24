@@ -9,7 +9,14 @@ page {
             where = uid = 1
         }
 
-        renderObj = TEXT
-        renderObj.field = header
+        renderObj = COA
+        renderObj {
+            10 = TEXT
+            10.field = header
+            10.wrap = <h1>|</h1>
+
+            20 = TEXT
+            20.field = bodytext
+        }
     }
 }
