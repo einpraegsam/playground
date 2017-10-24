@@ -32,11 +32,13 @@ lib.menu {
 
         NO = 1
         NO {
-            allWrap = <li class="nav-item">|</li>
+            wrapItemAndSub = <li class="nav-item">|</li>
             ATagParams = class="nav-link"
         }
 
         ACT < .NO
-        ACT.allWrap = <li class="nav-item active">|</li>
+        ACT.wrapItemAndSub = <li class="nav-item active">|</li>
     }
+
+    #2 < .1
 }
