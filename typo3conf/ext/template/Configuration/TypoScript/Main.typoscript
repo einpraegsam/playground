@@ -1,5 +1,8 @@
 page = PAGE
 page {
+    includeCSS.bootstrap = EXT:template/Resources/Public/Css/bootstrap.min.css
+    includeCSS.picture = EXT:template/Resources/Public/Css/Picture.css
+
     10 = FLUIDTEMPLATE
     10 {
         file = EXT:template/Resources/Private/Templates/Website.html
