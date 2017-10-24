@@ -19,3 +19,4 @@ lib.content < styles.content.get
 
 lib.date = TEXT
 lib.date.data = date:Y
+lib.date.noTrimWrap = |Copyright &copy; Your Website ||
