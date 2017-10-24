@@ -6,7 +6,15 @@ page {
 
         select {
             pidInList = 1
-            where = uid = 1
+
+            # index.php?id=1&content=2
+            where.cObject = TEXT
+            where.cObject {
+                # uid=2
+                data = GP:content
+                wrap = uid=|
+                intval = 1
+            }
         }
 
         renderObj = COA
