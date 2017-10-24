@@ -7,3 +7,6 @@ page {
 }
 
 lib.content < styles.content.get
+
+lib.date = TEXT
+lib.date.data = date:Y
