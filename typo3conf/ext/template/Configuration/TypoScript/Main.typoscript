@@ -1,14 +1,11 @@
 page = PAGE
 page {
-    # &test=<div style="color:red">test</div>
-    10 = TEXT
-    10.data = GP:test
-
-    # enforce integer
-    10.intval = 1
-
-    # enforce ascii signs for <>"'&
-    10.htmlSpecialChars = 1
-
-    10.wrap = <h1>|</h1>
+    10 = IMAGE
+    10 {
+        file = fileadmin/user_upload/dalmatiner.jpg
+        file.width = 300c
+        file.height = 300c
+        altText.field = title
+        titleText.field = subtitle
+    }
 }
