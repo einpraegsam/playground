@@ -15,8 +15,28 @@ page {
     }
 }
 
+
 lib.content < styles.content.get
+
 
 lib.date = TEXT
 lib.date.data = date:Y
 lib.date.noTrimWrap = |Copyright &copy; Your Website ||
+
+
+lib.menu = HMENU
+lib.menu {
+    1 = TMENU
+    1 {
+        wrap = <ul class="navbar-nav ml-auto">|</ul>
+
+        NO = 1
+        NO {
+            allWrap = <li class="nav-item">|</li>
+            ATagParams = class="nav-link"
+        }
+
+        ACT < .NO
+        ACT.allWrap = <li class="nav-item active">|</li>
+    }
+}
