@@ -4,11 +4,4 @@
 # Load own TypoScript
 <INCLUDE_TYPOSCRIPT: source="DIR:EXT:template/Configuration/TypoScript/Libraries" extensions="typoscript">
 <INCLUDE_TYPOSCRIPT: source="DIR:EXT:template/Configuration/TypoScript/Includes" extensions="typoscript">
-
-page = PAGE
-page {
-    10 = FLUIDTEMPLATE
-    10 {
-        file = EXT:template/Resources/Private/Templates/Website.html
-    }
-}
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:template/Configuration/TypoScript/Page" extensions="typoscript">
