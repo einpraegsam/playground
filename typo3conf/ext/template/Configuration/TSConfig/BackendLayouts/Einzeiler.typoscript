@@ -1,6 +1,6 @@
 mod.web_layout.BackendLayouts {
-    einspalter {
-        title = Einspalter
+    einzeiler {
+        title = Einzeiler
         icon = EXT:example_extension/Resources/Public/Images/BackendLayouts/default.gif
         config {
             backend_layout {
