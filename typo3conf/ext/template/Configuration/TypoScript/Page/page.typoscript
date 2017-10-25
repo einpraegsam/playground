@@ -3,6 +3,7 @@ page {
     10 = FLUIDTEMPLATE
     10 {
         layoutRootPath = EXT:template/Resources/Private/Layouts/
+        partialRootPath = EXT:template/Resources/Private/Partials/
 
         file.cObject = CASE
         file.cObject {
