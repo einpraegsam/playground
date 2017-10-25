@@ -1,0 +1,11 @@
+lib.menufooter = HMENU
+lib.menufooter {
+    special = directory
+    special.value = 8
+
+    1 = TMENU
+    1 {
+        wrap = <ul class="navigation-footer">|</ul>
+        NO.wrapItemAndSub = <li>|</li>
+    }
+}

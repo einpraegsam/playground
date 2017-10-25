@@ -32,4 +32,5 @@ body {
 
 .navigation-footer li>a {
   color: white;
+  padding: 0 10px;
 }
