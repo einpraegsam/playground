@@ -1,0 +1,30 @@
+mod.web_layout.BackendLayouts {
+    zweizeiler {
+        title = Zweizeiler
+        icon = EXT:example_extension/Resources/Public/Images/BackendLayouts/default.gif
+        config {
+            backend_layout {
+                colCount = 1
+                rowCount = 2
+                rows {
+                    1 {
+                        columns {
+                            1 {
+                                name = Oben
+                                colPos = 0
+                            }
+                        }
+                    }
+                    2 {
+                        columns {
+                            1 {
+                                name = Unten
+                                colPos = 1
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
