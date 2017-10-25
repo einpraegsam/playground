@@ -42,3 +42,11 @@ lib.menu {
 
     #2 < .1
 }
+
+
+lib.logo = IMAGE
+lib.logo {
+    file = EXT:template/Resources/Public/Images/in2code.png
+    file.width = 200
+    params = class="img-fluid d-block mx-auto"
+}
