@@ -1,0 +1,1 @@
+lib.content < styles.content.get

@@ -1,3 +1,5 @@
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:template/Configuration/TypoScript/Libraries" extensions="typoscript">
+
 page = PAGE
 page {
     includeCSS {
@@ -13,32 +15,4 @@ page {
     10 {
         file = EXT:template/Resources/Private/Templates/Website.html
     }
-}
-
-
-lib.content < styles.content.get
-
-
-lib.date = TEXT
-lib.date.data = date:Y
-lib.date.noTrimWrap = |Copyright &copy; Your Website ||
-
-
-lib.menu = HMENU
-lib.menu {
-    1 = TMENU
-    1 {
-        wrap = <ul class="navbar-nav ml-auto">|</ul>
-
-        NO = 1
-        NO {
-            wrapItemAndSub = <li class="nav-item">|</li>
-            ATagParams = class="nav-link"
-        }
-
-        ACT < .NO
-        ACT.wrapItemAndSub = <li class="nav-item active">|</li>
-    }
-
-    #2 < .1
 }
