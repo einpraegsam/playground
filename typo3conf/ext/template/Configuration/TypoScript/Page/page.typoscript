@@ -2,7 +2,6 @@ page = PAGE
 page {
     10 = FLUIDTEMPLATE
     10 {
-        file = TEXT
         file.stdWrap.cObject = CASE
         file.stdWrap.cObject {
             key.data = levelfield:-1, backend_layout_next_level, slide
