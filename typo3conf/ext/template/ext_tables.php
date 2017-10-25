@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Add Page TSConfig (e.g. for backend layouts)
  */
@@ -9,6 +10,8 @@
 /**
  * Add TypoScript setup for frontend rendering
  */
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTypoScriptSetup(
-    '<INCLUDE_TYPOSCRIPT: source="FILE:EXT:template/Configuration/TypoScript/Main.typoscript">'
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile(
+    'template',
+    'Configuration/TypoScript',
+    'Basic Template for Website'
 );
