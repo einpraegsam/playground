@@ -1,0 +1,6 @@
+page {
+    includeJSFooter {
+        jquery = EXT:template/Resources/Public/JavaScript/jquery.min.js
+        bootstrap = EXT:template/Resources/Public/JavaScript/bootstrap.bundle.min.js
+    }
+}
