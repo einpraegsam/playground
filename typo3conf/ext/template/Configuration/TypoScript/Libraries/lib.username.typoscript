@@ -1,0 +1,5 @@
+lib.username = COA_INT
+lib.username {
+    10 = TEXT
+    10.data = TSFE:fe_user|user|username
+}

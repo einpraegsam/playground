@@ -1,7 +1,7 @@
 <span class="login">
     <f:security.ifAuthenticated>
         <f:then>
-            Benutzername
+            <f:cObject typoscriptObjectPath="lib.username">Benutzername</f:cObject>
             (<f:link.page pageUid="1" additionalParams="{logintype:'logout'}">logout</f:link.page>)
         </f:then>
         <f:else>
