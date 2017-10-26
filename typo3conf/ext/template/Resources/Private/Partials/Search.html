@@ -1,5 +1,5 @@
 <form action="{f:uri.page(pageUid:13)}">
-    <input type="text" name="tx_indexedsearch_pi2[search][sword]" placeholder="Suchbegriff" />
+    <input type="text" name="tx_indexedsearch_pi2[search][sword]" placeholder="Suchbegriff" value="{f:cObject(typoscriptObjectPath:'lib.searchterm')}" />
     <input type="submit" value="suchen..." />
 
     <input type="hidden" name="id" value="13" />

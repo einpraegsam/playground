@@ -1,0 +1,4 @@
+// ?tx_indexedsearch_pi2[search][sword]=any
+lib.searchterm = TEXT
+lib.searchterm.data = GP:tx_indexedsearch_pi2|search|sword
+lib.searchterm.htmlSpecialChars = 1

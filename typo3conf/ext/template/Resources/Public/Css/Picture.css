@@ -35,6 +35,7 @@ body {
   padding: 0 10px;
 }
 
-.tx-indexedsearch-rules {
+.tx-indexedsearch-rules,
+.tx-indexedsearch-searchbox {
   display: none;
 }
