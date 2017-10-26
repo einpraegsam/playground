@@ -1,0 +1,9 @@
+config {
+    language = de
+    sys_language_uid = 0
+}
+
+[globalVar = GP:L=1]
+    config.language = en
+    config.sys_language_uid = 1
+[end]

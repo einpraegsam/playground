@@ -5,3 +5,4 @@
 <INCLUDE_TYPOSCRIPT: source="DIR:EXT:template/Configuration/TypoScript/Libraries" extensions="typoscript">
 <INCLUDE_TYPOSCRIPT: source="DIR:EXT:template/Configuration/TypoScript/Includes" extensions="typoscript">
 <INCLUDE_TYPOSCRIPT: source="DIR:EXT:template/Configuration/TypoScript/Page" extensions="typoscript">
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:template/Configuration/TypoScript/Configuration" extensions="typoscript">
