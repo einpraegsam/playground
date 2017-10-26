@@ -1,6 +1,7 @@
 config {
     language = de
     sys_language_uid = 0
+    linkVars = L
 }
 
 [globalVar = GP:L=1]
