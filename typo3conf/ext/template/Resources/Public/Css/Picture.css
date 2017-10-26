@@ -34,3 +34,7 @@ body {
   color: white;
   padding: 0 10px;
 }
+
+.tx-indexedsearch-rules {
+  display: none;
+}
