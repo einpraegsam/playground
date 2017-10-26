@@ -1,5 +1,6 @@
 # Load from other extensions
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:fluid_styled_content/Configuration/TypoScript/setup.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:indexed_search/Configuration/TypoScript/setup.txt">
 
 # Load own TypoScript
 <INCLUDE_TYPOSCRIPT: source="DIR:EXT:template/Configuration/TypoScript/Libraries" extensions="typoscript">
