@@ -39,3 +39,8 @@ body {
 .tx-indexedsearch-searchbox {
   display: none;
 }
+
+.login {
+  color: white;
+  margin-left: 10px;
+}

@@ -1,8 +1,11 @@
-<f:security.ifAuthenticated>
-    <f:then>
-        Benutzername (<f:link.page pageUid="1" additionalParams="{logintype:'logout'}">logout</f:link.page>)
-    </f:then>
-    <f:else>
-        <f:link.page pageUid="14" class="btn btn-primary">Login</f:link.page>
-    </f:else>
-</f:security.ifAuthenticated>
+<span class="login">
+    <f:security.ifAuthenticated>
+        <f:then>
+            Benutzername
+            (<f:link.page pageUid="1" additionalParams="{logintype:'logout'}">logout</f:link.page>)
+        </f:then>
+        <f:else>
+            <f:link.page pageUid="14" class="btn btn-primary">Login</f:link.page>
+        </f:else>
+    </f:security.ifAuthenticated>
+</span>
