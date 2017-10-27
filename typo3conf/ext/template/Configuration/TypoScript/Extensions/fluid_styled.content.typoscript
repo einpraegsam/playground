@@ -1,0 +1,11 @@
+lib.contentElement {
+    templateRootPaths {
+        10 = EXT:template/Resources/Private/Templates/Extensions/FluidStyledContent/
+    }
+    partialRootPaths {
+        10 = EXT:template/Resources/Private/Partials/Extensions/FluidStyledContent/
+    }
+    layoutRootPaths {
+        10 = EXT:template/Resources/Private/Layouts/Extensions/FluidStyledContent/
+    }
+}
