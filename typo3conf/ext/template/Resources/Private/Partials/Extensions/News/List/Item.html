@@ -36,17 +36,6 @@
 				</n:link>
 			</div>
 		</f:then>
-		<f:else>
-			<f:if condition="{settings.displayDummyIfNoMedia}">
-				<div class="news-img-wrap">
-					<span class="no-media-element">
-						<n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
-							<f:image src="{settings.list.media.dummyImage}" title="" alt="" maxWidth="{f:if(condition: settings.media.maxWidth, then: settings.media.maxWidth, else: settings.list.media.image.maxWidth)}" maxHeight="{f:if(condition: settings.media.maxHeight, then: settings.media.maxHeight, else: settings.list.media.image.maxHeight)}"/>
-						</n:link>
-					</span>
-				</div>
-			</f:if>
-		</f:else>
 	</f:if>
 
 
