@@ -10,7 +10,8 @@
     "friendsoftypo3/extension-builder": "8.7.x-dev",
     "in2code/powermail": "*",
     "helhum/typo3-console": "*",
-    "dmitryd/typo3-realurl": "*"
+    "dmitryd/typo3-realurl": "*",
+    "georgringer/news": "*"
   },
   "autoload": {
     "psr-4": {
