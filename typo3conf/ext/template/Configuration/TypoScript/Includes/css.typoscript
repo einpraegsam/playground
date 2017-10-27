@@ -1,6 +1,6 @@
 page {
     includeCSS {
         bootstrap = EXT:template/Resources/Public/Css/bootstrap.min.css
-        picture = EXT:template/Resources/Public/Css/Picture.css
+        picture = EXT:template/Resources/Public/Css/Custom.css
     }
 }
