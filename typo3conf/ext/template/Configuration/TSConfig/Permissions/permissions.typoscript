@@ -87,13 +87,20 @@ TCEFORM {
         recursive.disabled = 1
         categories.disabled = 1
         layout {
-            label.default = Split text in columns
-            label.de = Text automatisch auf Spalten aufteilen
+            label.default = Choose backgroundcolor
+            label.de = Hintergrundfarbe wählen
+
+            removeItems := addToList(3)
+            altLabels {
+                0 = Standard
+                1 = Background grey (bright)
+                2 = Background grey (dark)
+            }
         }
-        section_frame {
-            label.default = Accordion function for text
-            label.de = Accordion Funktion für Text
-        }
+        section_frame.disabled = 1
+        frame_class.disabled = 1
+        space_before_class.disabled = 1
+        space_after_class.disabled = 1
     }
     tx_news_domain_model_news {
         notes.disabled = 1
