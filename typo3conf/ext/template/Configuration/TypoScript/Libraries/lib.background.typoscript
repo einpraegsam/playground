@@ -1,10 +1,19 @@
-lib.background = IMG_RESOURCE
+lib.background = COA
 lib.background {
-    stdWrap.wrap = /
-    file {
-        import.data = levelmedia:-1, slide
-        treatIdAsReference = 1
-        import.listNum = 0
-        width = 1200
+    wrap = /
+
+    10 = IMG_RESOURCE
+    10 {
+        file.import.cObject = TEXT
+        file.import.cObject {
+            value = EXT:template/Resources/Public/Images/fish.jpg
+            override {
+                data = levelmedia:-1, slide
+                listNum = 0
+                required = 1
+            }
+        }
+        file.with = 1200
+        file.treatIdAsReference = 1
     }
 }
