@@ -1,6 +1,6 @@
 # TYPO3 instance for your training session
 
-Welcome to your individual training for extension development or administration/integration in TYPO3  
+**LRZ** - welcome to your individual training for extension development or administration/integration in TYPO3
 
 ## Note
 
