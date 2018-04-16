@@ -1,21 +1,15 @@
 page = PAGE
 page {
-    10 = CONTENT
+    10 = TEXT
     10 {
-        table = tt_content
-        select {
-            pidInList = 30
-            where = uid = 25
-        }
+        value = HW
+        // Constants "color=red" => {$color}
+        wrap = <p style="color:{$color}">|</p>
+    }
 
-        renderObj = COA
-        renderObj {
-            10 = TEXT
-            10.field = header
-            10.wrap = <h4>|</h4>
-
-            20 = TEXT
-            20.field = bodytext
-        }
+    20 = TEXT
+    20 {
+        value = HW
+        wrap = <p style="color:{$color}">|</p>
     }
 }
