@@ -1,4 +1,20 @@
 page = PAGE
 page {
-    10 < styles.content.get
+    10 = HMENU
+    10 {
+        wrap = <nav><ul>|</ul></nav>
+
+        1 = TMENU
+        1 {
+            NO {
+                wrapItemAndSub = <li>|</li>
+            }
+            ACT = 1
+            ACT {
+                wrapItemAndSub = <li><strong>|</strong></li>
+            }
+        }
+    }
+
+    20 < styles.content.get
 }
