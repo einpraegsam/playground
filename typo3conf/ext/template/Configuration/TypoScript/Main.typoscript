@@ -1,12 +1,16 @@
 page = PAGE
 page {
-    10 = IMAGE
+    10 = CONTENT
     10 {
-        file = fileadmin/user_upload/dalmatiner.jpg
-        file.width = 100c
-        file.height = 100c
-        altText = Dalmatiner
-        titleText = Wunderschöner Dalmatiner
-        params = class="rounded" id="headerimage"
+        table = tt_content
+        select {
+            pidInList = 30
+            where = uid = 25
+        }
+
+        renderObj = TEXT
+        renderObj {
+            field = header
+        }
     }
 }
