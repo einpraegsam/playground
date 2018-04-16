@@ -1,4 +1,10 @@
-# <INCLUDE_TYPOSCRIPT: source="FILE:typo3conf/ext/template/Configuration/TypoScript/Main.typoscript">
 page = PAGE
-page.10 = TEXT
-page.10.value = Hello World
+page {
+    10 = TEXT
+    10 {
+        value = Hallo
+        wrap = <h3>|</h3>
+    }
+
+    20 < .10
+}
