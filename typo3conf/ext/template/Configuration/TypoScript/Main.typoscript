@@ -1,14 +1,8 @@
 page = PAGE
 page {
-    10 = TEXT
+    10 = IMAGE
     10 {
-        # GET (POST):
-        # /index.php?id=30&test=xyz
-        data = GP:test
-
-        # security against XSS (cross site scripting)
-        htmlSpecialChars = 1
-
-        noTrimWrap = |<p>Copyright | LRZ</p>|
+        file = fileadmin/user_upload/dalmatiner.jpg
+        file.width = 100
     }
 }
