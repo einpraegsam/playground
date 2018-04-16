@@ -1,15 +1,4 @@
 page = PAGE
 page {
-    10 = TEXT
-    10 {
-        value = HW
-        // Constants "color=red" => {$color}
-        wrap = <p style="color:{$color}">|</p>
-    }
-
-    20 = TEXT
-    20 {
-        value = HW
-        wrap = <p style="color:{$color}">|</p>
-    }
+    10 < styles.content.get
 }
