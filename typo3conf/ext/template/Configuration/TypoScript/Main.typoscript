@@ -2,9 +2,13 @@ page = PAGE
 page {
     10 = TEXT
     10 {
-        value = Hallo
-        wrap = <h3>|</h3>
-    }
+        # GET (POST):
+        # /index.php?id=30&test=xyz
+        data = GP:test
 
-    20 < .10
+        # security against XSS (cross site scripting)
+        htmlSpecialChars = 1
+
+        noTrimWrap = |<p>Copyright | LRZ</p>|
+    }
 }
