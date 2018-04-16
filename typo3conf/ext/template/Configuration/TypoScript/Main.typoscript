@@ -3,6 +3,10 @@ page {
     10 = IMAGE
     10 {
         file = fileadmin/user_upload/dalmatiner.jpg
-        file.width = 100
+        file.width = 100c
+        file.height = 100c
+        altText = Dalmatiner
+        titleText = Wunderschöner Dalmatiner
+        params = class="rounded" id="headerimage"
     }
 }
