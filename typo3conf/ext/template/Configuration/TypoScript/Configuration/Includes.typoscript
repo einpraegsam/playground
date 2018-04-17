@@ -4,6 +4,7 @@ page {
         fa = EXT:template/Resources/Public/CSS/font-awesome.min.css
         google = https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic
         google.external = 1
+
         sli = EXT:template/Resources/Public/CSS/simple-line-icons.css
         template = EXT:template/Resources/Public/CSS/stylish-portfolio.min.css
     }
