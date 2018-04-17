@@ -34,6 +34,18 @@ lib.navigation {
 
 
 
+lib.footernavigation = HMENU
+lib.footernavigation {
+    special = directory
+    special.value = 34
+
+    wrap = <ul class="list-inline mb-5">|</ul>
+    1 = TMENU
+    1.NO.wrapItemAndSub = <li class="list-inline-item">|</li>
+}
+
+
+
 lib.title = COA
 lib.title {
     # Output of page title
