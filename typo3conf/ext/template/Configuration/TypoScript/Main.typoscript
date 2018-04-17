@@ -23,7 +23,7 @@ lib.content < styles.content.get
 
 lib.navigation = HMENU
 lib.navigation {
-    wrap = <ul class="sidebar-nav">|</ul>
+    wrap = <ul class="sidebar-nav"><li class="sidebar-brand"><a class="js-scroll-trigger" href="/">Home</a></li>|</ul>
 
     1 = TMENU
     1 {
