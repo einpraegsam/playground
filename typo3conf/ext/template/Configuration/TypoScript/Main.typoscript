@@ -15,5 +15,4 @@ page {
     }
 }
 
-lib.content = TEXT
-lib.content.value = HW
+lib.content < styles.content.get
