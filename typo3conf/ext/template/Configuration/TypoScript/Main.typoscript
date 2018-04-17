@@ -1,23 +1,7 @@
 page = PAGE
 page {
-    10 = HMENU
+    10 = FLUIDTEMPLATE
     10 {
-        wrap = <nav>|</nav>
-
-        1 = TMENU
-        1 {
-            wrap = <ul>|</ul>
-            NO {
-                wrapItemAndSub = <li>|</li>
-            }
-            ACT = 1
-            ACT {
-                wrapItemAndSub = <li><strong>|</strong></li>
-            }
-        }
-
-        2 < .1
+        file = typo3conf/ext/template/Resources/Private/Templates/Main.html
     }
-
-    20 < styles.content.get
 }
