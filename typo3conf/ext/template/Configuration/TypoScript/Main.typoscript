@@ -50,3 +50,11 @@ lib.title {
         wrap = <h3 class="mb-5">|</h3>
     }
 }
+
+
+
+lib.copy = TEXT
+lib.copy {
+    noTrimWrap = |<p class="text-muted small mb-0">Copyright &copy; LRZ |</p>|
+    data = date:Y
+}
