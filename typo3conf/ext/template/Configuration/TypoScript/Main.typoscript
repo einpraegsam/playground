@@ -31,3 +31,22 @@ lib.navigation {
         NO.ATagParams = class="js-scroll-trigger"
     }
 }
+
+
+
+lib.title = COA
+lib.title {
+    # Output of page title
+    10 = TEXT
+    10 {
+        data = page:title
+        wrap = <h1 class="mb-1">|</h1>
+    }
+
+    # Output of page subtitle
+    20 = TEXT
+    20 {
+        data = page:subtitle
+        wrap = <h3 class="mb-5">|</h3>
+    }
+}
