@@ -2,6 +2,6 @@ page = PAGE
 page {
     10 = FLUIDTEMPLATE
     10 {
-        file = typo3conf/ext/template/Resources/Private/Templates/Main.html
+        file = EXT:template/Resources/Private/Templates/Main.html
     }
 }
