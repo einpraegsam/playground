@@ -1,0 +1,10 @@
+lib.navigation = HMENU
+lib.navigation {
+    wrap = <ul class="sidebar-nav"><li class="sidebar-brand"><a class="js-scroll-trigger" href="/">Home</a></li>|</ul>
+
+    1 = TMENU
+    1 {
+        NO.wrapItemAndSub = <li class="sidebar-nav-item">|</li>
+        NO.ATagParams = class="js-scroll-trigger"
+    }
+}
