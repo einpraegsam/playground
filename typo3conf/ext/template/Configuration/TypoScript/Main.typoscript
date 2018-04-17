@@ -15,4 +15,19 @@ page {
     }
 }
 
+
+
 lib.content < styles.content.get
+
+
+
+lib.navigation = HMENU
+lib.navigation {
+    wrap = <ul class="sidebar-nav">|</ul>
+
+    1 = TMENU
+    1 {
+        NO.wrapItemAndSub = <li class="sidebar-nav-item">|</li>
+        NO.ATagParams = class="js-scroll-trigger"
+    }
+}
