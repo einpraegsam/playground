@@ -1,6 +1,9 @@
 <?php
 namespace In2code\Person\Domain\Model;
 
+use In2code\Person\Domain\Service\BirthdateService;
+use In2code\Person\Utility\StringUtility;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 /**
@@ -139,6 +142,16 @@ class Person extends AbstractEntity
     }
 
     /**
+     * @return string
+     */
+    public function getCrypticalEmail(): string
+    {
+        $email = $this->getEmail();
+        $email = StringUtility::convertEmail($email);
+        return $email;
+    }
+
+    /**
      * @param string $email
      * @return void
      */
@@ -152,7 +165,8 @@ class Person extends AbstractEntity
      */
     public function isOverEighteen(): bool
     {
-        $birthdate = $this->getBirthdate();
-        return $birthdate->diff(new \DateTime())->y >= 18;
+        /** @var BirthdateService $birthdateService */
+        $birthdateService = GeneralUtility::makeInstance(BirthdateService::class);
+        return $birthdateService->isOver18($this->getBirthdate());
     }
 }

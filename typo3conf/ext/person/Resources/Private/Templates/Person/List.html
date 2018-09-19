@@ -3,7 +3,7 @@
 		<ul>
 			<f:for each="{persons}" as="person">
 				<li>
-					{person.lastName}
+					{person.lastName} ({person.crypticalEmail})
 					- Ü18:
 					<f:if condition="{person.overEighteen}"><f:then>Ja</f:then><f:else>Nein</f:else></f:if>
 				</li>
