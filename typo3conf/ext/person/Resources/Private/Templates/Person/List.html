@@ -6,6 +6,7 @@
 					{person.lastName} ({person.crypticalEmail})
 					- Ü18:
 					<f:if condition="{person.overEighteen}"><f:then>Ja</f:then><f:else>Nein</f:else></f:if>
+					<f:link.action action="detail" arguments="{person:person}">Details</f:link.action>
 				</li>
 			</f:for>
 		</ul>

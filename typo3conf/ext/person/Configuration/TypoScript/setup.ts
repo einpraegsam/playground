@@ -9,7 +9,7 @@ plugin.tx_person_pi1 {
         layoutRootPaths.1 = {$plugin.tx_person_pi1.view.layoutRootPath}
     }
     persistence {
-        storagePid = {$plugin.tx_person_pi1.persistence.storagePid}
+        # storagePid = {$plugin.tx_person_pi1.persistence.storagePid}
         #recursive = 1
     }
     features {
@@ -17,7 +17,7 @@ plugin.tx_person_pi1 {
         # if set to 1, the enable fields are ignored in BE context
         ignoreAllEnableFieldsInBe = 0
         # Should be on by default, but can be disabled if all action in the plugin are uncached
-        requireCHashArgumentForActionArguments = 1
+        requireCHashArgumentForActionArguments = 0
     }
     mvc {
         #callDefaultActionIfActionCantBeResolved = 1

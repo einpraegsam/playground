@@ -2,6 +2,7 @@
 declare(strict_types=1);
 namespace In2code\Person\Controller;
 
+use In2code\Person\Domain\Model\Person;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 /**
@@ -24,5 +25,14 @@ class PersonController extends ActionController
     {
         $persons = $this->personRepository->findAll();
         $this->view->assign('persons', $persons);
+    }
+
+    /**
+     * @param Person $person
+     * @return void
+     */
+    public function detailAction(Person $person)
+    {
+        $this->view->assign('person', $person);
     }
 }
