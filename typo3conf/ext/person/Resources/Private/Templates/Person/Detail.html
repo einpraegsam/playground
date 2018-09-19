@@ -2,6 +2,10 @@
 	<li>{person.lastName}</li>
 	<li>{person.firstName}</li>
 	<li>{person.email}</li>
+	<li><f:image image="{person.image}" /></li>
+	<f:if condition="{person.birthdate}">
+		<li><f:format.date format="{f:translate(key:'dateformat')}">{person.birthdate}</f:format.date></li>
+	</f:if>
 </ul>
 
 <f:link.page>Zurück</f:link.page>

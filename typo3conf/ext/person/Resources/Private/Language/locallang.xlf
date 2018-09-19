@@ -21,6 +21,10 @@
 			<trans-unit id="tx_person_domain_model_person.email">
 				<source>Email</source>
 			</trans-unit>
+
+			<trans-unit id="dateformat">
+				<source>%Y</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
