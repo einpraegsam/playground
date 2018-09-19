@@ -1,21 +1,12 @@
 <?php
 namespace In2code\Person\Domain\Model;
 
-/***
- *
- * This file is part of the "Personlisting" Extension for TYPO3 CMS.
- *
- * For the full copyright and license information, please read the
- * LICENSE.txt file that was distributed with this source code.
- *
- *  (c) 2018 Alex Kellner <alexander.kellner@in2code.de>, In2code GmbH
- *
- ***/
+use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 /**
  * Person
  */
-class Person extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
+class Person extends AbstractEntity
 {
     /**
      * lastName
@@ -140,9 +131,7 @@ class Person extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Returns the email
-     *
-     * @return string $email
+     * @return string
      */
     public function getEmail()
     {
@@ -150,13 +139,20 @@ class Person extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Sets the email
-     *
      * @param string $email
      * @return void
      */
-    public function setEmail($email)
+    public function setEmail(string $email)
     {
         $this->email = $email;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isOverEighteen(): bool
+    {
+        $birthdate = $this->getBirthdate();
+        return $birthdate->diff(new \DateTime())->y >= 18;
     }
 }

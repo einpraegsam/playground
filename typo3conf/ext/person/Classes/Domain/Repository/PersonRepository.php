@@ -1,20 +1,11 @@
 <?php
 namespace In2code\Person\Domain\Repository;
 
-/***
- *
- * This file is part of the "Personlisting" Extension for TYPO3 CMS.
- *
- * For the full copyright and license information, please read the
- * LICENSE.txt file that was distributed with this source code.
- *
- *  (c) 2018 Alex Kellner <alexander.kellner@in2code.de>, In2code GmbH
- *
- ***/
+use TYPO3\CMS\Extbase\Persistence\Repository;
 
 /**
- * The repository for Persons
+ * Class PersonRepository
  */
-class PersonRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
+class PersonRepository extends Repository
 {
-    }
+}
