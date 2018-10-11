@@ -1,6 +1,6 @@
 # TYPO3 instance for your training session
 
-Welcome to your individual training for extension development or administration/integration in TYPO3  
+Welcome to your individual training for extension development or administration/integration in TYPO3
 
 ## Note
 
@@ -8,8 +8,10 @@ I renamed the repository from Playground to Training
 
 ## Overview
 
-| Branch      | Date        | Content                                           | 
+| Branch      | Date        | Content                                           |
 | ----------- | ----------- | ------------------------------------------------- |
+| insignio    | 2018-10     | Very small extbase insights                       |
+| unitue      | 2018-09     | Small extbase training                            |
 | lrz         | 2018-04     | TYPO3 Integration/Admin Training                  |
 | evs         | 2018-02     | TYPO3 Extbase/Fluid Person Training               |
 | undkonsorten| 2017-10     | TYPO3 Integration/Admin Training                  |
@@ -21,9 +23,9 @@ I renamed the repository from Playground to Training
 
 ## Contact
 
-Alex Kellner  
-TYPO3 Training and Consulting  
-alexander.kellner@in2code.de  
+Alex Kellner
+TYPO3 Training and Consulting
+alexander.kellner@in2code.de
 https://www.in2code.de
 
 ![in2code - Wir leben TYPO3](https://raw.githubusercontent.com/einpraegsam/playground/master/typo3conf/ext/template/Resources/Public/Images/in2code.png)
