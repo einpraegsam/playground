@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2018-10-11T15:06:14Z" product-name="blog">
+		<header/>
+		<body>
+			<trans-unit id="title.description">
+				<source>title</source>
+			</trans-unit>
+			<trans-unit id="text.description">
+				<source>text</source>
+			</trans-unit>
+			<trans-unit id="author.description">
+				<source>author</source>
+			</trans-unit>
+			<trans-unit id="publication_date.description">
+				<source>publicationDate</source>
+			</trans-unit>
+			<trans-unit id="published.description">
+				<source>published</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
