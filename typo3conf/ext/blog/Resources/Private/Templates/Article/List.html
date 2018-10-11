@@ -1,46 +1,8 @@
-<html xmlns:f="https://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-	<f:layout name="Default" />
-
-	This Template is responsible for creating a table of domain objects.
-
-	If you modify this template, do not forget to change the overwrite settings
-	in /Configuration/ExtensionBuilder/settings.yaml:
-	  Resources:
-		Private:
-		  Templates:
-			List.html: keep
-
-	Otherwise your changes will be overwritten the next time you save the extension in the extension builder
-
-	<f:section name="content">
-		<h1>Listing for Article</h1>
-
-		<f:flashMessages />
-
-		<table  class="tx_blog" >
-			<tr>
-				<th><f:translate key="tx_blog_domain_model_article.title" /></th>
-				<th><f:translate key="tx_blog_domain_model_article.text" /></th>
-				<th><f:translate key="tx_blog_domain_model_article.author" /></th>
-				<th><f:translate key="tx_blog_domain_model_article.publication_date" /></th>
-				<th><f:translate key="tx_blog_domain_model_article.published" /></th>
-				<th> </th>
-				<th> </th>
-			</tr>
-
-			<f:for each="{articles}" as="article">
-				<tr>
-					<td><f:link.action action="show" arguments="{article : article}"> {article.title}</f:link.action></td>
-					<td><f:link.action action="show" arguments="{article : article}"> {article.text}</f:link.action></td>
-					<td><f:link.action action="show" arguments="{article : article}"> {article.author}</f:link.action></td>
-					<td><f:link.action action="show" arguments="{article : article}"> {article.publicationDate -> f:format.date()}</f:link.action></td>
-					<td><f:link.action action="show" arguments="{article : article}"> {article.published}</f:link.action></td>
-					<td><f:link.action action="edit" arguments="{article : article}">Edit</f:link.action></td>
-					<td><f:link.action action="delete" arguments="{article : article}">Delete</f:link.action></td>
-				</tr>
-			</f:for>
-		</table>
-
-		<f:link.action action="new">New Article</f:link.action>
-	</f:section>
-</html>
+<ul>
+	<f:for each="{articles}" as="article">
+		<li>
+			{article.title}
+			<f:link.action action="show" arguments="{article:article}">Details</f:link.action>
+		</li>
+	</f:for>
+</ul>

@@ -9,11 +9,11 @@ call_user_func(
             'In2code.Blog',
             'Pi1',
             [
-                'Article' => 'list'
+                'Article' => 'list,show'
             ],
             // non-cacheable actions
             [
-                'Article' => ''
+                'Article' => 'list'
             ]
         );
 
@@ -37,12 +37,12 @@ call_user_func(
        }'
     );
 		$iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
-		
+
 			$iconRegistry->registerIcon(
 				'blog-plugin-pi1',
 				\TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
 				['source' => 'EXT:blog/Resources/Public/Icons/user_plugin_pi1.svg']
 			);
-		
+
     }
 );
