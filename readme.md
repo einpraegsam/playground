@@ -8,18 +8,18 @@ I renamed the repository from Playground to Training
 
 ## Overview
 
-| Branch      | Date        | Content                                           |
-| ----------- | ----------- | ------------------------------------------------- |
-| insignio    | 2018-10     | Very small extbase insights                       |
-| unitue      | 2018-09     | Small extbase training                            |
-| lrz         | 2018-04     | TYPO3 Integration/Admin Training                  |
-| evs         | 2018-02     | TYPO3 Extbase/Fluid Person Training               |
-| undkonsorten| 2017-10     | TYPO3 Integration/Admin Training                  |
-| eno.de      | 2017-08     | TYPO3 Integration/Admin & Extbase/Fluid Training  |
-| group       | 2017-08     | TYPO3 Extbase/Fluid Group Training                |
-| puffer      | 2017-07     | TYPO3 Extbase/Fluid Person Training               |
-| twofour     | 2017-06     | TYPO3 Extbase/Fluid Company Training              |
-| unikonstanz | 2017-03     | TYPO3 Extbase/Fluid Company Training              |
+| Branch      | Date        | TYPO3       | Content                                           |
+| ----------- | ----------- | ----------- | ------------------------------------------------- |
+| insignio    | 2018-10     | 8.7 LTS     | Very small extbase insights                       |
+| unitue      | 2018-09     | 8.7 LTS     | Small extbase training                            |
+| lrz         | 2018-04     | 8.7 LTS     | TYPO3 Integration/Admin Training                  |
+| evs         | 2018-02     | 8.7 LTS     | TYPO3 Extbase/Fluid Person Training               |
+| undkonsorten| 2017-10     | 8.7 LTS     | TYPO3 Integration/Admin Training                  |
+| eno.de      | 2017-08     | 8.7 LTS     | TYPO3 Integration/Admin & Extbase/Fluid Training  |
+| group       | 2017-08     | 8.7 LTS     | TYPO3 Extbase/Fluid Group Training                |
+| puffer      | 2017-07     | 8.7 LTS     | TYPO3 Extbase/Fluid Person Training               |
+| twofour     | 2017-06     | 8.7 LTS     | TYPO3 Extbase/Fluid Company Training              |
+| unikonstanz | 2017-03     | 8.7 LTS     | TYPO3 Extbase/Fluid Company Training              |
 
 ## Contact
 
