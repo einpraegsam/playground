@@ -1,4 +1,18 @@
 # <INCLUDE_TYPOSCRIPT: source="FILE:typo3conf/ext/template/Configuration/TypoScript/Main.typoscript">
 page = PAGE
-page.10 = TEXT
-page.10.value = Hello World
+page {
+    includeCSS.bootstrap = EXT:template/Resources/Public/Css/bootstrap.min.css
+    includeCSS.fontawsome = EXT:template/Resources/Public/Css/all.min.css
+    includeCSS.main = EXT:template/Resources/Public/Css/grayscale.min.css
+    includeCSS.font1 = https://fonts.googleapis.com/css?family=Varela+Round
+    includeCSS.font1.external = 1
+    includeCSS.font2 = https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i
+    includeCSS.font2.external = 1
+
+    10 = FLUIDTEMPLATE
+    10.file = EXT:template/Resources/Private/Templates/Page.html
+
+    bodyTag >
+    bodyTagCObject = TEXT
+    bodyTagCObject.stdWrap.dataWrap = <body id="page-top" data-page-identifier="{field:uid}"|>
+}
