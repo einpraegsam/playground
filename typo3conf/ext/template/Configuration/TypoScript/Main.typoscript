@@ -1,4 +1,6 @@
-# <INCLUDE_TYPOSCRIPT: source="FILE:typo3conf/ext/template/Configuration/TypoScript/Main.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:fluid_styled_content/Configuration/TypoScript/Styling/setup.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:fluid_styled_content/Configuration/TypoScript/setup.txt">
+
 page = PAGE
 page {
     includeCSS.bootstrap = EXT:template/Resources/Public/Css/bootstrap.min.css
@@ -10,9 +12,18 @@ page {
     includeCSS.font2.external = 1
 
     10 = FLUIDTEMPLATE
-    10.file = EXT:template/Resources/Private/Templates/Page.html
+    10.file = EXT:template/Resources/Private/Templates/Page/Page.html
 
     bodyTag >
     bodyTagCObject = TEXT
     bodyTagCObject.stdWrap.dataWrap = <body id="page-top" data-page-identifier="{field:uid}"|>
 }
+
+lib.contentElement {
+    templateRootPaths {
+        0 = EXT:fluid_styled_content/Resources/Private/Templates/
+        10 = EXT:template/Resources/Private/Templates/Extensions/FluidStyledContent/
+    }
+}
+
+lib.content < styles.content.get
