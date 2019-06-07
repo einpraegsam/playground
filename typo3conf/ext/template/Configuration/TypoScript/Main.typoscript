@@ -10,6 +10,9 @@ page {
     includeCSS.font1.external = 1
     includeCSS.font2 = https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i
     includeCSS.font2.external = 1
+    includeCSS.lightbox = EXT:template/Resources/Public/Css/lightbox.min.css
+
+    includeJSFooter.lightbox = EXT:template/Resources/Public/JavaScript/lightbox-plus-jquery.min.js
 
     10 = FLUIDTEMPLATE
     10.file = EXT:template/Resources/Private/Templates/Page/Page.html
@@ -23,6 +26,10 @@ lib.contentElement {
     templateRootPaths {
         0 = EXT:fluid_styled_content/Resources/Private/Templates/
         10 = EXT:template/Resources/Private/Templates/Extensions/FluidStyledContent/
+    }
+    partialRootPaths {
+        0 = EXT:fluid_styled_content/Resources/Private/Partials/
+        10 = EXT:template/Resources/Private/Partials/Extensions/FluidStyledContent/
     }
 }
 
