@@ -1,7 +1,14 @@
 <?php
 // PASSWORDS
-$saltFactory = \TYPO3\CMS\Saltedpasswords\Salt\SaltFactory::getSaltingInstance();
-$GLOBALS['TYPO3_CONF_VARS']['BE']['installToolPassword'] = $saltFactory->getHashedPassword('akellner');
+if (class_exists(\TYPO3\CMS\Core\Crypto\PasswordHashing\PasswordHashFactory::class)) {
+    $hashInstance = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(
+        \TYPO3\CMS\Core\Crypto\PasswordHashing\PasswordHashFactory::class
+    )->getDefaultHashInstance('BE');
+    $GLOBALS['TYPO3_CONF_VARS']['BE']['installToolPassword'] = $hashInstance->getHashedPassword('akellner');
+} else {
+    $saltFactory = \TYPO3\CMS\Saltedpasswords\Salt\SaltFactory::getSaltingInstance();
+    $GLOBALS['TYPO3_CONF_VARS']['BE']['installToolPassword'] = $saltFactory->getHashedPassword('akellner');
+}
 
 // MISC
 $GLOBALS['TYPO3_CONF_VARS']['BE']['sessionTimeout'] = 9999999999;
