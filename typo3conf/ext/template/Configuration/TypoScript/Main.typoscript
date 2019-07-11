@@ -1,28 +1,24 @@
 page = PAGE
 page {
-    10 = TEXT
-    10.data = TSFE:id
-    10.wrap = <h1>|</h1>
-
-    20 = IMAGE
-    20.file = fileadmin/user_upload/dalmatiner.png
-    20.file.width = 400c
-    20.file.height = 400c
-    20.altText = Dalmatiner in Feld
-    20.titleText = Hier sehen Sie ein Mohnfeld mit Dalmatiner
-    20.params = class="image" id="imagex"
-
-    30 = COA
-    30 {
-        10 = TEXT
-        10.value = HW
-
-        20 = COA
-        20 {
-            10 = COA
+    10 = CONTENT
+    10 {
+        table = tt_content
+        select {
+            pidInList = 2
+            where = uid = 1
+        }
+        renderObj = COA
+        renderObj {
+            10 = TEXT
             10 {
-                10 < page.30.10
+                field = header
+                wrap = <h1>|</h1>
             }
+            20 = TEXT
+            20 {
+                field = pid
+                noTrimWrap = |Befindet sich auf der Seite: ||
+             }
         }
     }
 }
