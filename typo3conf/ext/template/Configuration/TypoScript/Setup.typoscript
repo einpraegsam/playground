@@ -1,0 +1,6 @@
+page = PAGE
+page {
+    10 = TEXT
+    10.value = Hallo Welt
+    10.wrap = <h1 style="color:{$configuration.color.1};">|</h1>
+}

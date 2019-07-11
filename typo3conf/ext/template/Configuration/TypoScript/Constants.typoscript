@@ -1,0 +1,5 @@
+configuration {
+    color {
+        1 = blue
+    }
+}
