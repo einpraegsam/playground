@@ -1,20 +1,41 @@
 page = PAGE
 page {
-    10 = HMENU
-    10 {
-        1 = TMENU
-        1 {
-#            expAll = 1
-            wrap = <ul>|</ul>
-            NO {
-                wrapItemAndSub = <li>|</li>
-            }
-            CUR = 1
-            CUR {
-                wrapItemAndSub = <li><b>|</b></li>
-            }
-        }
-        2 < .1
-        3 < .1
+    # Enable wrap and subtitle if value in pages.subtitle
+    10 = TEXT
+    10.field = subtitle
+    10.wrap = <h1>Überschrift:|</h1>
+    10.if.isTrue.field = subtitle
+
+
+
+
+    # Case cObject example
+    20 = CASE
+    20 {
+        key.cObject = TEXT
+        key.cObject.value = abc
+
+        abc = TEXT
+        abc.value = abcd
+
+        def = TEXT
+        def.value = defd
+
+        default = TEXT
+        default.value = passt gar nix
     }
+
+
+
+
+    30 = TEXT
+    30.value = Du bist auf irgendeiner Seite
+    30.value.wrap = <p>|</p>
 }
+
+
+
+# Conditions to disable children TypoScript
+[globalVar = TSFE:id = 2]
+    page.30.value = Du bist auf Seite 2
+[end]
