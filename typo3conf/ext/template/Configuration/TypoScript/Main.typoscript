@@ -1,4 +1,14 @@
-# <INCLUDE_TYPOSCRIPT: source="FILE:typo3conf/ext/template/Configuration/TypoScript/Main.typoscript">
 page = PAGE
-page.10 = TEXT
-page.10.value = Hello World
+page {
+    10 = TEXT
+    10.data = TSFE:id
+    10.wrap = <h1>|</h1>
+
+    20 = IMAGE
+    20.file = fileadmin/user_upload/dalmatiner.png
+    20.file.width = 400c
+    20.file.height = 400c
+    20.altText = Dalmatiner in Feld
+    20.titleText = Hier sehen Sie ein Mohnfeld mit Dalmatiner
+    20.params = class="image" id="imagex"
+}
