@@ -1,6 +1,6 @@
 # TYPO3 instance for your training session
 
-Welcome to your individual training for extension development or administration/integration in TYPO3
+Welcome to your individual training for extension development or administration/integration in TYPO3 8.7
 
 ## Note
 
@@ -10,6 +10,7 @@ I renamed the repository from Playground to Training
 
 | Branch      | Date        | TYPO3       | Content                                           |
 | ----------- | ----------- | ----------- | ------------------------------------------------- |
+| unikonstanz2| 2019-07     | 8.7 LTS     | TYPO3 Integration/Admin Training                  |
 | insignio    | 2018-10     | 8.7 LTS     | Very small extbase insights                       |
 | unitue      | 2018-09     | 8.7 LTS     | Small extbase training                            |
 | lrz         | 2018-04     | 8.7 LTS     | TYPO3 Integration/Admin Training                  |
