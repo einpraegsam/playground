@@ -1,6 +1,8 @@
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:fluid_styled_content/Configuration/TypoScript/setup.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:fluid_styled_content/Configuration/TypoScript/Styling/setup.txt">
+
+
 page = PAGE
 page {
-    10 = TEXT
-    10.value = Hallo Welt
-    10.wrap = <h1 style="color:{$configuration.color.1};">|</h1>
+    10 < styles.content.get
 }
