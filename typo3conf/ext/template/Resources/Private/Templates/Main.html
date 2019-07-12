@@ -16,7 +16,19 @@
 		<nav class="navigation-main">
 			<ul>
 				<f:for each="{menu}" as="menuItem">
-					<li{f:if(condition:menuItem.current,then:' style="font-weight:bold;"')}><a href="{menuItem.link}">{menuItem.title}</a></li>
+					<li{f:if(condition:menuItem.current,then:' style="font-weight:bold;"')}>
+						<a href="{menuItem.link}">{menuItem.title}</a>
+
+						<f:if condition="{menuItem.children}">
+							<ul>
+								<f:for each="{menuItem.children}" as="submenuItem">
+									<li{f:if(condition:submenuItem.current,then:' style="font-weight:bold;"')}>
+										<a href="{submenuItem.link}">{submenuItem.title}</a>
+									</li>
+								</f:for>
+							</ul>
+						</f:if>
+					</li>
 				</f:for>
 			</ul>
 		</nav>

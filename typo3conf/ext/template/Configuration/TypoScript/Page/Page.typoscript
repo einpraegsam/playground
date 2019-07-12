@@ -8,6 +8,9 @@ page {
 
         dataProcessing {
             10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            10 {
+                levels = 2
+            }
         }
 
         variables {
