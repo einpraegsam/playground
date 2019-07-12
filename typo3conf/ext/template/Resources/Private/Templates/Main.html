@@ -37,12 +37,14 @@
 </div>
 
 <footer>
-	<nav class="navigation-footer">
-		<ul>
-			<li><a href="#">Impressum</a></li>
-			<li><a href="#">Datenschutz</a></li>
-		</ul>
-	</nav>
+	<f:cObject typoscriptObjectPath="lib.navigationFooter">
+		<nav class="navigation-footer">
+			<ul>
+				<li><a href="#">Impressum</a></li>
+				<li><a href="#">Datenschutz</a></li>
+			</ul>
+		</nav>
+	</f:cObject>
 
 	<f:cObject typoscriptObjectPath="lib.copyrightLine">
 		&copy; Copyright Uni Konstanz 2019

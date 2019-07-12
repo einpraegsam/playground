@@ -2,7 +2,7 @@
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:fluid_styled_content/Configuration/TypoScript/Styling/constants.txt">
 
 configuration {
-    color {
-        1 = blue
+    pid {
+        navigationFooter = 9
     }
 }

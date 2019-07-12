@@ -43,3 +43,20 @@ lib.logo {
     value = <img src="https://www.uni-konstanz.de/fileadmin/templates/relaunch/img/logo.svg" width="200" />
     typolink.parameter = 1
 }
+
+
+
+lib.navigationFooter = HMENU
+lib.navigationFooter {
+    special = directory
+    special.value = {$configuration.pid.navigationFooter}
+    wrap = <nav class="navigation-footer">|</nav>
+
+    1 = TMENU
+    1 {
+        wrap = <ul>|</ul>
+        NO {
+            wrapItemAndSub = <li>|</li>
+        }
+    }
+}
