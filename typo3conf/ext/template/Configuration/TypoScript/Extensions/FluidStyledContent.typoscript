@@ -1,2 +1,8 @@
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:fluid_styled_content/Configuration/TypoScript/setup.txt">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:fluid_styled_content/Configuration/TypoScript/Styling/setup.txt">
+
+lib.contentElement {
+    templateRootPaths {
+        10 = EXT:template/Resources/Private/FluidStyledContent/Templates/
+    }
+}
