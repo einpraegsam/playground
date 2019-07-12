@@ -1,0 +1,5 @@
+lib.logo = TEXT
+lib.logo {
+    value = <img src="https://www.uni-konstanz.de/fileadmin/templates/relaunch/img/logo.svg" width="200" />
+    typolink.parameter = 1
+}
