@@ -8,6 +8,10 @@ page {
 
     10 = FLUIDTEMPLATE
     10.file = EXT:template/Resources/Private/Templates/Main.html
+    10.variables {
+        navigationFooter = TEXT
+        navigationFooter.value = {$configuration.pid.navigationFooter}
+    }
 }
 
 
