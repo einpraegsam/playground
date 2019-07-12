@@ -1,17 +1,3 @@
-lib.navigationMain = HMENU
-lib.navigationMain {
-    wrap = <nav class="navigation-main">|</nav>
-
-    1 = TMENU
-    1 {
-        wrap = <ul>|</ul>
-        NO {
-            wrapItemAndSub = <li>|</li>
-        }
-    }
-}
-
-
 lib.navigationFooter = HMENU
 lib.navigationFooter {
     special = directory
