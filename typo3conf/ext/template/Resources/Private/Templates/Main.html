@@ -1,51 +1,53 @@
-<header>
-	<f:link.page pageUid="1">
-		<f:image src="typo3conf/ext/template/Resources/Public/Images/Logo_UniKonstanz.jpg" width="200" title="Logo Uni Konstanz" alt="Logo Uni Konstanz" />
-	</f:link.page>
+<div class="all {f:if(condition:data.darkmode,then:'darkmode',else:'brightmode')}">
+	<header>
+		<f:link.page pageUid="1">
+			<f:image src="typo3conf/ext/template/Resources/Public/Images/Logo_UniKonstanz.jpg" width="200" title="Logo Uni Konstanz" alt="Logo Uni Konstanz" />
+		</f:link.page>
 
-	<nav class="navigation-language">
-		<ul>
-			<li>deutsch</li>
-			<li>english</li>
-		</ul>
-	</nav>
-</header>
-
-<div class="body">
-	<f:cObject typoscriptObjectPath="lib.navigationMain">
-		<nav class="navigation-main">
+		<nav class="navigation-language">
 			<ul>
-				<li><a href="#">Startseite</a></li>
-				<li><a href="#">Unterseite 1</a></li>
-				<li><a href="#">Unterseite 2</a></li>
+				<li>deutsch</li>
+				<li>english</li>
 			</ul>
 		</nav>
-	</f:cObject>
+	</header>
 
-	<div class="body-container">
-		<f:cObject typoscriptObjectPath="lib.content">
-			<h1 class="red">First Site</h1>
-			<p class="red">
-				Lorem ipsum dolor sit amet, consetetur<br />sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-			</p>
-			<img src="https://www.uni-konstanz.de/typo3temp/secure_downloads/54203/0/2fa4e56636ab3ad35891d1db7d25e9b9daf0f48b/csm_DSC_3239_9b07a6a146.jpg" width="300" />
-			<p>
-				Lorem ipsum dolor sit amet, <a href="#">consetetur sadipscing</a> elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-			</p>
+	<div class="body">
+		<f:cObject typoscriptObjectPath="lib.navigationMain">
+			<nav class="navigation-main">
+				<ul>
+					<li><a href="#">Startseite</a></li>
+					<li><a href="#">Unterseite 1</a></li>
+					<li><a href="#">Unterseite 2</a></li>
+				</ul>
+			</nav>
 		</f:cObject>
+
+		<div class="body-container">
+			<f:cObject typoscriptObjectPath="lib.content">
+				<h1 class="red">First Site</h1>
+				<p class="red">
+					Lorem ipsum dolor sit amet, consetetur<br />sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+				</p>
+				<img src="https://www.uni-konstanz.de/typo3temp/secure_downloads/54203/0/2fa4e56636ab3ad35891d1db7d25e9b9daf0f48b/csm_DSC_3239_9b07a6a146.jpg" width="300" />
+				<p>
+					Lorem ipsum dolor sit amet, <a href="#">consetetur sadipscing</a> elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+				</p>
+			</f:cObject>
+		</div>
 	</div>
+
+	<footer>
+		<f:cObject typoscriptObjectPath="lib.navigationFooter">
+			<nav class="navigation-footer">
+				<ul>
+					<li><a href="#">Impressum</a></li>
+					<li><a href="#">Datenschutz</a></li>
+				</ul>
+			</nav>
+		</f:cObject>
+
+		&copy; Copyright Uni Konstanz
+		<f:format.date format="Y">now</f:format.date>
+	</footer>
 </div>
-
-<footer>
-	<f:cObject typoscriptObjectPath="lib.navigationFooter">
-		<nav class="navigation-footer">
-			<ul>
-				<li><a href="#">Impressum</a></li>
-				<li><a href="#">Datenschutz</a></li>
-			</ul>
-		</nav>
-	</f:cObject>
-
-	&copy; Copyright Uni Konstanz
-	<f:format.date format="Y">now</f:format.date>
-</footer>
