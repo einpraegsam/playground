@@ -9,6 +9,17 @@ page {
         dataProcessing {
             10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
             10 {
+                special = directory
+                special.value = 1
+
+                # Overwrite menu start page if backend_layout="startseite"
+                special.value.override.cObject = USER
+                special.value.override.cObject.userFunc = In2code\Template\User\GetNextStartPage->get
+                special.value.override.if {
+                    value = 2
+                    equals.data = levelfield:-1, backend_layout_next_level, slide
+                    equals.override.field = backend_layout
+                }
                 levels = 2
             }
         }
