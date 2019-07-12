@@ -13,15 +13,13 @@
 	</header>
 
 	<div class="body">
-		<f:cObject typoscriptObjectPath="lib.navigationMain">
-			<nav class="navigation-main">
-				<ul>
-					<li><a href="#">Startseite</a></li>
-					<li><a href="#">Unterseite 1</a></li>
-					<li><a href="#">Unterseite 2</a></li>
-				</ul>
-			</nav>
-		</f:cObject>
+		<nav class="navigation-main">
+			<ul>
+				<f:for each="{menu}" as="menuItem">
+					<li{f:if(condition:menuItem.current,then:' style="font-weight:bold;"')}><a href="{menuItem.link}">{menuItem.title}</a></li>
+				</f:for>
+			</ul>
+		</nav>
 
 		<div class="body-container">
 			<f:cObject typoscriptObjectPath="lib.content">

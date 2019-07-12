@@ -3,9 +3,16 @@ page {
     includeCSS.main = EXT:template/Resources/Public/Css/Main.css
 
     10 = FLUIDTEMPLATE
-    10.file = EXT:template/Resources/Private/Templates/Main.html
-    10.variables {
-        navigationFooter = TEXT
-        navigationFooter.value = {$configuration.pid.navigationFooter}
+    10 {
+        file = EXT:template/Resources/Private/Templates/Main.html
+
+        dataProcessing {
+            10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+        }
+
+        variables {
+            navigationFooter = TEXT
+            navigationFooter.value = {$configuration.pid.navigationFooter}
+        }
     }
 }
