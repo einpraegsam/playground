@@ -9,13 +9,16 @@
 </header>
 
 <div class="body">
-	<nav class="navigation-main">
-		<ul>
-			<li><a href="#">Startseite</a></li>
-			<li><a href="#">Unterseite 1</a></li>
-			<li><a href="#">Unterseite 2</a></li>
-		</ul>
-	</nav>
+	<f:cObject typoscriptObjectPath="lib.navigationMain">
+		<nav class="navigation-main">
+			<ul>
+				<li><a href="#">Startseite</a></li>
+				<li><a href="#">Unterseite 1</a></li>
+				<li><a href="#">Unterseite 2</a></li>
+			</ul>
+		</nav>
+	</f:cObject>
+
 	<div class="body-container">
 		<f:cObject typoscriptObjectPath="lib.content">
 			<h1 class="red">First Site</h1>
