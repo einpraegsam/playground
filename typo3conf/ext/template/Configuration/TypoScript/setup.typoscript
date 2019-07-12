@@ -4,5 +4,8 @@
 
 page = PAGE
 page {
-    10 < styles.content.get
+    includeCSS.main = EXT:template/Resources/Public/Css/Main.css
+
+    10 = FLUIDTEMPLATE
+    10.file = EXT:template/Resources/Private/Templates/Main.html
 }

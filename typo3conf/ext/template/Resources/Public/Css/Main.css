@@ -1,0 +1,32 @@
+.red {
+	color: red;
+}
+a {
+    color: #d45cff;
+}
+.navigation-language,
+.navigation-footer {
+    display: inline-block;
+    float: right;
+}
+.body {
+    display: flex;
+}
+.navigation-main {
+    flex: 1 1;
+    margin-top: 80px;
+}
+.navigation-main ul {
+    list-style-type: none;
+    padding: 0;
+}
+.navigation-main ul li a {
+    display: block;
+    background-color: #eee;
+    padding: 10px;
+    border-bottom: 1px solid #888;
+    margin-right: 20px;
+}
+.body-container {
+    flex: 3 1;
+}
