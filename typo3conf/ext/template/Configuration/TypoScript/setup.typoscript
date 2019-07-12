@@ -12,3 +12,10 @@ page {
 
 
 lib.content < styles.content.get
+
+
+lib.copyrightLine = TEXT
+lib.copyrightLine {
+    data = date:Y
+    noTrimWrap = |&copy; Copyright Uni Konstanz ||
+}
