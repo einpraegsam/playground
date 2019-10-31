@@ -1,63 +1,18 @@
-### TYPO3 spezielle Dateien
-.*
+/var/
+/vendor/
 composer.lock
-fileadmin/
-typo3temp/
-uploads/
-typo3conf/l10n/
-typo3conf/LocalConfiguration.php
-typo3conf/ENABLE_INSTALL_TOOL
-typo3conf/PackageStates.php
 
-### TYPO3 Extension Handling (typo3conf/ext ignorieren und alle eigenen Extensions, ausser die über Composer kommen, ausnehmen)
-typo3conf/ext/*
-!/typo3conf/ext/template/
+/public/index.php
+/public/fileadmin
+/public/typo3
+/public/typo3temp
+/public/uploads
+/public/typo3conf/PackageStates.php
+/public/typo3conf/LocalConfiguration.php
+/public/typo3conf/l10n
+!/public/typo3conf/AdditionalConfiguration
+!/public/typo3conf/AdditionalConfiguration.php
+/public/typo3conf/ext/*
+!/public/typo3conf/ext/template/
 
-### Dateien die per SYMLINK hinzugefügt werden
-### bzw. Logfiles und TXT-Files
-typo3
-typo3_src
-index.php
-typo3conf/*.log
-ChangeLog
-GPL.txt
-INSTALL.txt
-NEWS.txt
-RELEASE_NOTES.txt
-
-### dynamische Build-Files ausschließen
-node_modules
-Export/
-vendor/
-.sass-cache/
-npm-debug.log
-/Build/Assets/JavaScript/Concat/*.js
-/Build/Assets/Klickdummy/*.json
-/Build/bower_components
-
-# CI spezifische Dateien
-/build.xml
-/Build/Artefacts/
-/Build/Deployment/vendor/
-/Build/In2codeBuild/
-/Build/In2codeBuildessentials/
-/Build/WorkingDirectoryForTools/
-/cache.properties
-
-### IDE spezielle Dateien
-msi.iws
-.idea/
-nbproject/
-.svn
-dynamicReturnTypeMeta.json
-
-### OS spezielle Dateien
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-*.swp
-*.swo
+.idea

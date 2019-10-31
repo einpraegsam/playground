@@ -2,9 +2,6 @@
 
 Welcome to your individual training for extension development or administration/integration in TYPO3
 
-## Note
-
-I renamed the repository from Playground to Training
 
 ## Overview
 
@@ -21,6 +18,13 @@ I renamed the repository from Playground to Training
 | puffer      | 2017-07     | 8.7 LTS     | TYPO3 Extbase/Fluid Person Training               |
 | twofour     | 2017-06     | 8.7 LTS     | TYPO3 Extbase/Fluid Company Training              |
 | unikonstanz | 2017-03     | 8.7 LTS     | TYPO3 Extbase/Fluid Company Training              |
+
+
+## Changelog
+
+* 2019-10-31: Updated structure and composer.json for TYPO3 9.5
+* 2017-08-18: Repository from Playground to Training
+
 
 ## Contact
 
