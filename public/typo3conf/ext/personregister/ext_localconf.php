@@ -6,7 +6,7 @@ call_user_func(function () {
         'In2code.personregister',
         'Pi1',
         [
-            'Person' => 'list'
+            'Person' => 'list,detail'
         ],
         [
             'Person' => 'list'
