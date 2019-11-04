@@ -20,7 +20,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Vendor\\Example\\": "typo3conf/ext/vendor/Classes"
+      "In2code\\Personregister\\": "public/typo3conf/ext/personregister/Classes"
     }
   },
   "scripts": {
