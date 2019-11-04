@@ -14,5 +14,6 @@ composer.lock
 !/public/typo3conf/AdditionalConfiguration.php
 /public/typo3conf/ext/*
 !/public/typo3conf/ext/template/
+!/public/typo3conf/ext/personregister/
 
 .idea
