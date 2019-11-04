@@ -2,10 +2,12 @@
 declare(strict_types=1);
 namespace In2code\Personregister\Domain\Model;
 
+use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
+
 /**
  * Class Person
  */
-class Person
+class Person extends AbstractEntity
 {
     /**
      * @var string

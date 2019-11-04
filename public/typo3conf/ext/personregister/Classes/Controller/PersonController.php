@@ -2,7 +2,7 @@
 declare(strict_types=1);
 namespace In2code\Personregister\Controller;
 
-use In2code\Personregister\Domain\Model\Person;
+use In2code\Personregister\Domain\Repository\PersonRepository;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 /**
@@ -15,7 +15,10 @@ class PersonController extends ActionController
      */
     public function listAction(): void
     {
-        $this->view->assign('person', new Person());
+        $personRepository = $this->objectManager->get(PersonRepository::class);
+        $persons = $personRepository->findAll();
+        \TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($persons, 'in2code ' . __CLASS__ . ':' . __LINE__);
+        $this->view->assign('persons', $persons);
     }
 
     /**
