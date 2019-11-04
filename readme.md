@@ -1,6 +1,7 @@
 # TYPO3 instance for your training session
 
-Welcome to your individual training for extension development or administration/integration in TYPO3
+Welcome Berlin-Brandenburgische Akademie der Wissenschaften 
+to your individual training for extension development in TYPO3
 
 
 ## Overview
