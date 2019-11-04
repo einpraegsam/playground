@@ -1,1 +1,12 @@
-Hello World Detail
+<ul>
+	<li>{person.firstName}</li>
+	<li>{person.lastName}</li>
+	<li>{person.room}</li>
+	<li>{person.phone}</li>
+	<li>
+		<f:if condition="{person.gender}">
+			<f:then>Frau</f:then>
+			<f:else>Mann</f:else>
+		</f:if>
+	</li>
+</ul>
