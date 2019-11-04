@@ -20,6 +20,21 @@ class Person extends AbstractEntity
     protected $lastName = 'Kellner';
 
     /**
+     * @var string
+     */
+    protected $room = '';
+
+    /**
+     * @var string
+     */
+    protected $phone = '';
+
+    /**
+     * @var bool
+     */
+    protected $gender = false;
+
+    /**
      * @return string {object.firstName}
      */
     public function getFirstName(): string
@@ -61,5 +76,59 @@ class Person extends AbstractEntity
     public function isNight(): bool
     {
         return true;
+    }
+
+    /**
+     * @return string
+     */
+    public function getRoom(): string
+    {
+        return $this->room;
+    }
+
+    /**
+     * @param string $room
+     * @return Person
+     */
+    public function setRoom(string $room): self
+    {
+        $this->room = $room;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPhone(): string
+    {
+        return $this->phone;
+    }
+
+    /**
+     * @param string $phone
+     * @return Person
+     */
+    public function setPhone(string $phone): self
+    {
+        $this->phone = $phone;
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isGender(): bool
+    {
+        return $this->gender;
+    }
+
+    /**
+     * @param bool $gender
+     * @return Person
+     */
+    public function setGender(bool $gender): self
+    {
+        $this->gender = $gender;
+        return $this;
     }
 }
