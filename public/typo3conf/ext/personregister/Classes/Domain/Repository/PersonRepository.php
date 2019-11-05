@@ -17,11 +17,11 @@ class PersonRepository extends Repository
      * @return QueryResultInterface
      * @throws InvalidQueryException
      */
-    public function findByFilter(Filter $filter): QueryResultInterface
+    public function findByFilter(Filter $filter = null): QueryResultInterface
     {
         $query = $this->createQuery();
 
-        if ($filter->isSet()) {
+        if ($filter !== null && $filter->isSet()) {
             $logicalOr = [];
             foreach ($filter->getSearchterms() as $searchterm) {
                 $logicalOr[] = $query->like('firstName', '%' . $searchterm . '%');
