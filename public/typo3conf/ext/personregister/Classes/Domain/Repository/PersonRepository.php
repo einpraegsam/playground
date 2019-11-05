@@ -14,6 +14,19 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 class PersonRepository
 {
     /**
+     * @var \Doctrine\DBAL\Driver\Mysqli\MysqliConnection|null
+     */
+    protected $connection = null;
+
+    /**
+     * PersonRepository constructor.
+     */
+    public function __construct()
+    {
+        $this->connection = GeneralUtility::makeInstance(DatabaseConnection::class)->build();
+    }
+
+    /**
      * @param Filter|null $filter
      * @return array
      */
