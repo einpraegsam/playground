@@ -3,36 +3,41 @@ declare(strict_types=1);
 namespace In2code\Personregister\Domain\Repository;
 
 use In2code\Personregister\Domain\Model\Dto\Filter;
-use TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException;
-use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
-use TYPO3\CMS\Extbase\Persistence\Repository;
+use TYPO3\CMS\Core\Database\ConnectionPool;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  * Class PersonRepository
+ * Use https://docs.typo3.org/m/typo3/reference-coreapi/master/en-us/ApiOverview/Database/Configuration/Index.html
+ * to define more then only 1 database
  */
-class PersonRepository extends Repository
+class PersonRepository
 {
     /**
-     * @param Filter $filter
-     * @return QueryResultInterface
-     * @throws InvalidQueryException
+     * @param Filter|null $filter
+     * @return array
      */
-    public function findByFilter(Filter $filter = null): QueryResultInterface
+    public function findByFilter(Filter $filter = null): array
     {
-        $query = $this->createQuery();
+    }
 
-        if ($filter !== null && $filter->isSet()) {
-            $logicalOr = [];
-            foreach ($filter->getSearchterms() as $searchterm) {
-                $logicalOr[] = $query->like('firstName', '%' . $searchterm . '%');
-                $logicalOr[] = $query->like('lastName', '%' . $searchterm . '%');
-                $logicalOr[] = $query->like('room', '%' . $searchterm . '%');
-                $logicalOr[] = $query->like('phone', '%' . $searchterm . '%');
-            }
-            $constraint = $query->logicalOr($logicalOr);
-            $query->matching($constraint);
-        }
-
-        return $query->execute();
+    /**
+     * See https://docs.typo3.org/m/typo3/reference-coreapi/master/en-us/ApiOverview/Database/QueryBuilder/Index.html
+     * for some exapmles how to use the querybuilder in TYPO3
+     *
+     * @param int $identifier
+     * @return array
+     */
+    public function findByUid(int $identifier): array
+    {
+        $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('inschrift');
+        return (array)$queryBuilder
+            ->select('id', 'inschrift', 'text')
+            ->from('inschrift')
+            ->where(
+                $queryBuilder->expr()->eq('id', $queryBuilder->createNamedParameter($identifier, \PDO::PARAM_INT))
+            )
+            ->execute()
+            ->fetch();
     }
 }
