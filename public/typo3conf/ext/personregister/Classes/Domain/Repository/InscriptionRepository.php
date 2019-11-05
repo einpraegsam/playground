@@ -32,6 +32,16 @@ class InscriptionRepository
      */
     public function findByFilter(Filter $filter = null): array
     {
+        $filter = ['suchbegriff' => 'III'];
+        $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('inschrift');
+        return (array)$queryBuilder
+            ->select('id', 'inschrift', 'text')
+            ->from('inschrift')
+            ->where(
+                $queryBuilder->expr()->eq('inschrift', $queryBuilder->createNamedParameter($filter['suchbegriff'], \PDO::PARAM_STR))
+            )
+            ->execute()
+            ->fetchAll();
     }
 
     /**

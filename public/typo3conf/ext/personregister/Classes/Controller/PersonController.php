@@ -24,6 +24,8 @@ class PersonController extends ActionController
      */
     public function listAction(Filter $filter = null): void
     {
+        $inscriptions = $this->inscriptionRepository->findByFilter($filter);
+        $this->view->assign('inscriptions', $inscriptions);
     }
 
     /**
