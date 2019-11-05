@@ -6,10 +6,10 @@ call_user_func(function () {
         'In2code.personregister',
         'Pi1',
         [
-            'Person' => 'list,detail'
+            'Person' => 'list,jsonList,detail'
         ],
         [
-            'Person' => 'list'
+            'Person' => 'list,jsonList'
         ]
     );
 });

@@ -36,4 +36,36 @@ class PersonController extends ActionController
     {
         $this->view->assign('person', $person);
     }
+
+    /**
+     * @return void
+     * @throws \ErrorException
+     */
+    public function initializeJsonListAction(): void
+    {
+//        if ($authenticationService->isAuthenticated() === false) {
+//            throw new \ErrorException('You are not allowed to see this view', 1572957189);
+//        }
+        try {
+            $filterArgument = $this->arguments->getArgument('filter');
+            $filterPropMapping = $filterArgument->getPropertyMappingConfiguration();
+            $filterPropMapping->allowAllProperties();
+        } catch (\Exception $exception) {
+            // no filter
+        }
+    }
+
+    /**
+     * &tx_personregister_pi1[action]=jsonList
+     *
+     * @param Filter|null $filter
+     * @return string
+     * @throws InvalidQueryException
+     */
+    public function jsonListAction(Filter $filter = null): string
+    {
+        $personRepository = $this->objectManager->get(PersonRepository::class);
+        $persons = $personRepository->findByFilterArray($filter);
+        return json_encode($persons);
+    }
 }

@@ -1,0 +1,26 @@
+plugin.tx_personregister_pi1.features.requireCHashArgumentForActionArguments = 0
+
+jsonList = PAGE
+jsonList {
+    typeNum = 1572956631
+    config {
+        additionalHeaders.10.header = Content-Type: application/json
+        no_cache = 1
+        disableAllHeaderCode = 1
+        disablePrefixComment = 1
+        xhtml_cleaning = 0
+        admPanel = 0
+        debug = 0
+    }
+
+    10 = USER
+    10 {
+        userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+        extensionName = Personregister
+        pluginName = Pi1
+        vendorName = In2code
+        controller = Person
+        action = jsonList
+        switchableControllerActions.Person.1 = jsonList
+    }
+}

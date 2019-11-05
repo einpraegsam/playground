@@ -131,4 +131,12 @@ class Person extends AbstractEntity
         $this->gender = $gender;
         return $this;
     }
+
+    /**
+     * @return array
+     */
+    public function getAllProperties()
+    {
+        return $this->_getProperties();
+    }
 }
