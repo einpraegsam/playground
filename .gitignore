@@ -15,5 +15,6 @@ composer.lock
 /public/typo3conf/ext/*
 !/public/typo3conf/ext/template/
 !/public/typo3conf/ext/personregister/
+!/public/typo3conf/ext/cildb/
 
 .idea

@@ -1,0 +1,5 @@
+
+
+page.includeCSS {
+    cildb = EXT:cildb/Resources/Public/Css/cildb.css
+}

@@ -1,0 +1,136 @@
+<html xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+{namespace cil= BBAW\Cildb\ViewHelpers}
+
+<f:layout name="defaultLayout" />
+<f:section name="content">
+<f:form name="filter">
+ <div class="row m-2 form-group">
+  <div class="col">
+   <div class="row justify-content-between p-2">
+       <div class="col-4">
+           <!-- &tx_cildb_datalisting[filter][search] -->
+         <f:form.textfield  class="form-control form-control-sm" property="search" type="text" placeholder="Inschrift"/>
+       </div>
+       <div class="col-4">
+         <a href="#">Sucherläuterungen</a>
+       </div>
+   </div>
+      <div class="row p-2">
+          <div class="col-4">
+              <!-- &tx_cildb_datalisting[filter][antik] -->
+              <f:form.select property="antik" class="form-control form-control-sm">
+                <option>Fundort (antik)</option>
+                <f:for each="{data_antik}" as="data">
+                    <option >{data.antik}</option>
+                </f:for>
+            </f:form.select>
+          </div>
+          <div class="col-4">
+            <f:form.select name="modern" class="form-control form-control-sm">
+                <option selected="">Fundort (modern)</option>
+                <f:for each="{data_modern}" as="data">
+                    <option >{data.modern}</option>
+                </f:for>
+            </f:form.select>
+          </div>
+      </div>
+      <div class="row p-2">
+          <div class="col-4">
+                <f:form.select name="provinz" class="form-control form-control-sm">
+                    <option selected="">Provinz</option>
+                    <f:for each="{data_name}" as="data">
+                        <option >{data.name}</option>
+                    </f:for>
+                </f:form.select>
+          </div>
+      </div>
+      <div class="row p-2">
+          <div class="col">
+              <div class="form-check">
+                  <f:form.checkbox class="form-check-input" name="scheden" value="scheden"/> <label class="form-check-label" for="scheden">Scheden</label>
+              </div>
+          </div>
+          <div class="col">
+              <div class="form-check">
+                 <f:form.checkbox  class="form-check-input" name="fotos" value="fotos"/><label class="form-check-label" for="fotos">Fotos</label>
+              </div>
+          </div>
+          <div class="col">
+              <div class="form-check">
+                 <f:form.checkbox  class="form-check-input" name="abklatsche" value="abklatsche"/><label class="form-check-label" for="abklatsche">Abklatsche</label>
+              </div>
+          </div>
+          <div class="col">
+              <div class="form-check">
+                 <f:form.checkbox  class="form-check-input" name="3d-abklatsche" value="3d-abklatsche"/><label class="form-check-label" for="3d-abklatsche">3D-Abklatsche</label>
+              </div>
+          </div>
+        <div class="col">
+            <f:form.button type="reset" value="Löschen" class="btn btn-primary">Löschen</f:form.button>
+          </div>
+          <div class="col-3">
+              <f:form.button type="submit" value="Suchen" class="btn btn-primary">Suchen</f:form.button>
+
+          </div>
+      </div>
+  </div>
+ </div>
+</f:form>
+
+<!--
+-->
+    <f:if condition="{filter.set}">
+        Bitte geben Sie was ein
+    </f:if>
+
+    <f:comment>
+        <f:debug>{data_info}</f:debug>
+        <f:debug>{data_sql}</f:debug>
+    </f:comment>
+
+    <f:if condition="{data_search}">
+        <f:then>
+            <h1><f:count subject="{data_search}"/> Treffer</h1>
+
+            <f:variable name="volumen">novalue</f:variable>
+            <ul class="list-unstyled">
+                <f:for each="{data_search}" as="data">
+
+                    <f:if condition="{0:'{data.kurztitel}'} != {0:''}">
+                        <f:then>
+                            <f:if condition="{0:volumen} != {0:'{data.kurztitel}'}">
+                                <f:variable name="volumen" value="{data.kurztitel}" />
+                                <h3 class="cil_belegTitle"><strong>{data.kurztitel}</strong></h3>
+
+                            </f:if>
+                        </f:then>
+                        <f:else if="{0:volumen} != {0:'generic'}">
+                            <f:variable name="volumen">generic</f:variable>
+                            <br />
+                        </f:else>
+                    </f:if>
+
+                    <f:link.action action="show"  arguments="{belegdetail_id:'{data.id}'}">
+                        <li class="mt-2">
+                            <f:format.html parseFuncTSPath=""><cil:belegeTransformation belege ="{data.belege}">{data.belege}</cil:belegeTransformation></f:format.html>
+                        </li>
+                    </f:link.action>
+
+                </f:for>
+
+            <!--<ul class="list-unstyled">
+                <f:for each="{data_search}" as="data">
+                    <f:link.action action="show"  arguments="{belegdetail_id:'{data.id}'}">
+                        <li class="mt-2">
+                            <f:format.html parseFuncTSPath=""><cil:belegeTransformation belege ="{data.belege}">{data.belege}</cil:belegeTransformation></f:format.html>
+                        </li>
+                    </f:link.action>
+                </f:for>
+            </ul>
+            -->
+            </ul>
+        </f:then>
+    </f:if>
+</f:section>
+
+</html>

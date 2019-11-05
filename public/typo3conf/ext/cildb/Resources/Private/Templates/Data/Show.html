@@ -1,0 +1,64 @@
+<html xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+{namespace cil= BBAW\Cildb\ViewHelpers}
+
+<f:layout name="defaultLayout" />
+
+<f:section name ="content">
+
+    <f:comment>
+        <f:debug>{datadetail}</f:debug>
+    </f:comment>
+    <f:for each="{datadetail}" as="data">
+        <f:format.html parseFuncTSPath=""><cil:FotoLightbox fotodata="{data.foto_meta}" belegname ="{data.belege}"></cil:FotoLightbox></f:format.html>
+        <f:format.html parseFuncTSPath=""><cil:AbklatscheLightbox abklatschedata="{data.abklatsch_meta}" belegname ="{data.belege}"></cil:AbklatscheLightbox></f:format.html>
+        <f:format.html parseFuncTSPath=""><cil:schedenLightbox schededata="{data.schede_meta}" belegname ="{data.belege}"></cil:schedenLightbox></f:format.html>
+    </f:for>
+
+
+
+            <div class="card">
+                <div class="card-body search-result">
+                    <label>Inschrift</label>
+
+                    <f:for each="{datadetail}" as="data">
+
+                        <h3><f:format.html parseFuncTSPath=""><cil:toolTip belege="{data.belege}" sammlungen="{data.sammlungen}">{data.belege}</cil:toolTip></f:format.html></h3>
+
+                        <p><f:format.html parseFuncTSPath=""><cil:simpleTextField label="Fundort (modern)" content="{data.modern}">{data.modern}</cil:simpleTextField></f:format.html></p>
+                        <p><f:format.html parseFuncTSPath=""><cil:simpleTextField label="Fundort (antik)" content="{data.antik}">{data.antik}</cil:simpleTextField></f:format.html></p>
+                        <p><f:format.html parseFuncTSPath=""><cil:simpleTextField label="Provinz" content="{data.provinz}">{data.provinz}</cil:simpleTextField></f:format.html></p>
+
+                        <p><f:format.html parseFuncTSPath=""><cil:clauss clauss="{data.clauss_id}">{data.clauss_id}</cil:clauss></f:format.html></p>
+
+                        <p><f:format.html parseFuncTSPath=""><cil:simpleTextField label="Aufbewahrung" content="{data.aufbewahrung}">{data.aufbewahrung}</cil:simpleTextField></f:format.html></p>
+                        <p><f:format.html parseFuncTSPath=""><cil:simpleTextField label="Drittmittelhinweis" content="{data.drittmittel}">{data.drittmittel}</cil:simpleTextField></f:format.html></p>
+
+                        <f:format.html parseFuncTSPath=""><cil:picture type="Fotos" content="{data.foto_meta}">{data.foto_meta}</cil:picture></f:format.html>
+                        <f:format.html parseFuncTSPath=""><cil:picture type="Abklatsche" content="{data.abklatsch_meta}">{data.abklatsch_meta}</cil:picture></f:format.html>
+                        <f:format.html parseFuncTSPath=""><cil:picture type="Scheden" content="{data.schede_meta}">{data.schede_meta}</cil:picture></f:format.html>
+
+
+
+                    </f:for>
+                </div>
+
+                <f:if condition="{inscription.photos}">
+                    <ul class="list-unstyled clearfix">
+                        <f:for each="{inscription.photos}" as="photo">
+                            <li>
+                                <div class="abklatsche_container">
+                                    <a href="#" onclick="openCarousel('abklatsche')">
+                                        <img class="m-2 float-left abklatsch_dummy_Bild" src="{photo.url}">
+                                    </a>
+                                </div>
+                            </li>
+                        </f:for>
+                    </ul>
+                </f:if>
+
+
+            </div>
+
+
+    <a href="javascript:history.back();" title="zurück zur Übersicht">zurück zur Übersicht</a>
+</f:section>

@@ -1,0 +1,33 @@
+## Backend-Layouts definieren
+mod.web_layout.BackendLayouts{
+    3{
+      title = CIL-Suche Listansicht Layout
+          icon = EXT:example_extension/Resources/Public/Images/BackendLayouts/default.gif
+          config {
+            backend_layout {
+              colCount = 3
+              rowCount = 2
+              rows {
+                1 {
+                  columns {
+                    1 {
+                      name = Content
+                      colPos = 0
+                    }
+                  }
+                }
+                2 {
+                  columns {
+                    1 {
+                      name = Content_Listansicht
+                      colPos = 1
+                    }
+                  }
+                }
+              }
+            }
+          }
+     }
+
+
+}

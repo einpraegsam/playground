@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2019-02-14T08:34:46Z" product-name="cildb">
+		<header/>
+		<body>
+			<trans-unit id="tx_cildb_datalisting.name">
+				<source>cildb - datalisting</source>
+			</trans-unit>
+			<trans-unit id="tx_cildb_datalisting.description">
+				<source>Suchfunktion für CIL</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
