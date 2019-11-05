@@ -11,7 +11,7 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  * Use https://docs.typo3.org/m/typo3/reference-coreapi/master/en-us/ApiOverview/Database/Configuration/Index.html
  * to define more then only 1 database
  */
-class PersonRepository
+class InscriptionRepository
 {
     /**
      * @var \Doctrine\DBAL\Driver\Mysqli\MysqliConnection|null
